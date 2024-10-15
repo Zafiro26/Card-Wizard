@@ -14,8 +14,19 @@ public partial class MoveState : State
 		player = GetNode<CharacterBody2D>("player");
 	}
 
+	public override void Enter()
+    {
+		return;
+    }
+
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
 	public override void _PhysicsProcess(double delta)
+	{
+
+		movement(delta);
+	}
+
+	public void movement(double delta)
 	{
 
 		Vector2 velocity = player.Velocity;
@@ -35,8 +46,6 @@ public partial class MoveState : State
 
 		player.Velocity = velocity;
 		player.MoveAndSlide();
-
-
 
 	}
 }
