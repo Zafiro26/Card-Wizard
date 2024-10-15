@@ -5,8 +5,8 @@ using System.Collections.Generic;
 public partial class StateMachine : Node
 {
 
-    private state current_state;
-    private Dictionary<string, state> states = new Dictionary<string, state>();
+    private State current_state;
+    private Dictionary<string, State> states = new Dictionary<string, State>();
     [Export] public NodePath initialState;
 
 	// Called when the node enters the scene tree for the first time.
@@ -14,12 +14,17 @@ public partial class StateMachine : Node
 	{
         foreach (Node child in this.GetChildren())
         {
-            if (child is state s)
+            if (child is State s)
             {
                 states[child.Name] = s;
-                
+                s.fsm = this;
+                s.Ready();
+                s.Exit();           //Reset all states
             }
         }
+
+        this.current_state = GetNode<State>(initialState);
+        this.current_state.Enter();
 	}
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -35,7 +40,18 @@ public partial class StateMachine : Node
     {
         if (current_state != null) 
         {
-            current_state.Update((float)delta);
+            current_state.PhysicsUpdate((float)delta);
         }
+    }
+
+    public void TransitionTo(string key)
+    {
+        if (!states.ContainsKey(key) || current_state != states[key])
+        {
+            this.current_state.Exit();
+            this.current_state = this.states[key];
+            this.current_state.Enter();
+        }
+
     }
 }

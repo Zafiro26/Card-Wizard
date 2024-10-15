@@ -1,7 +1,7 @@
 using Godot;
 using System;
 
-public partial class state : Node
+public partial class State : Node
 {
 	
     public StateMachine fsm;
