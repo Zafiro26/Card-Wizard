@@ -9,43 +9,67 @@ public partial class MoveState : State
 	private CharacterBody2D player;
 
 	// Called when the node enters the scene tree for the first time.
-	public override void _Ready()
+	public override void Ready()
 	{
-		player = GetNode<CharacterBody2D>("player");
+        player = this.GetOwner<CharacterBody2D>();
 	}
 
 	public override void Enter()
     {
-		return;
+		
+        
+        
     }
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
-	public override void _PhysicsProcess(double delta)
+	public override void PhysicsUpdate(float delta)
 	{
-
+        
 		movement(delta);
 	}
 
-	public void movement(double delta)
+	public void movement(float delta)
 	{
 
-		Vector2 velocity = player.Velocity;
+		 Vector2 v = player.Velocity;   
+        
+        if (Input.IsActionPressed("ui_right"))
+        {  
+            //direction = 1;
+            //play_animation(1);
+            v.X = SPEED;
+            v.Y = 0;
+        }
+        else if (Input.IsActionPressed("ui_left"))
+        {
+            //direction = 3;
+            //play_animation(1);
+            v.X = -SPEED;
+            v.Y = 0;
+        }
+        else if (Input.IsActionPressed("ui_down"))
+        {
+            //direction = 2;
+            //play_animation(1);
+            v.X = 0;
+            v.Y = SPEED;
+        }
+        else if (Input.IsActionPressed("ui_up"))
+        {
+            //direction = 4;
+            //play_animation(1);
+            v.X = 0;
+            v.Y = -SPEED;
+        } 
+        else 
+        {
+            //play_animation(0);
+            fsm.TransitionTo("idle");
+        }
 
-		// Get the input direction and handle the movement/deceleration.
-		// As good practice, you should replace UI actions with custom gameplay actions.
-		Vector2 direction = Input.GetVector("ui_left", "ui_right", "ui_up", "ui_down");
-		if (direction != Vector2.Zero)
-		{
-			velocity.X = direction.X * SPEED;
-		}
-		else
-		{
-			//velocity.X = Mathf.MoveToward(player.Velocity.X, 0, SPEED);
-			fsm.TransitionTo("IdleState");
-		}
+        player.Velocity = v;
 
-		player.Velocity = velocity;
-		player.MoveAndSlide();
+        player.MoveAndSlide();
 
 	}
 }

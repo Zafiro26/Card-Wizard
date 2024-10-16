@@ -48,12 +48,13 @@ public partial class StateMachine : Node
 
     public void TransitionTo(string key)
     {
-        if (!states.ContainsKey(key) || current_state != states[key])
+        if (!states.ContainsKey(key) || current_state == states[key])
         {
-            this.current_state.Exit();
-            this.current_state = this.states[key];
-            this.current_state.Enter();
+            return;
         }
+        this.current_state.Exit();
+        this.current_state = this.states[key];
+        this.current_state.Enter();
 
     }
 }
