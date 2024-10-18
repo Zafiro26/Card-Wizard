@@ -2,8 +2,8 @@
 
 [ext_resource type="Texture2D" uid="uid://4prhe04glhm3" path="res://sprites/characters/player.png" id="1_3p7rb"]
 [ext_resource type="Script" path="res://scripts/states/StateMachine.cs" id="2_bi1lk"]
-[ext_resource type="Script" path="res://scripts/states/IdleState.cs" id="3_6axvw"]
-[ext_resource type="Script" path="res://scripts/states/MoveState.cs" id="4_7k8l6"]
+[ext_resource type="Script" path="res://scripts/states/player/IdleState.cs" id="3_6axvw"]
+[ext_resource type="Script" path="res://scripts/states/player/MoveState.cs" id="4_7k8l6"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_dopyf"]
 atlas = ExtResource("1_3p7rb")

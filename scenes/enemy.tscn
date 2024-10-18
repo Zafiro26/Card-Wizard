@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://cs1xxp1hi4smr"]
+
+[ext_resource type="Script" path="res://scripts/states/enemy/MoveMob.cs" id="1_j7ddt"]
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+
+[node name="FSM" type="Node" parent="."]
+
+[node name="moveMob" type="Node" parent="FSM"]
+script = ExtResource("1_j7ddt")
