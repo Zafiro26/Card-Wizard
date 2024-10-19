@@ -1,10 +1,65 @@
-[gd_scene load_steps=2 format=3 uid="uid://cs1xxp1hi4smr"]
+[gd_scene load_steps=11 format=3 uid="uid://cs1xxp1hi4smr"]
 
+[ext_resource type="Texture2D" uid="uid://cfyk8pf3bnfhp" path="res://sprites/characters/slime.png" id="1_35i4f"]
 [ext_resource type="Script" path="res://scripts/states/enemy/MoveMob.cs" id="1_j7ddt"]
+[ext_resource type="Script" path="res://scripts/states/StateMachine.cs" id="2_cj4r4"]
+[ext_resource type="Script" path="res://scripts/states/enemy/IdleMob.cs" id="4_vwlyj"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ywexu"]
+atlas = ExtResource("1_35i4f")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p8rjq"]
+atlas = ExtResource("1_35i4f")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1pnqw"]
+atlas = ExtResource("1_35i4f")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4tc83"]
+atlas = ExtResource("1_35i4f")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_iuw4o"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ywexu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p8rjq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1pnqw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4tc83")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_4qbse"]
 
 [node name="CharacterBody2D" type="CharacterBody2D"]
 
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -3)
+sprite_frames = SubResource("SpriteFrames_iuw4o")
+animation = &"idle"
+autoplay = "idle"
+
 [node name="FSM" type="Node" parent="."]
+script = ExtResource("2_cj4r4")
+initialState = NodePath("idleMob")
 
 [node name="moveMob" type="Node" parent="FSM"]
 script = ExtResource("1_j7ddt")
+
+[node name="idleMob" type="Node" parent="FSM"]
+script = ExtResource("4_vwlyj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_4qbse")

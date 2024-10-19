@@ -19,8 +19,15 @@ public partial class IdleState : State
 		Vector2 v;
 		v.X = 0;
 		v.Y = 0;
-		player.Velocity = v;
-		player.MoveAndSlide();
+        if (player != null)
+        {
+            player.Velocity = v;
+		    player.MoveAndSlide();
+        }
+        else
+        {
+            GD.Print("No player");
+        }
 	}
 
 	public override void PhysicsUpdate(float delta)
