@@ -1,9 +1,10 @@
-[gd_scene load_steps=11 format=3 uid="uid://cs1xxp1hi4smr"]
+[gd_scene load_steps=13 format=3 uid="uid://cs1xxp1hi4smr"]
 
 [ext_resource type="Texture2D" uid="uid://cfyk8pf3bnfhp" path="res://sprites/characters/slime.png" id="1_35i4f"]
 [ext_resource type="Script" path="res://scripts/states/enemy/MoveMob.cs" id="1_j7ddt"]
 [ext_resource type="Script" path="res://scripts/states/StateMachine.cs" id="2_cj4r4"]
 [ext_resource type="Script" path="res://scripts/states/enemy/IdleMob.cs" id="4_vwlyj"]
+[ext_resource type="Script" path="res://scripts/states/enemy/AttackMeleeMob.cs" id="5_iox7x"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ywexu"]
 atlas = ExtResource("1_35i4f")
@@ -43,6 +44,8 @@ animations = [{
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_4qbse"]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_rxk01"]
+
 [node name="CharacterBody2D" type="CharacterBody2D"]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
@@ -61,5 +64,13 @@ script = ExtResource("1_j7ddt")
 [node name="idleMob" type="Node" parent="FSM"]
 script = ExtResource("4_vwlyj")
 
+[node name="attackMob" type="Node" parent="FSM"]
+script = ExtResource("5_iox7x")
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_4qbse")
+
+[node name="Hitbox" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
+shape = SubResource("CircleShape2D_rxk01")

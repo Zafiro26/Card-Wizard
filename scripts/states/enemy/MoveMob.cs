@@ -38,5 +38,11 @@ public partial class MoveMob : State
             enemy.MoveAndSlide();
         }
 
+        if (d.Length() < 10)
+        {
+            fsm.TransitionTo("attackMob");
+        }
+
+
 	}
 }
