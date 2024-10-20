@@ -42,8 +42,8 @@ public partial class StateMachine : Node
         {
             current_state.PhysicsUpdate((float)delta);
         }
-        GD.Print("Estado: ");
-        GD.Print(current_state.Name);
+        //GD.Print("Estado: ");
+        //GD.Print(current_state.Name);
     }
 
     public void TransitionTo(string key)

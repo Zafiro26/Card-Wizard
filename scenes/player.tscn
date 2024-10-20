@@ -1,6 +1,7 @@
-[gd_scene load_steps=13 format=3 uid="uid://desn57nqlkj4y"]
+[gd_scene load_steps=14 format=3 uid="uid://desn57nqlkj4y"]
 
 [ext_resource type="Texture2D" uid="uid://4prhe04glhm3" path="res://sprites/characters/player.png" id="1_3p7rb"]
+[ext_resource type="Script" path="res://scripts/Player.cs" id="1_nb1at"]
 [ext_resource type="Script" path="res://scripts/states/StateMachine.cs" id="2_bi1lk"]
 [ext_resource type="Script" path="res://scripts/states/player/IdleState.cs" id="3_6axvw"]
 [ext_resource type="Script" path="res://scripts/states/player/MoveState.cs" id="4_7k8l6"]
@@ -60,6 +61,7 @@ radius = 4.0
 height = 14.0
 
 [node name="player" type="CharacterBody2D" groups=["Player"]]
+script = ExtResource("1_nb1at")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -13)
@@ -81,3 +83,5 @@ script = ExtResource("3_6axvw")
 
 [node name="move" type="Node" parent="FSM"]
 script = ExtResource("4_7k8l6")
+
+[node name="die" type="Node" parent="FSM"]
