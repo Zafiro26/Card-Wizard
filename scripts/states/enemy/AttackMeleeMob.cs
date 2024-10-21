@@ -27,7 +27,7 @@ public partial class AttackMeleeMob : State
     private void DoDamage(Player player)
     {
         player.Take_damage(damage);
-        GD.Print("damage");
+        //GD.Print("damage");
     }
 
     // Called every frame. 'delta' is the elapsed time since the previous frame.

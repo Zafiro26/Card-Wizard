@@ -34,11 +34,15 @@ public partial class IdleState : State
 	{
 
 		Vector2 direction = Input.GetVector("ui_left", "ui_right", "ui_up", "ui_down");
-		if (direction == Vector2.Zero)
+		if (direction != Vector2.Zero)
 		{
-			return;
+			fsm.TransitionTo("move");
 		}
-		fsm.TransitionTo("move");
+        if (Input.IsActionJustPressed("Shoot"))
+        {
+            fsm.TransitionTo("attack");
+        }
+		
 
 	}
 

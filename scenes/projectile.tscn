@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://udf1lyy8m5gv"]
+
+[ext_resource type="Texture2D" uid="uid://ckvnuj6dybj0k" path="res://sprites/laserRed01.png" id="1_y26l7"]
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_7tsi2"]
+a = Vector2(-5.24537e-07, -12)
+b = Vector2(9.61651e-07, 22)
+
+[node name="Projectile" type="CharacterBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+rotation = 1.5708
+scale = Vector2(0.528063, 0.658117)
+texture = ExtResource("1_y26l7")
+
+[node name="Hitbox" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
+position = Vector2(5, 0)
+rotation = 1.5708
+shape = SubResource("SegmentShape2D_7tsi2")
