@@ -28,4 +28,13 @@ public partial class Player : CharacterBody2D
             fsm.TransitionTo("die");
         }
     }
+
+    public void heal(int healing)
+    {
+        health += healing;
+        if (health > MAX_HP)
+        {
+            health = MAX_HP;
+        }
+    }
 }
