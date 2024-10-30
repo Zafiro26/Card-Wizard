@@ -7,6 +7,7 @@ public partial class Deck : Node
 
     private Stack<Card> deck;
     private Stack<Card> used_deck;
+    
 
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
@@ -21,34 +22,30 @@ public partial class Deck : Node
         if (deck.Count == 0) {
             deck = used_deck;
             used_deck.Clear();
+            deck.Shuffle();
             
         }
 	}
 
-    public static Stack<T> Shuffle<T>(this Stack<T> stack)
-{
-    List<T> list = stack.ToList();
-    list.Shuffle();
-    return list.ToStack();
-}
-
-    public static void Shuffle<T> ( this List<T> list )
+    public List<Card> draw(int ammount)
     {
-        for ( int i = 0; i < list.Count; i++ )
+
+        List<Card> r = new List<Card>();
+
+        for (int i = 0; i < ammount; i++)
         {
-            int num = Form1.rnd.Next ( list.Count );
-            T temp = list[i];
-            list[i] = list[num];
-            list[num] = temp;
+            Card c = deck.Pop();
+            r[i] = c;
+            used_deck.Push(c);
         }
+
+        return r;
+        
     }
 
-    public static Stack<T> ToStack<T> ( this List<T> list )
+    public void add_used_deck(Card c)
     {
-        Stack<T> stack = new Stack<T> ();
-        foreach ( T t in list )
-            stack.Push ( t );
 
-        return stack;
     }
+
 }

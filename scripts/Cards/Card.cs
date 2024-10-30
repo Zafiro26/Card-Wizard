@@ -16,7 +16,8 @@ public partial class Card : Node
 
     }
 
-    public void Cast_card()
+    //Return true if it still has uses
+    public bool Cast_card()
     {
 
         if (usages >= 0)
@@ -29,6 +30,13 @@ public partial class Card : Node
         {
             GD.Print("Carta %d sin usos", id);
         }
+
+        if (usages > 0)
+        {
+            return true;
+        }
+
+        return false;
 
     }
 
