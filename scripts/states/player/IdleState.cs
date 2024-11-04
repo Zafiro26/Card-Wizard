@@ -38,9 +38,21 @@ public partial class IdleState : State
 		{
 			fsm.TransitionTo("move");
 		}
-        if (Input.IsActionJustPressed("Shoot"))
+        if (Input.IsActionJustPressed("Cast_card1"))
         {
-            fsm.TransitionTo("attack");
+            fsm.TransitionTo("castCard");
+        }
+        else if (Input.IsActionJustPressed("Cast_card2"))
+        {
+            fsm.TransitionTo("castCard");
+        }
+        else if (Input.IsActionJustPressed("Cast_card3"))
+        {
+            fsm.TransitionTo("castCard");
+        }
+        else if (Input.IsActionJustPressed("Cast_card4"))
+        {
+            fsm.TransitionTo("castCard");
         }
 		
 

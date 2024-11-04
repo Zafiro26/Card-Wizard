@@ -10,6 +10,7 @@ public partial class Healing : Card
     {
         Player player = GetTree().GetFirstNodeInGroup("player") as Player;
         player.heal(heal);
+        GD.Print("Casted healing");
     }
 
 }

@@ -16,7 +16,10 @@ public partial class Card : Node
 
     }
 
-    //Return true if it still has uses
+    /*
+    * Cast the effect of the card, reduce the usages.
+    * @return true if it has more usages after cast and false if it does not
+    */
     public bool Cast_card()
     {
 
@@ -40,6 +43,9 @@ public partial class Card : Node
 
     }
 
+    /*
+    * The effect of the card, muest be override for each card
+    */
     public virtual void Effect_card() {}
 
 

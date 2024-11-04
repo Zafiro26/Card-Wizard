@@ -2,11 +2,16 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 
+//Clase estatica que añade la funcion de mezclar para las pilas
 public static class ShuffleClass
 {
 
     private static Random rnd = new Random();
     
+    /*
+    * Shuffles the stack
+    * @Param stack, the stack that is going to get shuffle
+    */
     public static void Shuffle<T>(this Stack<T> stack)
     {
         var values = stack.ToArray();

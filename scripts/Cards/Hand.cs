@@ -17,9 +17,13 @@ public partial class Hand : Node
 
     public override void _PhysicsProcess(double delta)
 	{
+        
     }
 
-
+    /*
+    * Cast the card
+    * @param n, position in hand from right to left of the card to cast
+    */
     public void play_card(int n)
     {
         if (n < 0 || n >= max_hand)
@@ -31,7 +35,7 @@ public partial class Hand : Node
             Card c = hand[n];
             if (!c.Cast_card())
             {
-                
+                hand.RemoveAt(n);
             }
         }
     }

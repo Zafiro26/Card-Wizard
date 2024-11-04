@@ -10,6 +10,7 @@ public partial class Fireball : Card
     {
         Player player = GetTree().GetFirstNodeInGroup("player") as Player;
         player.Take_damage(damage);
+        GD.Print("Casted fireball");
     }
 	
 }

@@ -27,6 +27,11 @@ public partial class Deck : Node
         }
 	}
 
+    /*
+    * Draws cards from the main deck and are moved to the used_deck.
+    * @param ammount, number of cards that want to be drawn.
+    * @return list of the cards drawn.
+    */
     public List<Card> draw(int ammount)
     {
 
@@ -35,7 +40,7 @@ public partial class Deck : Node
         for (int i = 0; i < ammount; i++)
         {
             Card c = deck.Pop();
-            r[i] = c;
+            r.Add(c);
             used_deck.Push(c);
         }
 

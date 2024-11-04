@@ -6,6 +6,8 @@ public partial class Player : CharacterBody2D
 {
     private const int MAX_HP = 100;
     public StateMachine fsm;
+    //public Deck deck;
+    public Hand hand;
 
     private int health;
 	// Called when the node enters the scene tree for the first time.
@@ -13,6 +15,8 @@ public partial class Player : CharacterBody2D
 	{
         Init_player();
         fsm = GetNode<StateMachine>("FSM");
+        //deck = GetNode<Deck>("deck");
+        hand = GetNode<Hand>("hand");
 	}
 
     private void Init_player()
