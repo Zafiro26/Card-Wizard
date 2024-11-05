@@ -10,6 +10,7 @@ public partial class Card : Node
     [Export] private type t;
     [Export] private String nombre;
     [Export] private int usages;
+    [Export] private int cooldown = 0;
 
     public void Init_card()
     {

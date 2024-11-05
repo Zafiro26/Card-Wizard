@@ -14,6 +14,17 @@ public partial class Deck : Node
 	{
         deck = new Stack<Card>();
         used_deck = new Stack<Card>();
+
+        //Test
+        Card c1 = new Fireball();
+        Card c2 = new Fireball();
+        Card c3 = new Healing();
+        Card c4 = new Healing();
+
+        deck.Push(c1);
+        deck.Push(c2);
+        deck.Push(c3);
+        deck.Push(c4);
 	}
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.

@@ -30,7 +30,7 @@ public partial class Attack : State
             hand.play_card(3);
         }
 
-        fsm.TransitionTo("castCard");
+        fsm.TransitionTo("idle");
 
     }
 

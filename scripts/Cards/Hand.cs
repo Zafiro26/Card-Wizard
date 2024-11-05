@@ -13,6 +13,7 @@ public partial class Hand : Node
 	{
         hand = new List<Card>();
         deck = GetNode<Deck>("deck");
+        hand = deck.draw(max_hand);
     }
 
     public override void _PhysicsProcess(double delta)

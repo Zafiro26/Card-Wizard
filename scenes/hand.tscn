@@ -1,6 +1,9 @@
-[gd_scene load_steps=2 format=3 uid="uid://7s8wu3bstbo6"]
+[gd_scene load_steps=3 format=3 uid="uid://7s8wu3bstbo6"]
 
 [ext_resource type="Script" path="res://scripts/Cards/Hand.cs" id="1_voc5p"]
+[ext_resource type="PackedScene" uid="uid://dya2gto7jgheq" path="res://scenes/deck.tscn" id="2_g1eu2"]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_voc5p")
+
+[node name="deck" parent="." instance=ExtResource("2_g1eu2")]
