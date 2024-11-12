@@ -6,11 +6,11 @@ public partial class Card : Node
 
     enum type {PROJECTILE, DEFENSE, HEALTH}
 
-    [Export] private int id;
-    [Export] private type t;
-    [Export] private String nombre;
-    [Export] private int usages;
-    [Export] private int cooldown = 0;
+    [Export] public int id;
+    //[Export] public type t;
+    [Export] public String nombre;
+    [Export] public int usages;
+    [Export] public int cooldown = 0;
 
     public void Init_card()
     {
@@ -19,15 +19,17 @@ public partial class Card : Node
 
     /*
     * Cast the effect of the card, reduce the usages.
-    * @return true if it has more usages after cast and false if it does not
+    * @return false if it has more usages after cast and true if it does not
     */
     public bool Cast_card()
     {
 
+        bool r = true;
+
         if (usages >= 0)
         {
-            GD.Print("Carta %d usada", id);
-            this.Effect_card();
+            GD.Print("Carta " + nombre + id + " usada");
+            //this.Effect_card();
             usages--;
         }
         else
@@ -35,12 +37,12 @@ public partial class Card : Node
             GD.Print("Carta %d sin usos", id);
         }
 
-        if (usages > 0)
+        if (usages <= 0)
         {
-            return true;
+            r = false;
         }
 
-        return false;
+        return r;
 
     }
 

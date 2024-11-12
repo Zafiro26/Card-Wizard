@@ -16,7 +16,7 @@ public partial class Player : CharacterBody2D
         Init_player();
         fsm = GetNode<StateMachine>("FSM");
         //deck = GetNode<Deck>("deck");
-        hand = GetNode<Hand>("hand");
+        hand = GetNode<Hand>("Hand");
 	}
 
     private void Init_player()

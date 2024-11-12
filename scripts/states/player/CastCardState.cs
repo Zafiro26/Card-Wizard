@@ -1,14 +1,14 @@
 using Godot;
 using System;
 
-public partial class Attack : State
+public partial class CastCardState : State
 {
 
     public Hand hand;
 	// Called when the node enters the scene tree for the first time.
 	public override void Ready()
 	{
-        hand = GetNode<Hand>("hand");
+        hand = GetOwner<CharacterBody2D>().GetNode<Hand>("Hand");
 	}
 
     public override void Enter()

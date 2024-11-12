@@ -1,6 +1,7 @@
 using Godot;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.Design.Serialization;
 
 public partial class Deck : Node
 {
@@ -25,15 +26,17 @@ public partial class Deck : Node
         deck.Push(c2);
         deck.Push(c3);
         deck.Push(c4);
+        GD.Print(deck.Count);
 	}
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
 	public override void _PhysicsProcess(double delta)
 	{
         if (deck.Count == 0) {
+            //GD.Print(deck.Count);
             deck = used_deck;
             used_deck.Clear();
-            deck.Shuffle();
+            //deck.Shuffle();
             
         }
 	}
@@ -53,6 +56,12 @@ public partial class Deck : Node
             Card c = deck.Pop();
             r.Add(c);
             used_deck.Push(c);
+        }
+
+        GD.Print("New hand");
+        for (int i = 0; i < r.Count; i++)
+        {
+            GD.Print("Card in " + i + " is " + r[i].nombre);
         }
 
         return r;

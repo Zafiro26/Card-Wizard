@@ -8,16 +8,22 @@ public partial class Hand : Node
     private int max_hand = 4;
     private List<Card> hand;
     private Deck deck;
+    private int used_hand = 0;
 
     public override void _Ready()
 	{
         hand = new List<Card>();
-        deck = GetNode<Deck>("deck");
+        deck = GetNode<Deck>("Deck");
         hand = deck.draw(max_hand);
     }
 
     public override void _PhysicsProcess(double delta)
 	{
+
+        if (Input.IsActionJustPressed("Draw"))
+        {
+            hand = deck.draw(max_hand);
+        }
         
     }
 
@@ -34,10 +40,12 @@ public partial class Hand : Node
         else
         {
             Card c = hand[n];
-            if (!c.Cast_card())
+            
+            if (c.Cast_card())
             {
-                hand.RemoveAt(n);
+                used_hand++;
             }
+            
         }
     }
 

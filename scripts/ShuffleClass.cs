@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using Godot;
 
 //Clase estatica que añade la funcion de mezclar para las pilas
 public static class ShuffleClass
@@ -20,6 +21,8 @@ public static class ShuffleClass
         {
             stack.Push(value);
         }
+
+        GD.Print("Shuffling deck");
     }
 
 
