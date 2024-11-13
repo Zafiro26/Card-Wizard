@@ -34,7 +34,8 @@ public partial class Card : Node
         }
         else
         {
-            GD.Print("Carta %d sin usos", id);
+            //GD.Print("Carta %d sin usos", id);
+            GD.Print("Carta " + nombre + id + " usada");
         }
 
         if (usages <= 0)
