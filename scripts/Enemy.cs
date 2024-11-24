@@ -9,6 +9,7 @@ public partial class Enemy : CharacterBody2D
     public Area2D areaDetection;
     public Area2D attackArea;
     public float attackCooldown;
+    public HealthBar healthBar;
 
     
 	// Called when the node enters the scene tree for the first time.
@@ -18,6 +19,8 @@ public partial class Enemy : CharacterBody2D
         health = MAX_HP;
         areaDetection = GetNode<Area2D>("Detection");
         attackArea = GetNode<Area2D>("AttackArea");
+        healthBar = GetNode<HealthBar>("HealthBar");
+        healthBar.init_health(MAX_HP);
 
         areaDetection.BodyEntered += OnBodyDetectionEntered;
         areaDetection.BodyExited += OnBodyDetectionExit;
@@ -57,19 +60,26 @@ public partial class Enemy : CharacterBody2D
     // Called every frame. 'delta' is the elapsed time since the previous frame.
     public void Take_damage(int damage)
     {
-        health -= damage;
-        if (health <= 0)
-        {
-            fsm.TransitionTo("die");
-        }
+        add_health(0 - damage);
+        
     }
 
     public void heal(int healing)
     {
-        health += healing;
+        add_health(healing);
+    }
+
+    private void add_health(int n)
+    {
+        health += n;
+        if (health <= 0)
+        {
+            fsm.TransitionTo("die");
+        }
         if (health > MAX_HP)
         {
             health = MAX_HP;
         }
+        healthBar.set_health(health);
     }
 }

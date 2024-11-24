@@ -28,15 +28,11 @@ public partial class Player : CharacterBody2D
     * Player loses health equals to damage.
     * @param damage, damage that the player takes.
     */
-	public void Take_damage(int damage)
+    public void Take_damage(int damage)
     {
+        add_health(0 - damage);
         GD.Print("Player takes: " + damage);
-        health -= damage;
-        GD.Print("Player health: " + health);
-        if (health <= 0)
-        {
-            fsm.TransitionTo("die");
-        }
+        
     }
 
     /*
@@ -45,12 +41,24 @@ public partial class Player : CharacterBody2D
     */
     public void heal(int healing)
     {
+        add_health(healing);
         GD.Print("Player heals: " + healing);
-        health += healing;
+    }
+
+    /*
+    * Add player health with value.
+    * @param n, value to add.
+    */
+    private void add_health(int n)
+    {
+        health += n;
+        if (health <= 0)
+        {
+            fsm.TransitionTo("die");
+        }
         if (health > MAX_HP)
         {
             health = MAX_HP;
         }
-        GD.Print("Player health: " + health);
     }
 }

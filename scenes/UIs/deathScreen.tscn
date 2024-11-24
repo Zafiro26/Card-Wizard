@@ -1,0 +1,22 @@
+[gd_scene load_steps=2 format=3 uid="uid://bfd3nmk4eeilm"]
+
+[ext_resource type="Script" path="res://scripts/UIs/DeathScreen.cs" id="1_24ygj"]
+
+[node name="DeathScreen" type="CanvasLayer"]
+script = ExtResource("1_24ygj")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Label" type="Label" parent="Control"]
+layout_mode = 0
+offset_right = 652.0
+offset_bottom = 341.0
+text = "You died
+
+Press \"Enter\" to go to the menu
+
+Press \"ESC\" to exit"

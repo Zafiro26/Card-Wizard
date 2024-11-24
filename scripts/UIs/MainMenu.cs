@@ -15,6 +15,7 @@ public partial class MainMenu : Control
         playButton = GetNode<Button>("MarginContainer/VBoxContainer/PlayButton");
         obtionsButton = GetNode<Button>("MarginContainer/VBoxContainer/ObtionsButton");
         exitButton = GetNode<Button>("MarginContainer/VBoxContainer/ExitButton");
+        playButton.GrabFocus();
 
         playButton.Pressed += onPlayButtonPressed;
         obtionsButton.Pressed += onObtionsButtonPressed;

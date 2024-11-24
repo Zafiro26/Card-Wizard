@@ -1,4 +1,4 @@
-[gd_scene load_steps=82 format=3 uid="uid://cs1xxp1hi4smr"]
+[gd_scene load_steps=81 format=3 uid="uid://cs1xxp1hi4smr"]
 
 [ext_resource type="Script" path="res://scripts/Enemy.cs" id="1_8rjim"]
 [ext_resource type="Texture2D" uid="uid://cfyk8pf3bnfhp" path="res://sprites/characters/slime.png" id="1_35i4f"]
@@ -6,6 +6,7 @@
 [ext_resource type="Script" path="res://scripts/states/StateMachine.cs" id="2_cj4r4"]
 [ext_resource type="Script" path="res://scripts/states/enemy/IdleMob.cs" id="4_vwlyj"]
 [ext_resource type="Script" path="res://scripts/states/enemy/AttackMeleeMob.cs" id="5_iox7x"]
+[ext_resource type="PackedScene" uid="uid://b1imj3rbykb40" path="res://scenes/UIs/healthBar.tscn" id="7_7kjav"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3kr08"]
 atlas = ExtResource("1_35i4f")
@@ -602,10 +603,6 @@ radius = 50.01
 [sub_resource type="CircleShape2D" id="CircleShape2D_u10ro"]
 radius = 14.0
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pe0vx"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8x0bx"]
-
 [node name="enemy" type="CharacterBody2D" groups=["Enemy"]]
 script = ExtResource("1_8rjim")
 
@@ -635,34 +632,32 @@ script = ExtResource("4_vwlyj")
 script = ExtResource("5_iox7x")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
 shape = SubResource("CircleShape2D_4qbse")
 
 [node name="Hitbox" type="Area2D" parent="."]
+visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
 shape = SubResource("CircleShape2D_rxk01")
 
 [node name="Detection" type="Area2D" parent="."]
+visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Detection"]
 shape = SubResource("CircleShape2D_s3of6")
 
 [node name="AttackArea" type="Area2D" parent="."]
+visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AttackArea"]
+visible = false
 shape = SubResource("CircleShape2D_u10ro")
 
-[node name="ProgressBar" type="ProgressBar" parent="."]
-offset_left = 14.0
-offset_top = -12.0
-offset_right = 18.0
-offset_bottom = 15.0
-rotation = 1.5708
-theme_override_styles/background = SubResource("StyleBoxFlat_pe0vx")
-theme_override_styles/fill = SubResource("StyleBoxFlat_8x0bx")
-step = 1.0
-value = 57.0
-fill_mode = 2
-show_percentage = false
-
 [node name="AttackCooldown" type="Timer" parent="."]
+
+[node name="HealthBar" parent="." instance=ExtResource("7_7kjav")]
+offset_left = -13.0
+offset_top = -12.0
+offset_right = 13.0
+offset_bottom = -9.0
