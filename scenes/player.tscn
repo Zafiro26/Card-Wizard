@@ -59,8 +59,8 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_dt7ja"]
-radius = 4.0
-height = 14.0
+radius = 5.0
+height = 18.0
 
 [node name="player" type="CharacterBody2D" groups=["Player"]]
 script = ExtResource("1_nb1at")

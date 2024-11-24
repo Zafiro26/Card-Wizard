@@ -125,4 +125,4 @@ zoom = Vector2(2.905, 2.905)
 position = Vector2(-110, -5)
 
 [node name="enemy" parent="." instance=ExtResource("5_tfg4p")]
-position = Vector2(121, 93)
+position = Vector2(115, 70)

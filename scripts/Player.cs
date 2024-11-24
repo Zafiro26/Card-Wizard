@@ -26,6 +26,7 @@ public partial class Player : CharacterBody2D
 
 	public void Take_damage(int damage)
     {
+        GD.Print("Player takes: " + damage);
         health -= damage;
         if (health <= 0)
         {

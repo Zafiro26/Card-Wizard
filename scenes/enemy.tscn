@@ -1,5 +1,6 @@
-[gd_scene load_steps=77 format=3 uid="uid://cs1xxp1hi4smr"]
+[gd_scene load_steps=82 format=3 uid="uid://cs1xxp1hi4smr"]
 
+[ext_resource type="Script" path="res://scripts/Enemy.cs" id="1_8rjim"]
 [ext_resource type="Texture2D" uid="uid://cfyk8pf3bnfhp" path="res://sprites/characters/slime.png" id="1_35i4f"]
 [ext_resource type="Script" path="res://scripts/states/enemy/MoveMob.cs" id="1_j7ddt"]
 [ext_resource type="Script" path="res://scripts/states/StateMachine.cs" id="2_cj4r4"]
@@ -595,7 +596,18 @@ _data = {
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_rxk01"]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_s3of6"]
+radius = 50.01
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_u10ro"]
+radius = 17.0294
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pe0vx"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8x0bx"]
+
 [node name="enemy" type="CharacterBody2D" groups=["Enemy"]]
+script = ExtResource("1_8rjim")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -3)
@@ -629,3 +641,26 @@ shape = SubResource("CircleShape2D_4qbse")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
 shape = SubResource("CircleShape2D_rxk01")
+
+[node name="Detection" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Detection"]
+shape = SubResource("CircleShape2D_s3of6")
+
+[node name="AttackArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AttackArea"]
+shape = SubResource("CircleShape2D_u10ro")
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+offset_left = 14.0
+offset_top = -12.0
+offset_right = 18.0
+offset_bottom = 15.0
+rotation = 1.5708
+theme_override_styles/background = SubResource("StyleBoxFlat_pe0vx")
+theme_override_styles/fill = SubResource("StyleBoxFlat_8x0bx")
+step = 1.0
+value = 57.0
+fill_mode = 2
+show_percentage = false

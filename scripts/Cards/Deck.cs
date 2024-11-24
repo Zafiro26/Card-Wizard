@@ -79,6 +79,7 @@ public partial class Deck : Node
         
     }
 
+    //Moves the used_deck to the deck, meant to be used when deck is empty 
     private void used_deck_to_deck()
     {
         int f = used_deck.Count;
