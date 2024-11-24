@@ -600,7 +600,7 @@ _data = {
 radius = 50.01
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_u10ro"]
-radius = 17.0294
+radius = 14.0
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pe0vx"]
 
@@ -631,18 +631,20 @@ script = ExtResource("1_j7ddt")
 [node name="idleMob" type="Node" parent="FSM"]
 script = ExtResource("4_vwlyj")
 
-[node name="attackMob" type="Node" parent="FSM"]
+[node name="attackMeleeMob" type="Node" parent="FSM"]
 script = ExtResource("5_iox7x")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_4qbse")
 
 [node name="Hitbox" type="Area2D" parent="."]
+visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
 shape = SubResource("CircleShape2D_rxk01")
 
 [node name="Detection" type="Area2D" parent="."]
+visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Detection"]
 shape = SubResource("CircleShape2D_s3of6")
@@ -664,3 +666,5 @@ step = 1.0
 value = 57.0
 fill_mode = 2
 show_percentage = false
+
+[node name="AttackCooldown" type="Timer" parent="."]

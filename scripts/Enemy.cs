@@ -8,6 +8,8 @@ public partial class Enemy : CharacterBody2D
     public StateMachine fsm;
     public Area2D areaDetection;
     public Area2D attackArea;
+    public float attackCooldown;
+
     
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
@@ -22,11 +24,12 @@ public partial class Enemy : CharacterBody2D
         attackArea.BodyEntered += OnBodyAttackEnter;
 	}
 
+
     private void OnBodyAttackEnter(Node2D body)
     {
         if (body.IsInGroup("Player"))
         {
-            fsm.TransitionTo("AttackMob");
+            fsm.TransitionTo("attackMeleeMob");
             GD.Print("Mob change to attack");
         }
     }
@@ -34,8 +37,11 @@ public partial class Enemy : CharacterBody2D
 
     private void OnBodyDetectionExit(Node2D body)
     {
-        fsm.TransitionTo("idleMob");
-        GD.Print("Mob change to idle");
+        if (body.IsInGroup("Player"))
+        {
+            fsm.TransitionTo("idleMob");
+            GD.Print("Mob change to idle");
+        }
     }
 
 
