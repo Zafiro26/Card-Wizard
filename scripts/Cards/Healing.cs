@@ -14,9 +14,8 @@ public partial class Healing : Card
         this.cooldown = 1;
     }
 	
-	public override void Effect_card()
+	public override void Effect_card(Player player)
     {
-        Player player = GetTree().GetFirstNodeInGroup("player") as Player;
         player.heal(heal);
         GD.Print("Casted healing");
     }

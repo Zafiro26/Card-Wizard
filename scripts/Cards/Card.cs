@@ -12,6 +12,10 @@ public partial class Card : Node
     [Export] public int usages;
     [Export] public int cooldown = 0;
 
+    public Card()
+    {
+    }
+
     public void Init_card()
     {
 
@@ -21,7 +25,7 @@ public partial class Card : Node
     * Cast the effect of the card, reduce the usages.
     * @return false if it has more usages after cast and true if it does not
     */
-    public bool Cast_card()
+    public bool Cast_card(Player player)
     {
 
         bool r = true;
@@ -29,7 +33,7 @@ public partial class Card : Node
         if (usages >= 0)
         {
             GD.Print("Carta " + nombre + id + " usada");
-            //this.Effect_card();
+            this.Effect_card(player);
             usages--;
         }
         else
@@ -50,7 +54,7 @@ public partial class Card : Node
     /*
     * The effect of the card, muest be override for each card
     */
-    public virtual void Effect_card() {}
+    public virtual void Effect_card(Player player) {}
 
 
 }

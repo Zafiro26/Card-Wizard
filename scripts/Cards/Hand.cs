@@ -9,12 +9,14 @@ public partial class Hand : Node
     private List<Card> hand;
     private Deck deck;
     private int used_hand = 0;
+    private Player player;
 
     public override void _Ready()
 	{
         hand = new List<Card>();
         deck = GetNode<Deck>("Deck");
         hand = deck.draw(max_hand);
+        player = (Player)GetTree().GetFirstNodeInGroup("Player");
     }
 
     public override void _PhysicsProcess(double delta)
@@ -41,7 +43,7 @@ public partial class Hand : Node
         {
             Card c = hand[n];
             
-            if (c.Cast_card())
+            if (c.Cast_card(player))
             {
                 used_hand++;
             }

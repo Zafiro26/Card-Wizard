@@ -9,12 +9,14 @@ public partial class Deck : Node
     private Stack<Card> deck;
     private Stack<Card> used_deck;
     
+    
 
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
         deck = new Stack<Card>();
         used_deck = new Stack<Card>();
+        
 
         //Test
         Card c1 = new Fireball();
