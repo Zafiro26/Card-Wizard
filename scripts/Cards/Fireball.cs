@@ -16,7 +16,7 @@ public partial class Fireball : Card
 
     public override void Effect_card(Player player)
     {
-        player.Take_damage(damage);
+        player.shoot();
         GD.Print("Casted fireball");
     }
 	

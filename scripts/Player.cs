@@ -45,6 +45,11 @@ public partial class Player : CharacterBody2D
         GD.Print("Player heals: " + healing);
     }
 
+    public void shoot()
+    {
+        
+    }
+
     /*
     * Add player health with value.
     * @param n, value to add.

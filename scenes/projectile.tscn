@@ -1,12 +1,17 @@
-[gd_scene load_steps=3 format=3 uid="uid://udf1lyy8m5gv"]
+[gd_scene load_steps=5 format=3 uid="uid://udf1lyy8m5gv"]
 
+[ext_resource type="Script" path="res://scripts/Projectile.cs" id="1_ccr7y"]
 [ext_resource type="Texture2D" uid="uid://ckvnuj6dybj0k" path="res://sprites/laserRed01.png" id="1_y26l7"]
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_7tsi2"]
 a = Vector2(-5.24537e-07, -12)
 b = Vector2(9.61651e-07, 22)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_aew7k"]
+size = Vector2(34, 2.875)
+
 [node name="Projectile" type="CharacterBody2D"]
+script = ExtResource("1_ccr7y")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 rotation = 1.5708
@@ -19,3 +24,6 @@ texture = ExtResource("1_y26l7")
 position = Vector2(5, 0)
 rotation = 1.5708
 shape = SubResource("SegmentShape2D_7tsi2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_aew7k")
