@@ -28,8 +28,8 @@ public partial class Projectile : CharacterBody2D
         {
             Enemy tmp = (Enemy)body;
             tmp.Take_damage(damage);
+            this.QueueFree();
         }
-        this.QueueFree();
     }
 
 }
