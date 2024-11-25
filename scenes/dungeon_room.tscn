@@ -1,0 +1,79 @@
+[gd_scene load_steps=6 format=3 uid="uid://bhok0guuewoa3"]
+
+[ext_resource type="Texture2D" uid="uid://tvaqd08yyty6" path="res://sprites/basic_dungeon_room.png" id="1_it8dt"]
+[ext_resource type="Script" path="res://scripts/Dungeon/DungeonRoom.cs" id="1_yj86n"]
+[ext_resource type="PackedScene" uid="uid://biropaa43pld0" path="res://scenes/door.tscn" id="2_novrj"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gj80x"]
+size = Vector2(336, 168)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fysyi"]
+
+[node name="DungeonRoom" type="Node2D"]
+script = ExtResource("1_yj86n")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(240, 132)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("1_it8dt")
+
+[node name="DetectionPlayer" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DetectionPlayer"]
+position = Vector2(240, 132)
+shape = SubResource("RectangleShape2D_gj80x")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PackedVector2Array(72, 116, 1, 115, 0, 1, 225, 1, 224, 48, 73, 49)
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="StaticBody2D"]
+position = Vector2(480, 265)
+rotation = 3.14159
+polygon = PackedVector2Array(72, 116, 1, 115, 0, 1, 225, 1, 224, 48, 73, 49)
+
+[node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="StaticBody2D"]
+position = Vector2(0, 1)
+polygon = PackedVector2Array(408, 116, 479, 116, 480, 0, 254, 1, 255, 47, 408, 49)
+
+[node name="CollisionPolygon2D4" type="CollisionPolygon2D" parent="StaticBody2D"]
+position = Vector2(480, 265)
+rotation = 3.14159
+polygon = PackedVector2Array(408, 116, 479, 116, 480, 0, 254, 1, 255, 47, 408, 49)
+
+[node name="DoorUp" parent="." instance=ExtResource("2_novrj")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DoorUp"]
+position = Vector2(239, 37)
+shape = SubResource("RectangleShape2D_fysyi")
+
+[node name="Marker2D2" type="Marker2D" parent="DoorUp"]
+position = Vector2(239, 37)
+
+[node name="DoorDown" parent="." instance=ExtResource("2_novrj")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DoorDown"]
+position = Vector2(239, 226)
+shape = SubResource("RectangleShape2D_fysyi")
+
+[node name="Marker2D2" type="Marker2D" parent="DoorDown"]
+position = Vector2(239, 226)
+
+[node name="DoorRight" parent="." instance=ExtResource("2_novrj")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DoorRight"]
+position = Vector2(418, 134)
+shape = SubResource("RectangleShape2D_fysyi")
+
+[node name="Marker2D2" type="Marker2D" parent="DoorRight"]
+position = Vector2(418, 134)
+
+[node name="DoorLeft" parent="." instance=ExtResource("2_novrj")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DoorLeft"]
+position = Vector2(62, 134)
+shape = SubResource("RectangleShape2D_fysyi")
+
+[node name="Marker2D2" type="Marker2D" parent="DoorLeft"]
+position = Vector2(62, 134)

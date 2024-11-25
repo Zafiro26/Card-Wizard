@@ -1,0 +1,5 @@
+[gd_scene format=3 uid="uid://biropaa43pld0"]
+
+[node name="Area2D" type="Area2D"]
+
+[node name="Marker2D" type="Marker2D" parent="."]
