@@ -4,9 +4,10 @@ using System;
 public partial class Projectile : CharacterBody2D
 {
 
-    private int SPEED = 700;
+    public int speed;
     private Area2D area;
     private int damage = 10;
+    private Vector2 d;
 
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
@@ -19,7 +20,7 @@ public partial class Projectile : CharacterBody2D
 	public override void _PhysicsProcess(double delta)
 	{
         
-        this.Position += Transform.X * SPEED * (float)delta;
+        this.Position += Transform.X * speed * (float)delta;
 	}
 
     private void OnBodyEntered(Node2D body)
@@ -31,5 +32,6 @@ public partial class Projectile : CharacterBody2D
             this.QueueFree();
         }
     }
+
 
 }

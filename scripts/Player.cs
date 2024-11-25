@@ -26,7 +26,8 @@ public partial class Player : CharacterBody2D
 
     public override void _PhysicsProcess(double delta)
     {
-        LookAt(GetGlobalMousePosition());
+        //LookAt(GetGlobalMousePosition());
+        muzzle.LookAt(GetGlobalMousePosition());
     }
 
     private void Init_player()
@@ -55,9 +56,10 @@ public partial class Player : CharacterBody2D
 		GD.Print("Player heals: " + healing);
 	}
 
-	public void shoot()
+	public void shoot(int speed)
 	{
 		Projectile n = (Projectile)projectile.Instantiate();
+        n.speed = speed;
 		GetTree().Root.AddChild(n);
 		n.Transform = muzzle.GlobalTransform;
 		
