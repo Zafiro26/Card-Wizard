@@ -3,6 +3,8 @@
 [ext_resource type="Script" path="res://scripts/Dungeon/Door.cs" id="1_g232v"]
 
 [node name="Area2D" type="Area2D"]
+collision_layer = 0
+collision_mask = 2
 script = ExtResource("1_g232v")
 
 [node name="Marker2D" type="Marker2D" parent="."]

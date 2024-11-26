@@ -3,21 +3,28 @@ using System;
 
 public partial class Camera2dDungeon : Camera2D
 {
-    public DungeonRoom dungeonRoom;
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
-        dungeonRoom = GetOwner().GetNode<DungeonRoom>("DungeonRoom");
-        dungeonRoom.RoomEntered += OnRoomEntered;
-	}
-
+        
+        foreach (Node n in GetOwner().GetChildren())
+        {
+            //GD.Print(n.GetType());
+            if (n.GetType() == typeof(DungeonRoom))
+            {
+                DungeonRoom tmp = (DungeonRoom)n;
+                tmp.RoomEntered += OnRoomEntered;
+                //GD.Print("a");
+            }
+        }
+    }
+    
+    
     private void OnRoomEntered(DungeonRoom room)
     {
-        GlobalPosition = room.GlobalPosition;
+        GD.Print(room.Name);
+        this.GlobalPosition = room.GlobalPosition;
+        //GD.Print(this.GlobalPosition);
     }
-
-    // Called every frame. 'delta' is the elapsed time since the previous frame.
-    public override void _Process(double delta)
-	{
-	}
+    
 }

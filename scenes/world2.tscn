@@ -1,16 +1,14 @@
-[gd_scene load_steps=4 format=3 uid="uid://d181qg7qq5rhd"]
+[gd_scene load_steps=5 format=3 uid="uid://d181qg7qq5rhd"]
 
 [ext_resource type="PackedScene" uid="uid://desn57nqlkj4y" path="res://scenes/player.tscn" id="1_o03oh"]
 [ext_resource type="PackedScene" uid="uid://bhok0guuewoa3" path="res://scenes/dungeon_room.tscn" id="2_26cl8"]
 [ext_resource type="Script" path="res://scenes/Camera2dDungeon.cs" id="3_rx7ss"]
+[ext_resource type="PackedScene" uid="uid://cs1xxp1hi4smr" path="res://scenes/enemy.tscn" id="4_snh8m"]
 
 [node name="World" type="Node2D"]
 
 [node name="player" parent="." instance=ExtResource("1_o03oh")]
 position = Vector2(237, 141)
-
-[node name="DungeonRoom" parent="." instance=ExtResource("2_26cl8")]
-z_index = -1
 
 [node name="Camera2D" type="Camera2D" parent="."]
 anchor_mode = 0
@@ -18,3 +16,25 @@ zoom = Vector2(2.4, 2.45)
 position_smoothing_enabled = true
 position_smoothing_speed = 10.0
 script = ExtResource("3_rx7ss")
+
+[node name="DungeonRoom" parent="." instance=ExtResource("2_26cl8")]
+z_index = -1
+
+[node name="DungeonRoom5" parent="." instance=ExtResource("2_26cl8")]
+z_index = -1
+position = Vector2(-479, -1)
+
+[node name="DungeonRoom2" parent="." instance=ExtResource("2_26cl8")]
+z_index = -1
+position = Vector2(0, -264)
+
+[node name="DungeonRoom3" parent="." instance=ExtResource("2_26cl8")]
+z_index = -1
+position = Vector2(479, 0)
+
+[node name="DungeonRoom4" parent="." instance=ExtResource("2_26cl8")]
+z_index = -1
+position = Vector2(0, 264)
+
+[node name="enemy" parent="." instance=ExtResource("4_snh8m")]
+position = Vector2(362, -178)

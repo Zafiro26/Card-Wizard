@@ -16,7 +16,12 @@ public partial class DungeonRoom : Node2D
 
     private void onBodyEntered(Node2D body)
     {
-        EmitSignal(SignalName.RoomEntered, this);
+        if (body.IsInGroup("Player"))
+        {
+            GD.Print("a");
+            EmitSignal(SignalName.RoomEntered, this);
+        }
+        GD.Print("a");
     }
 
 }

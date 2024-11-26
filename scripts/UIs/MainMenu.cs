@@ -30,12 +30,12 @@ public partial class MainMenu : Control
 
     private void onObtionsButtonPressed()
     {
-        GetTree().ChangeSceneToFile("res://scenes/world.tscn");
+        GetTree().ChangeSceneToFile("res://scenes/world2.tscn");
     }
 
 
     private void onPlayButtonPressed()
     {
-        GetTree().ChangeSceneToFile("res://scenes/world.tscn");
+        GetTree().ChangeSceneToFile("res://scenes/world2.tscn");
     }
 }

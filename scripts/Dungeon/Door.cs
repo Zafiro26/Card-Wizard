@@ -10,7 +10,9 @@ public partial class Door : Area2D
 	public override void _Ready()
 	{
         marker = GetNode<Marker2D>("Marker2D");
+
         this.BodyEntered += onBodyEntered;
+        
 	}
 
     //Change the player of room
@@ -19,6 +21,7 @@ public partial class Door : Area2D
         if (body.IsInGroup("Player"))
         {
             body.Position = marker.GlobalPosition;
+            GD.Print(marker.GlobalPosition);
         }
     }
 
