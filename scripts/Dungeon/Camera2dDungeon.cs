@@ -9,12 +9,12 @@ public partial class Camera2dDungeon : Camera2D
         
         foreach (Node n in GetOwner().GetChildren())
         {
-            //GD.Print(n.GetType());
+            
             if (n.GetType() == typeof(DungeonRoom))
             {
                 DungeonRoom tmp = (DungeonRoom)n;
                 tmp.RoomEntered += OnRoomEntered;
-                //GD.Print("a");
+                
             }
         }
     }
@@ -24,7 +24,6 @@ public partial class Camera2dDungeon : Camera2D
     {
         GD.Print(room.Name);
         this.GlobalPosition = room.GlobalPosition;
-        //GD.Print(this.GlobalPosition);
     }
     
 }

@@ -22,10 +22,25 @@ public partial class Enemy : CharacterBody2D
         healthBar = GetNode<HealthBar>("HealthBar");
         healthBar.init_health(MAX_HP);
 
-        areaDetection.BodyEntered += OnBodyDetectionEntered;
-        areaDetection.BodyExited += OnBodyDetectionExit;
+        //areaDetection.BodyEntered += OnBodyDetectionEntered;
+        //areaDetection.BodyExited += OnBodyDetectionExit;
         attackArea.BodyEntered += OnBodyAttackEnter;
+        attackArea.BodyExited += OnBodyAttackExit;
 	}
+
+    private void OnBodyAttackExit(Node2D body)
+    {
+        if (body.IsInGroup("Player"))
+        {
+            fsm.TransitionTo("moveMob");
+        }
+    }
+
+
+    public void force_transition_move()
+    {
+        fsm.TransitionTo("moveMob");
+    }
 
 
     private void OnBodyAttackEnter(Node2D body)
@@ -74,7 +89,7 @@ public partial class Enemy : CharacterBody2D
         health += n;
         if (health <= 0)
         {
-            fsm.TransitionTo("die");
+            fsm.TransitionTo("dieMob");
         }
         if (health > MAX_HP)
         {

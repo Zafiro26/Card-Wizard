@@ -7,8 +7,8 @@ public partial class AttackMeleeMob : State
     private Area2D area;
     private Player player;
     private Enemy mob;
-    public bool attackCooldown;
-    public Timer attackCooldownTimer;
+    private bool attackCooldown;
+    private Timer attackCooldownTimer;
 	// Called when the node enters the scene tree for the first time.
 	public override void Ready()
 	{
@@ -17,6 +17,7 @@ public partial class AttackMeleeMob : State
         attackCooldown = false;
         attackCooldownTimer = mob.GetNode<Timer>("AttackCooldown");
         attackCooldownTimer.Timeout += onTimerEnd;
+        GD.Print("hola");
 	}
 
     private void onTimerEnd()
@@ -29,13 +30,12 @@ public partial class AttackMeleeMob : State
         player.Take_damage(damage);
     }
 
-    public override void Enter()
-    {
-
-    }
-
     public override void PhysicsUpdate(float delta)
     {
+        if (attackCooldown)
+        {
+            //GD.Print("aa");
+        }
         if (!attackCooldown)
         {
             DoDamage(player);

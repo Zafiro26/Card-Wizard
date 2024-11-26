@@ -6,7 +6,7 @@
 [ext_resource type="Script" path="res://scripts/states/player/IdleState.cs" id="3_6axvw"]
 [ext_resource type="Script" path="res://scripts/states/player/MoveState.cs" id="4_7k8l6"]
 [ext_resource type="Script" path="res://scripts/states/player/CastCardState.cs" id="6_qb1xb"]
-[ext_resource type="PackedScene" uid="uid://7s8wu3bstbo6" path="res://scenes/hand.tscn" id="7_tljjc"]
+[ext_resource type="PackedScene" uid="uid://7s8wu3bstbo6" path="res://scenes/Player/hand.tscn" id="7_tljjc"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_dopyf"]
 atlas = ExtResource("1_3p7rb")
@@ -59,11 +59,11 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_dt7ja"]
-radius = 3.0
+radius = 4.0
 height = 14.0
 
 [node name="player" type="CharacterBody2D" groups=["Player"]]
-collision_layer = 2
+collision_layer = 3
 script = ExtResource("1_nb1at")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]

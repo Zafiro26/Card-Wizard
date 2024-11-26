@@ -9,7 +9,7 @@ public partial class MoveMob : State
     public Area2D area;
     public Area2D attackArea;
 
-    public int SPEED = 40;
+    public int SPEED = 80;
 
 	// Called when the node enters the scene tree for the first time.
 	public override void Ready()

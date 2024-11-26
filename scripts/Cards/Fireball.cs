@@ -4,7 +4,7 @@ using System;
 public partial class Fireball : Card
 {
 	
-    public int damage = 10;
+    public int damage = 100;
     public int speed = 300;
 
     public Fireball()
@@ -17,7 +17,7 @@ public partial class Fireball : Card
 
     public override void Effect_card(Player player)
     {
-        player.shoot(speed);
+        player.shoot(speed, damage);
         GD.Print("Casted fireball");
     }
 	

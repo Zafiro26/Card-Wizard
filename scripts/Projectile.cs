@@ -6,7 +6,7 @@ public partial class Projectile : CharacterBody2D
 
     public int speed;
     private Area2D area;
-    private int damage = 10;
+    public int damage = 10;
     private Vector2 d;
 
 	// Called when the node enters the scene tree for the first time.

@@ -18,10 +18,22 @@ public partial class DungeonRoom : Node2D
     {
         if (body.IsInGroup("Player"))
         {
-            GD.Print("a");
             EmitSignal(SignalName.RoomEntered, this);
+            make_mobs_attack();
         }
-        GD.Print("a");
+    }
+
+    private void make_mobs_attack()
+    {
+        foreach (Node n in GetChildren())
+        {
+            if (n.GetType() == typeof(Enemy))
+            {
+                Enemy tmp = (Enemy)n;
+                tmp.force_transition_move();
+                
+            }
+        }
     }
 
 }

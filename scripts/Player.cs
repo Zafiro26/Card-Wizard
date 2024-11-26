@@ -56,10 +56,11 @@ public partial class Player : CharacterBody2D
 		GD.Print("Player heals: " + healing);
 	}
 
-	public void shoot(int speed)
+	public void shoot(int speed, int damage)
 	{
 		Projectile n = (Projectile)projectile.Instantiate();
         n.speed = speed;
+        n.damage = damage;
 		GetTree().Root.AddChild(n);
 		n.Transform = muzzle.GlobalTransform;
 		
