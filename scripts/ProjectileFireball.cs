@@ -1,19 +1,21 @@
 using Godot;
 using System;
 
-public partial class Projectile : CharacterBody2D
+public partial class ProjectileFireball : CharacterBody2D
 {
 
     public int speed;
     private Area2D area;
     public int damage = 10;
     private Vector2 d;
+    private Player player;
 
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
         area = this.GetNode<Area2D>("Hitbox");
         area.BodyEntered += OnBodyEntered;
+        player = (Player)GetTree().GetFirstNodeInGroup("Player");
 	}
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.

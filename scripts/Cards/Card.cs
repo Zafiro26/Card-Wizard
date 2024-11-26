@@ -4,10 +4,8 @@ using System;
 public partial class Card : Node
 {
 
-    enum type {PROJECTILE, DEFENSE, HEALTH}
 
     [Export] public int id;
-    //[Export] public type t;
     [Export] public String nombre;
     [Export] public int usages;
     [Export] public int cooldown = 0;

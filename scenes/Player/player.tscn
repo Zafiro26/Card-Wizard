@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://desn57nqlkj4y"]
+[gd_scene load_steps=17 format=3 uid="uid://desn57nqlkj4y"]
 
 [ext_resource type="Texture2D" uid="uid://4prhe04glhm3" path="res://sprites/characters/player.png" id="1_3p7rb"]
 [ext_resource type="Script" path="res://scripts/Player.cs" id="1_nb1at"]
@@ -7,6 +7,7 @@
 [ext_resource type="Script" path="res://scripts/states/player/MoveState.cs" id="4_7k8l6"]
 [ext_resource type="Script" path="res://scripts/states/player/CastCardState.cs" id="6_qb1xb"]
 [ext_resource type="PackedScene" uid="uid://7s8wu3bstbo6" path="res://scenes/Player/hand.tscn" id="7_tljjc"]
+[ext_resource type="PackedScene" uid="uid://b1imj3rbykb40" path="res://scenes/UIs/healthBar.tscn" id="8_8q5xp"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_dopyf"]
 atlas = ExtResource("1_3p7rb")
@@ -96,3 +97,11 @@ script = ExtResource("6_qb1xb")
 position = Vector2(6, 1)
 
 [node name="Hand" parent="." instance=ExtResource("7_tljjc")]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="HealthBar" parent="CanvasLayer" instance=ExtResource("8_8q5xp")]
+offset_left = 7.0
+offset_top = 8.0
+offset_right = 247.0
+offset_bottom = 12.0

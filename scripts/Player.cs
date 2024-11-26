@@ -1,5 +1,6 @@
 using Godot;
 using System;
+using System.Collections.Generic;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 
@@ -11,17 +12,21 @@ public partial class Player : CharacterBody2D
 	public Hand hand;
 	public PackedScene projectile;
 	public Marker2D muzzle;
-
 	private int health;
+    public HealthBar healthBar;
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
-		Init_player();
+		
 		fsm = GetNode<StateMachine>("FSM");
-		//deck = GetNode<Deck>("deck");
 		hand = GetNode<Hand>("Hand");
-		projectile = GD.Load<PackedScene>("res://scenes/projectile.tscn");
+		
         muzzle = GetNode<Marker2D>("Muzzle");
+        healthBar = GetNode<HealthBar>("CanvasLayer/HealthBar");
+        
+        healthBar.init_health(MAX_HP);
+        Init_player();
+        
 	}
 
     public override void _PhysicsProcess(double delta)
@@ -56,13 +61,14 @@ public partial class Player : CharacterBody2D
 		GD.Print("Player heals: " + healing);
 	}
 
-	public void shoot(int speed, int damage)
+	public void shoot(int speed, int damage, AnimatedSprite2D animatedSprite)
 	{
-		Projectile n = (Projectile)projectile.Instantiate();
-        n.speed = speed;
-        n.damage = damage;
-		GetTree().Root.AddChild(n);
-		n.Transform = muzzle.GlobalTransform;
+        //projectile = GD.Load<PackedScene>("res://scenes/Cards/fireball.tscn");
+		//Projectile n = (Projectile)projectile.Instantiate();
+        //n.speed = speed;
+        //n.damage = damage;
+		//GetTree().Root.AddChild(n);
+		//n.Transform = muzzle.GlobalTransform;
 		
 	}
 
@@ -81,5 +87,6 @@ public partial class Player : CharacterBody2D
 		{
 			health = MAX_HP;
 		}
+        healthBar.set_health(health);
 	}
 }
