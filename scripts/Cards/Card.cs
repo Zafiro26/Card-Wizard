@@ -8,11 +8,11 @@ public partial class Card : Node2D
     public int usages;
     public int cooldown;
     [Export] public Sprite2D sprite2D;
-    public Label lebel;
+    //public Label lebel;
 
     public override void _Ready()
     {
-        lebel = GetNode<Label>("Cost/CostLabel");
+        //lebel = GetNode<Label>("Cost/CostLabel");
     }
 
     public void Init_card(String name, int usages, int cooldown)
@@ -24,7 +24,7 @@ public partial class Card : Node2D
 
     private void Update_cost()
     {
-        lebel.Text = usages.ToString();
+        //lebel.Text = usages.ToString();
     }
 
     /*
@@ -51,7 +51,6 @@ public partial class Card : Node2D
         {
             r = false;
         }
-        Update_cost();
         return r;
 
     }

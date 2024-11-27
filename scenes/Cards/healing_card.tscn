@@ -2,13 +2,14 @@
 
 [ext_resource type="Script" path="res://scripts/Cards/Healing.cs" id="1_43p2h"]
 [ext_resource type="PackedScene" uid="uid://vsptq01pxkxa" path="res://scenes/Cards/card.tscn" id="2_6uv38"]
-[ext_resource type="Texture2D" uid="uid://djgidac8yyuw" path="res://sprites/card_base.png" id="3_1tsf3"]
+[ext_resource type="Texture2D" uid="uid://b1ys0tq57whtn" path="res://sprites/defend_card_image.png" id="3_iavsq"]
 
-[node name="HealingCard" type="Node2D" node_paths=PackedStringArray("sprite2D")]
+[node name="HealingCard" type="Node2D"]
 script = ExtResource("1_43p2h")
-sprite2D = NodePath("Sprite2D")
 
 [node name="Card" parent="." instance=ExtResource("2_6uv38")]
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("3_1tsf3")
+[node name="Sprite2D" parent="Card/CardImage" index="0"]
+texture = ExtResource("3_iavsq")
+
+[editable path="Card"]

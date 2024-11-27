@@ -6,7 +6,7 @@
 [ext_resource type="Script" path="res://scripts/states/player/IdleState.cs" id="3_6axvw"]
 [ext_resource type="Script" path="res://scripts/states/player/MoveState.cs" id="4_7k8l6"]
 [ext_resource type="Script" path="res://scripts/states/player/CastCardState.cs" id="6_qb1xb"]
-[ext_resource type="PackedScene" uid="uid://7s8wu3bstbo6" path="res://scenes/Player/hand.tscn" id="7_tljjc"]
+[ext_resource type="PackedScene" uid="uid://dya2gto7jgheq" path="res://scenes/Player/deck.tscn" id="8_1puey"]
 [ext_resource type="PackedScene" uid="uid://b1imj3rbykb40" path="res://scenes/UIs/healthBar.tscn" id="8_8q5xp"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_dopyf"]
@@ -96,8 +96,6 @@ script = ExtResource("6_qb1xb")
 [node name="Muzzle" type="Marker2D" parent="."]
 position = Vector2(6, 1)
 
-[node name="Hand" parent="." instance=ExtResource("7_tljjc")]
-
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="HealthBar" parent="CanvasLayer" instance=ExtResource("8_8q5xp")]
@@ -105,3 +103,5 @@ offset_left = 7.0
 offset_top = 8.0
 offset_right = 247.0
 offset_bottom = 12.0
+
+[node name="Deck" parent="." instance=ExtResource("8_1puey")]
