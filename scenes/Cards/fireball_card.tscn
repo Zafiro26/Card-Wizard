@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://scripts/Cards/Fireball.cs" id="1_33sqt"]
 [ext_resource type="PackedScene" uid="uid://vsptq01pxkxa" path="res://scenes/Cards/card.tscn" id="2_45wks"]
-[ext_resource type="Texture2D" uid="uid://c5catmialllqi" path="res://sprites/attack_card_image.png" id="3_1qtcj"]
+[ext_resource type="Texture2D" uid="uid://dhm4ktauvqb0f" path="res://sprites/Cards/Fireball.png" id="3_2dx1f"]
 
 [node name="FireballCard" type="Node2D"]
 script = ExtResource("1_33sqt")
@@ -10,6 +10,7 @@ script = ExtResource("1_33sqt")
 [node name="Card" parent="." instance=ExtResource("2_45wks")]
 
 [node name="Sprite2D" parent="Card/CardImage" index="0"]
-texture = ExtResource("3_1qtcj")
+scale = Vector2(4, 4)
+texture = ExtResource("3_2dx1f")
 
 [editable path="Card"]

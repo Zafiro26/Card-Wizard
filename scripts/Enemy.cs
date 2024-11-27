@@ -10,6 +10,7 @@ public partial class Enemy : CharacterBody2D
     public Area2D attackArea;
     public float attackCooldown;
     public HealthBar healthBar;
+    public Timer scorchTimer;
 
     
 	// Called when the node enters the scene tree for the first time.
@@ -26,7 +27,14 @@ public partial class Enemy : CharacterBody2D
         //areaDetection.BodyExited += OnBodyDetectionExit;
         attackArea.BodyEntered += OnBodyAttackEnter;
         attackArea.BodyExited += OnBodyAttackExit;
+        scorchTimer.Timeout += OnScorchTimeout;
 	}
+
+    private void OnScorchTimeout()
+    {
+        throw new NotImplementedException();
+    }
+
 
     private void OnBodyAttackExit(Node2D body)
     {
@@ -77,6 +85,10 @@ public partial class Enemy : CharacterBody2D
     {
         add_health(0 - damage);
         
+    }
+    public void Take_dot_damage(int damage, int time, int intervale_damage)
+    {
+
     }
 
     public void heal(int healing)
