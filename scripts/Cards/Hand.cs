@@ -109,16 +109,16 @@ public partial class Hand : Node2D
         Vector2 v;
         v.Y = 600;
 
-        v.X = 500;
+        v.X = 750;
         d[0] = v;
 
-        v.X = 600;
+        v.X = 850;
         d[1] = v;
 
-        v.X = 700;
+        v.X = 950;
         d[2] = v;
 
-        v.X = 800;
+        v.X = 1050;
         d[3] = v;
     }
 

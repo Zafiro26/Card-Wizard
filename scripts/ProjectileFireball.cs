@@ -31,6 +31,7 @@ public partial class ProjectileFireball : CharacterBody2D
         {
             Enemy tmp = (Enemy)body;
             tmp.Take_damage(damage);
+            tmp.Take_dot_damage(5, 20, 2.0f);
             this.QueueFree();
         }
     }

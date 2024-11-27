@@ -12,6 +12,10 @@ public partial class Enemy : CharacterBody2D
     public HealthBar healthBar;
     public Timer scorchTimer;
 
+    public int scorchDamageTaken;
+    public int scorchDamageMax;
+    public int scorchDamage;
+
     
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
@@ -22,6 +26,7 @@ public partial class Enemy : CharacterBody2D
         attackArea = GetNode<Area2D>("AttackArea");
         healthBar = GetNode<HealthBar>("HealthBar");
         healthBar.init_health(MAX_HP);
+        scorchTimer = GetNode<Timer>("ScorchTimer");
 
         //areaDetection.BodyEntered += OnBodyDetectionEntered;
         //areaDetection.BodyExited += OnBodyDetectionExit;
@@ -32,7 +37,12 @@ public partial class Enemy : CharacterBody2D
 
     private void OnScorchTimeout()
     {
-        throw new NotImplementedException();
+        Take_damage(scorchDamage);
+        scorchDamageTaken += scorchDamage;
+        if (scorchDamageTaken < scorchDamageMax)
+        {
+            scorchTimer.Start();
+        }
     }
 
 
@@ -86,9 +96,13 @@ public partial class Enemy : CharacterBody2D
         add_health(0 - damage);
         
     }
-    public void Take_dot_damage(int damage, int time, int intervale_damage)
+    public void Take_dot_damage(int damage, int total_damage, float intervale_damage)
     {
-
+        scorchDamageTaken = 0;
+        scorchDamageMax = total_damage;
+        scorchDamage = damage;
+        scorchTimer.WaitTime = intervale_damage;
+        scorchTimer.Start();
     }
 
     public void heal(int healing)
