@@ -13,6 +13,7 @@ public partial class Card : Node2D
     public override void _Ready()
     {
         //lebel = GetNode<Label>("Cost/CostLabel");
+        sprite2D = GetNode<Sprite2D>("Card/CardImage/Sprite2D");
     }
 
     public void Init_card(String name, int usages, int cooldown)
@@ -50,9 +51,16 @@ public partial class Card : Node2D
         if (usages <= 0)
         {
             r = false;
+            change_sprite();
         }
         return r;
 
+    }
+
+    public void change_sprite()
+    {
+        Texture2D newTexture = GD.Load<Texture2D>("res://sprites/Cards/NoUsages.png");
+        sprite2D.Texture = newTexture;
     }
 
     /*
