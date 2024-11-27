@@ -1,0 +1,60 @@
+[gd_scene load_steps=9 format=3 uid="uid://dcxpiafe6dk83"]
+
+[ext_resource type="Script" path="res://scenes/Cards/ProjectileFrozenArrow.cs" id="1_ihltg"]
+[ext_resource type="Texture2D" uid="uid://ddhingodd52co" path="res://sprites/Arrows_pack.png" id="2_5ntwr"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_r6aam"]
+size = Vector2(6, 4)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_o732w"]
+size = Vector2(6, 4)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_251d2"]
+atlas = ExtResource("2_5ntwr")
+region = Rect2(0, 1024, 1024, 1024)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sxrxm"]
+atlas = ExtResource("2_5ntwr")
+region = Rect2(1024, 1024, 1024, 1024)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5fs2f"]
+atlas = ExtResource("2_5ntwr")
+region = Rect2(2048, 1024, 1024, 1024)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5rcvh"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_251d2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sxrxm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5fs2f")
+}],
+"loop": true,
+"name": &"arrow",
+"speed": 5.0
+}]
+
+[node name="ProjectileFrozenArrow" type="CharacterBody2D"]
+script = ExtResource("1_ihltg")
+
+[node name="Hitbox" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
+position = Vector2(5, -1)
+shape = SubResource("RectangleShape2D_r6aam")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(5, -1)
+shape = SubResource("RectangleShape2D_o732w")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-9.53674e-07, 0)
+scale = Vector2(0.038269, 0.0241699)
+sprite_frames = SubResource("SpriteFrames_5rcvh")
+animation = &"arrow"
+autoplay = "arrow"
+frame_progress = 0.20507

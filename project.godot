@@ -24,6 +24,7 @@ project/assembly_name="MoreTesting"
 Player=""
 Enemy=""
 deck=""
+World=""
 
 [input]
 

@@ -31,10 +31,6 @@ public partial class AttackMeleeMob : State
 
     public override void PhysicsUpdate(float delta)
     {
-        if (attackCooldown)
-        {
-            //GD.Print("aa");
-        }
         if (!attackCooldown)
         {
             DoDamage(player);

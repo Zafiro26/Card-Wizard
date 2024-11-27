@@ -4,18 +4,18 @@ using System;
 public partial class MoveMob : State
 {
 
-	public CharacterBody2D mob;
+	public Enemy mob;
     public Player player;
     public Area2D area;
     public Area2D attackArea;
 
-    public int SPEED = 80;
+    //public int SPEED = 80;
 
 	// Called when the node enters the scene tree for the first time.
 	public override void Ready()
 	{
 
-		mob = GetOwner<CharacterBody2D>();
+		mob = GetOwner<Enemy>();
         player = (Player)GetTree().GetFirstNodeInGroup("Player");
 
 	}
@@ -27,7 +27,7 @@ public partial class MoveMob : State
 	{
         Vector2 d = player.GlobalPosition - mob.GlobalPosition;
 
-        mob.Velocity = d.Normalized() * SPEED;
+        mob.Velocity = d.Normalized() * mob.SPEED;
         mob.MoveAndSlide();
 
 	}

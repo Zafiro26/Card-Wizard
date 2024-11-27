@@ -82,7 +82,7 @@ position = Vector2(61, 134)
 shape = SubResource("RectangleShape2D_fysyi")
 
 [node name="Slime" parent="." instance=ExtResource("4_1q2j5")]
-position = Vector2(354, 89)
+position = Vector2(365, 79)
 
 [editable path="DoorUp"]
 [editable path="DoorDown"]

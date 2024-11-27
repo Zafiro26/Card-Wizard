@@ -4,18 +4,23 @@ using System;
 public partial class Enemy : CharacterBody2D
 {
     public int MAX_HP = 100;
+    public float SPEED = 80f;
     public int health;
     public StateMachine fsm;
     public Area2D areaDetection;
     public Area2D attackArea;
     public float attackCooldown;
     public HealthBar healthBar;
+    
+    //Scorch timer and damage
     public Timer scorchTimer;
-
     public int scorchDamageTaken;
     public int scorchDamageMax;
     public int scorchDamage;
 
+    //Slow timer
+    public Timer slowTimer;
+    public float oldSpeed;
     
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
@@ -26,14 +31,25 @@ public partial class Enemy : CharacterBody2D
         attackArea = GetNode<Area2D>("AttackArea");
         healthBar = GetNode<HealthBar>("HealthBar");
         healthBar.init_health(MAX_HP);
+
         scorchTimer = GetNode<Timer>("ScorchTimer");
+        slowTimer = GetNode<Timer>("SlowTimer");
 
         //areaDetection.BodyEntered += OnBodyDetectionEntered;
         //areaDetection.BodyExited += OnBodyDetectionExit;
         attackArea.BodyEntered += OnBodyAttackEnter;
         attackArea.BodyExited += OnBodyAttackExit;
         scorchTimer.Timeout += OnScorchTimeout;
+        slowTimer.Timeout += OnSlowTimeout;
+        
+
 	}
+
+    private void OnSlowTimeout()
+    {
+        SPEED = oldSpeed;
+    }
+
 
     private void OnScorchTimeout()
     {
@@ -88,6 +104,14 @@ public partial class Enemy : CharacterBody2D
             fsm.TransitionTo("moveMob");
             GD.Print("Mob change to move");
         }
+    }
+
+    public void slow(float ammount)
+    {
+        float tmp = SPEED*((100 - ammount)/100);
+        oldSpeed = SPEED;
+        SPEED = tmp;
+        slowTimer.Start(5.0f);
     }
 
     // Called every frame. 'delta' is the elapsed time since the previous frame.

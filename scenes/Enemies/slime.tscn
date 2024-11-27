@@ -663,3 +663,5 @@ offset_right = 13.0
 offset_bottom = -9.0
 
 [node name="ScorchTimer" type="Timer" parent="."]
+
+[node name="SlowTimer" type="Timer" parent="."]
