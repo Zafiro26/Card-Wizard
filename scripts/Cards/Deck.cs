@@ -28,23 +28,11 @@ public partial class Deck : Node
         deck.Push(c2);
         deck.Push(c3);
         deck.Push(c4);
-        GD.Print(deck.Count);
 	}
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
 	public override void _PhysicsProcess(double delta)
 	{
-
-        /*
-        if (deck.Count == 0) {
-            //GD.Print(deck.Count);
-            //GD.Print(used_deck.Count);
-            deck = used_deck;
-            used_deck.Clear();
-            //deck.Shuffle();
-            
-        }
-        */
         
 	}
 

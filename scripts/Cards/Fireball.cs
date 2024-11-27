@@ -11,7 +11,6 @@ public partial class Fireball : Card
     public Fireball()
     {
         this.nombre = "Fireball";
-        this.id = 0;
         this.usages = 1;
         this.cooldown = 1;
     }
@@ -24,7 +23,6 @@ public partial class Fireball : Card
         n.damage = damage;
         player.GetTree().Root.AddChild(n);
         n.Transform = player.muzzle.GlobalTransform;
-        //player.shoot(name);
         GD.Print("Casted fireball");
     }
 	

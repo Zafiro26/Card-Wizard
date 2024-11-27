@@ -3,7 +3,39 @@
 [ext_resource type="Script" path="res://scripts/Cards/Hand.cs" id="1_xgw7l"]
 [ext_resource type="PackedScene" uid="uid://dya2gto7jgheq" path="res://scenes/Player/deck.tscn" id="2_nwd4m"]
 
-[node name="Node2D" type="Node2D"]
+[node name="Hand" type="Node2D"]
 script = ExtResource("1_xgw7l")
 
 [node name="Deck" parent="." instance=ExtResource("2_nwd4m")]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Label" type="Label" parent="CanvasLayer"]
+offset_left = 975.0
+offset_top = 508.0
+offset_right = 1150.0
+offset_bottom = 531.0
+text = "Card1"
+
+[node name="Label2" type="Label" parent="CanvasLayer"]
+offset_left = 975.0
+offset_top = 545.0
+offset_right = 1148.0
+offset_bottom = 568.0
+text = "Card2"
+
+[node name="Label3" type="Label" parent="CanvasLayer"]
+offset_left = 973.0
+offset_top = 577.0
+offset_right = 1143.0
+offset_bottom = 600.0
+text = "Card3
+"
+
+[node name="Label4" type="Label" parent="CanvasLayer"]
+offset_left = 971.0
+offset_top = 608.0
+offset_right = 1144.0
+offset_bottom = 631.0
+text = "Card4
+"

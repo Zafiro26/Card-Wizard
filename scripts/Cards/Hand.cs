@@ -2,7 +2,7 @@ using Godot;
 using System;
 using System.Collections.Generic;
 
-public partial class Hand : Node
+public partial class Hand : Node2D
 {
 
     private int max_hand = 4;
@@ -10,13 +10,21 @@ public partial class Hand : Node
     private Deck deck;
     private int used_hand = 0;
     private Player player;
-
+    private List<Label> labels;
+    
     public override void _Ready()
 	{
         hand = new List<Card>();
+        labels = new List<Label>();
         deck = GetNode<Deck>("Deck");
         hand = deck.draw(max_hand);
         player = (Player)GetTree().GetFirstNodeInGroup("Player");
+        
+        labels.Add(GetNode<Label>("CanvasLayer/Label"));
+        labels.Add(GetNode<Label>("CanvasLayer/Label2"));
+        labels.Add(GetNode<Label>("CanvasLayer/Label3"));
+        labels.Add(GetNode<Label>("CanvasLayer/Label4"));
+        update_card();
     }
 
     public override void _PhysicsProcess(double delta)
@@ -25,8 +33,18 @@ public partial class Hand : Node
         if (Input.IsActionJustPressed("Draw"))
         {
             hand = deck.draw(max_hand);
+            update_card();
         }
         
+    }
+
+    private void update_card()
+    {
+        for (int i = 0; i < 4; i++)
+        {
+            labels[i].Text = "Name: " + hand[i].Name + " Usages: " + hand[i].usages;
+            //labels[i].Text = "" + i;
+        }
     }
 
     /*
@@ -49,6 +67,7 @@ public partial class Hand : Node
             }
             
         }
+        update_card();
     }
 
     public int add_max_hand(int add)

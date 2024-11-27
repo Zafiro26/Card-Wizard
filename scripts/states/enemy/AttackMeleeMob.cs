@@ -17,7 +17,6 @@ public partial class AttackMeleeMob : State
         attackCooldown = false;
         attackCooldownTimer = mob.GetNode<Timer>("AttackCooldown");
         attackCooldownTimer.Timeout += onTimerEnd;
-        GD.Print("hola");
 	}
 
     private void onTimerEnd()

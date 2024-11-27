@@ -9,7 +9,6 @@ public partial class Healing : Card
     public Healing()
     {
         this.nombre = "Healing";
-        this.id = 1;
         this.usages = 1;
         this.cooldown = 1;
     }

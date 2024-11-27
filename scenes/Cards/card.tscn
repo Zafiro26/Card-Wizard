@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://vsptq01pxkxa"]
+
+[ext_resource type="Script" path="res://scripts/Cards/Card.cs" id="1_66wv0"]
+[ext_resource type="Texture2D" uid="uid://djgidac8yyuw" path="res://sprites/card_base.png" id="2_0djaq"]
+
+[node name="Card" type="Node2D"]
+script = ExtResource("1_66wv0")
+
+[node name="CardImage" type="Node2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="CardImage"]
+texture = ExtResource("2_0djaq")
+
+[node name="Cost" type="Node2D" parent="."]
+
+[node name="CostLabel" type="Label" parent="Cost"]
+offset_left = -37.0
+offset_top = -62.0
+offset_right = 3.0
+offset_bottom = -39.0
