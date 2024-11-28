@@ -1,6 +1,6 @@
 [gd_scene load_steps=10 format=3 uid="uid://udf1lyy8m5gv"]
 
-[ext_resource type="Script" path="res://scripts/ProjectileFireball.cs" id="1_jqn8x"]
+[ext_resource type="Script" path="res://scripts/Cards/ProjectileFireball.cs" id="1_jqn8x"]
 [ext_resource type="Texture2D" uid="uid://cwrdvjvh5jt8k" path="res://VFX/Fireball/FB00_nyknck/FB001.png" id="2_ejclv"]
 [ext_resource type="Texture2D" uid="uid://dyjbw8em0c1te" path="res://VFX/Fireball/FB00_nyknck/FB002.png" id="3_8mkua"]
 [ext_resource type="Texture2D" uid="uid://c5minppqrntwr" path="res://VFX/Fireball/FB00_nyknck/FB003.png" id="4_jj0pq"]

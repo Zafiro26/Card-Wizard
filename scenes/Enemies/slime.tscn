@@ -665,3 +665,5 @@ offset_bottom = -9.0
 [node name="ScorchTimer" type="Timer" parent="."]
 
 [node name="SlowTimer" type="Timer" parent="."]
+
+[node name="PoisonTimer" type="Timer" parent="."]

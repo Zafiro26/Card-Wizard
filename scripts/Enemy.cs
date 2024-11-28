@@ -18,6 +18,10 @@ public partial class Enemy : CharacterBody2D
     public int scorchDamageMax;
     public int scorchDamage;
 
+    //Posion timer
+    public Timer poisonTimer;
+    public int poisonDamage;
+
     //Slow timer
     public Timer slowTimer;
     public float oldSpeed;
@@ -34,6 +38,7 @@ public partial class Enemy : CharacterBody2D
 
         scorchTimer = GetNode<Timer>("ScorchTimer");
         slowTimer = GetNode<Timer>("SlowTimer");
+        poisonTimer = GetNode<Timer>("PoisonTimer");
 
         //areaDetection.BodyEntered += OnBodyDetectionEntered;
         //areaDetection.BodyExited += OnBodyDetectionExit;
@@ -41,6 +46,9 @@ public partial class Enemy : CharacterBody2D
         attackArea.BodyExited += OnBodyAttackExit;
         scorchTimer.Timeout += OnScorchTimeout;
         slowTimer.Timeout += OnSlowTimeout;
+        poisonTimer.Timeout += OnPoisonTimeout;
+
+        poisonDamage = 0;
         
 
 	}
@@ -48,6 +56,11 @@ public partial class Enemy : CharacterBody2D
     private void OnSlowTimeout()
     {
         SPEED = oldSpeed;
+    }
+
+    private void OnPoisonTimeout()
+    {
+        Take_damage(poisonDamage);
     }
 
 
@@ -122,11 +135,20 @@ public partial class Enemy : CharacterBody2D
     }
     public void Take_dot_damage(int damage, int total_damage, float intervale_damage)
     {
-        scorchDamageTaken = 0;
-        scorchDamageMax = total_damage;
-        scorchDamage = damage;
-        scorchTimer.WaitTime = intervale_damage;
-        scorchTimer.Start();
+        if (total_damage > 0)
+        {
+            scorchDamageTaken = 0;
+            scorchDamageMax = total_damage;
+            scorchDamage = damage;
+            scorchTimer.WaitTime = intervale_damage;
+            scorchTimer.Start();
+        }
+        else
+        {
+            poisonDamage += damage;
+            poisonTimer.WaitTime = intervale_damage;
+            poisonTimer.Start();
+        }
     }
 
     public void heal(int healing)

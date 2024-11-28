@@ -120,6 +120,14 @@ public partial class Deck : Node
         Card n6 = (Card)tmp.Instantiate();
         deck.Push(n6);
 
+        tmp = GD.Load<PackedScene>("res://scenes/Cards/poison_arrow_card.tscn");
+        Card n7 = (Card)tmp.Instantiate();
+        deck.Push(n7);
+
+        tmp = GD.Load<PackedScene>("res://scenes/Cards/poison_arrow_card.tscn");
+        Card n8 = (Card)tmp.Instantiate();
+        deck.Push(n8);
+
         
     }
 

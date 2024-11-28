@@ -37,7 +37,7 @@ public partial class Card : Node2D
 
         bool r = true;
 
-        if (usages >= 0)
+        if (usages > 0)
         {
             GD.Print("Carta " + nombre + " usada");
             this.Effect_card(player);

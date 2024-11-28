@@ -1,6 +1,6 @@
 [gd_scene load_steps=9 format=3 uid="uid://dcxpiafe6dk83"]
 
-[ext_resource type="Script" path="res://scenes/Cards/ProjectileFrozenArrow.cs" id="1_ihltg"]
+[ext_resource type="Script" path="res://scripts/Cards/ProjectileFrozenArrow.cs" id="1_ihltg"]
 [ext_resource type="Texture2D" uid="uid://ddhingodd52co" path="res://sprites/Arrows_pack.png" id="2_5ntwr"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_r6aam"]
