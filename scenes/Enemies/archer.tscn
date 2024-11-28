@@ -1,0 +1,143 @@
+[gd_scene load_steps=21 format=3 uid="uid://bquxx51tc6x84"]
+
+[ext_resource type="Script" path="res://scripts/Enemy.cs" id="1_mpuhr"]
+[ext_resource type="PackedScene" uid="uid://b1imj3rbykb40" path="res://scenes/UIs/healthBar.tscn" id="1_mtdaf"]
+[ext_resource type="Texture2D" uid="uid://cl2xqxhq6tsim" path="res://sprites/Soldier/Soldier/Soldier/Soldier-Walk.png" id="2_cwqk1"]
+[ext_resource type="Script" path="res://scripts/states/StateMachine.cs" id="3_a5r7q"]
+[ext_resource type="Script" path="res://scripts/states/enemy/IdleMob.cs" id="4_kg4uo"]
+[ext_resource type="Script" path="res://scripts/states/enemy/MoveMob.cs" id="5_koxd3"]
+[ext_resource type="Script" path="res://scripts/states/enemy/AttackRangeMob.cs" id="5_wr3mq"]
+[ext_resource type="Script" path="res://scripts/states/enemy/DieMob.cs" id="7_4t4q6"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mjtxd"]
+atlas = ExtResource("2_cwqk1")
+region = Rect2(0, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ung45"]
+atlas = ExtResource("2_cwqk1")
+region = Rect2(100, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xvmiv"]
+atlas = ExtResource("2_cwqk1")
+region = Rect2(200, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dvsvn"]
+atlas = ExtResource("2_cwqk1")
+region = Rect2(300, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gps70"]
+atlas = ExtResource("2_cwqk1")
+region = Rect2(400, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ecatu"]
+atlas = ExtResource("2_cwqk1")
+region = Rect2(500, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_itin0"]
+atlas = ExtResource("2_cwqk1")
+region = Rect2(600, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uckkr"]
+atlas = ExtResource("2_cwqk1")
+region = Rect2(700, 0, 100, 100)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_c66gb"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mjtxd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ung45")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xvmiv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dvsvn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gps70")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ecatu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_itin0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uckkr")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"new_animation",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fvhec"]
+size = Vector2(12, 18)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_d4bcq"]
+size = Vector2(12, 18)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_1jfes"]
+radius = 40.0125
+
+[node name="Archer" type="CharacterBody2D"]
+script = ExtResource("1_mpuhr")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_c66gb")
+
+[node name="FSM" type="Node" parent="." groups=["Enemy"]]
+script = ExtResource("3_a5r7q")
+initialState = NodePath("idleMob")
+
+[node name="idleMob" type="Node" parent="FSM"]
+script = ExtResource("4_kg4uo")
+
+[node name="moveMob" type="Node" parent="FSM"]
+script = ExtResource("5_koxd3")
+
+[node name="attackMob" type="Node" parent="FSM"]
+script = ExtResource("5_wr3mq")
+
+[node name="dieMob" type="Node" parent="FSM"]
+script = ExtResource("7_4t4q6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -2)
+shape = SubResource("RectangleShape2D_fvhec")
+
+[node name="Hitbox" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
+position = Vector2(0, -2)
+shape = SubResource("RectangleShape2D_d4bcq")
+
+[node name="Detection" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Detection"]
+
+[node name="Muzzle" type="Marker2D" parent="."]
+position = Vector2(2, 2)
+
+[node name="AttackArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AttackArea"]
+shape = SubResource("CircleShape2D_1jfes")
+
+[node name="HealthBar" parent="." instance=ExtResource("1_mtdaf")]
+visible = false
+
+[node name="AttackCooldown" type="Timer" parent="."]
+
+[node name="ScorchTimer" type="Timer" parent="."]
+
+[node name="SlowTimer" type="Timer" parent="."]
+
+[node name="PoisonTimer" type="Timer" parent="."]

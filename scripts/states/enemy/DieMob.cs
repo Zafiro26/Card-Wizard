@@ -12,7 +12,7 @@ public partial class DieMob : State
         anim = mob.GetNode<AnimatedSprite2D>("AnimatedSprite2D");
         //anim.AnimationFinished += OnAnimationFinished;
         anim.Play("died");
-        await ToSignal(anim, "animation_finished");
+        await ToSignal(anim, "animation_looped");
         mob.QueueFree();
         
     }

@@ -110,6 +110,10 @@ public partial class Deck : Node
         //Card n4 = (Card)tmp.Instantiate();
         //deck.Push(n4);
 
+        tmp = GD.Load<PackedScene>("res://scenes/Cards/fireball_card.tscn");
+        Card n4 = (Card)tmp.Instantiate();
+        deck.Push(n4);
+
         tmp = GD.Load<PackedScene>("res://scenes/Cards/frozen_arrow_card.tscn");
         Card n5 = (Card)tmp.Instantiate();
         deck.Push(n5);

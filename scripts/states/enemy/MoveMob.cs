@@ -33,7 +33,7 @@ public partial class MoveMob : State
 
         mob.Velocity = d * mob.SPEED;
         mob.MoveAndSlide();
-        update_animation(d);
+        //update_animation(d);
 
 	}
 
@@ -55,6 +55,8 @@ public partial class MoveMob : State
         }
         else
         {
+            anim.Play("walk_side");
+            /*
             // Vertical movement
             if (v.Y > 0)
             {
@@ -66,6 +68,7 @@ public partial class MoveMob : State
                 anim.FlipH = false;
                 anim.Play("walk_back");
             }
+            */
         }
 
     }
