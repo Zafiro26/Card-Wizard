@@ -8,11 +8,12 @@ public partial class Card : Node2D
     public int usages;
     public int cooldown;
     [Export] public Sprite2D sprite2D;
-    public Label lebel;
+    //public Label lebel;
 
     public override void _Ready()
     {
-        lebel = GetNode<Label>("Cost/CostLabel");
+        //lebel = GetNode<Label>("Cost/CostLabel");
+        sprite2D = GetNode<Sprite2D>("Card/CardImage/Sprite2D");
     }
 
     public void Init_card(String name, int usages, int cooldown)
@@ -24,7 +25,7 @@ public partial class Card : Node2D
 
     private void Update_cost()
     {
-        lebel.Text = usages.ToString();
+        //lebel.Text = usages.ToString();
     }
 
     /*
@@ -36,7 +37,7 @@ public partial class Card : Node2D
 
         bool r = true;
 
-        if (usages >= 0)
+        if (usages > 0)
         {
             GD.Print("Carta " + nombre + " usada");
             this.Effect_card(player);
@@ -50,10 +51,16 @@ public partial class Card : Node2D
         if (usages <= 0)
         {
             r = false;
+            change_sprite();
         }
-        Update_cost();
         return r;
 
+    }
+
+    public void change_sprite()
+    {
+        Texture2D newTexture = GD.Load<Texture2D>("res://sprites/Cards/NoUsages.png");
+        sprite2D.Texture = newTexture;
     }
 
     /*

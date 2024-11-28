@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://c35tvkmt8kwgc"]
+
+[ext_resource type="Script" path="res://scripts/Cards/FrozenArrow.cs" id="1_mce42"]
+[ext_resource type="PackedScene" uid="uid://vsptq01pxkxa" path="res://scenes/Cards/card.tscn" id="1_mhhxm"]
+[ext_resource type="Texture2D" uid="uid://c7wvu05p6qayd" path="res://sprites/Cards/FrozenArrow.png" id="2_o0ywu"]
+
+[node name="FrozenArrowCard" type="Node2D"]
+script = ExtResource("1_mce42")
+
+[node name="Card" parent="." instance=ExtResource("1_mhhxm")]
+
+[node name="Sprite2D" parent="Card/CardImage" index="0"]
+scale = Vector2(4, 4)
+texture = ExtResource("2_o0ywu")
+
+[editable path="Card"]

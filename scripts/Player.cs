@@ -8,8 +8,7 @@ public partial class Player : CharacterBody2D
 {
 	private const int MAX_HP = 100;
 	public StateMachine fsm;
-	//public Deck deck;
-	public Hand hand;
+	public Deck deck;
 	public PackedScene projectile;
 	public Marker2D muzzle;
 	private int health;
@@ -19,7 +18,7 @@ public partial class Player : CharacterBody2D
 	{
 		
 		fsm = GetNode<StateMachine>("FSM");
-		hand = GetNode<Hand>("Hand");
+        deck = GetNode<Deck>("Deck");
 		
         muzzle = GetNode<Marker2D>("Muzzle");
         healthBar = GetNode<HealthBar>("CanvasLayer/HealthBar");

@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://b8wufbhm0h1nq"]
+
+[ext_resource type="Script" path="res://scripts/Cards/Fireball.cs" id="1_33sqt"]
+[ext_resource type="PackedScene" uid="uid://vsptq01pxkxa" path="res://scenes/Cards/card.tscn" id="2_45wks"]
+[ext_resource type="Texture2D" uid="uid://dhm4ktauvqb0f" path="res://sprites/Cards/Fireball.png" id="3_2dx1f"]
+
+[node name="FireballCard" type="Node2D"]
+script = ExtResource("1_33sqt")
+
+[node name="Card" parent="." instance=ExtResource("2_45wks")]
+
+[node name="Sprite2D" parent="Card/CardImage" index="0"]
+scale = Vector2(4, 4)
+texture = ExtResource("3_2dx1f")
+
+[editable path="Card"]

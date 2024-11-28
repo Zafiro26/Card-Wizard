@@ -1,0 +1,56 @@
+[gd_scene load_steps=9 format=3 uid="uid://cnek87v0f3hku"]
+
+[ext_resource type="Texture2D" uid="uid://ddhingodd52co" path="res://sprites/Arrows_pack.png" id="1_8dg0n"]
+[ext_resource type="Script" path="res://scripts/Cards/ProjectilePoisonArrow.cs" id="1_cs453"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6irxc"]
+size = Vector2(6, 4)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jmv2e"]
+size = Vector2(6, 4)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_62880"]
+atlas = ExtResource("1_8dg0n")
+region = Rect2(0, 2048, 1024, 1024)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uj3ek"]
+atlas = ExtResource("1_8dg0n")
+region = Rect2(1024, 2048, 1024, 1024)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mi88a"]
+atlas = ExtResource("1_8dg0n")
+region = Rect2(2048, 2048, 1024, 1024)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ovjcj"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_62880")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uj3ek")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mi88a")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+script = ExtResource("1_cs453")
+
+[node name="Hitbox" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
+position = Vector2(6, -1)
+shape = SubResource("RectangleShape2D_6irxc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(6, -1)
+shape = SubResource("RectangleShape2D_jmv2e")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.038, 0.024)
+sprite_frames = SubResource("SpriteFrames_ovjcj")

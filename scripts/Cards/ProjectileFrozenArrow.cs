@@ -1,12 +1,12 @@
 using Godot;
 using System;
 
-public partial class ProjectileFireball : CharacterBody2D
+public partial class ProjectileFrozenArrow : CharacterBody2D
 {
 
     public int speed;
     private Area2D area;
-    public int damage = 10;
+    public int damage;
     private Vector2 d;
     private Player player;
 
@@ -31,6 +31,7 @@ public partial class ProjectileFireball : CharacterBody2D
         {
             Enemy tmp = (Enemy)body;
             tmp.Take_damage(damage);
+            tmp.slow(40);
             this.QueueFree();
         }
     }
