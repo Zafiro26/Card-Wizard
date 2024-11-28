@@ -32,7 +32,6 @@ public partial class IdleState : State
 
 	public override void PhysicsUpdate(float delta)
 	{
-
 		Vector2 direction = Input.GetVector("ui_left", "ui_right", "ui_up", "ui_down");
 		if (direction != Vector2.Zero)
 		{

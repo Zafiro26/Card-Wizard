@@ -561,7 +561,7 @@ script = ExtResource("4_fihtu")
 [node name="idleMob" type="Node" parent="FSM"]
 script = ExtResource("5_dsqfn")
 
-[node name="attackMeleeMob" type="Node" parent="FSM"]
+[node name="attackMob" type="Node" parent="FSM"]
 script = ExtResource("6_7e7hv")
 
 [node name="dieMob" type="Node" parent="FSM"]
@@ -571,6 +571,7 @@ script = ExtResource("7_dvvta")
 shape = SubResource("CircleShape2D_4qbse")
 
 [node name="Hitbox" type="Area2D" parent="."]
+visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
 shape = SubResource("CircleShape2D_rxk01")

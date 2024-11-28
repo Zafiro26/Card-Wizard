@@ -24,8 +24,23 @@ public partial class MoveState : State
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
 	public override void PhysicsUpdate(float delta)
 	{
-		
 		movement(delta);
+        if (Input.IsActionJustPressed("Cast_card1"))
+        {
+            fsm.TransitionTo("castCard");
+        }
+        else if (Input.IsActionJustPressed("Cast_card2"))
+        {
+            fsm.TransitionTo("castCard");
+        }
+        else if (Input.IsActionJustPressed("Cast_card3"))
+        {
+            fsm.TransitionTo("castCard");
+        }
+        else if (Input.IsActionJustPressed("Cast_card4"))
+        {
+            fsm.TransitionTo("castCard");
+        }
 	}
 
 	public void movement(float delta)

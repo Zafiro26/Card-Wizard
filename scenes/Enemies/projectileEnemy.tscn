@@ -1,11 +1,40 @@
-[gd_scene format=3 uid="uid://bpofpmf0drgvp"]
+[gd_scene load_steps=7 format=3 uid="uid://bpofpmf0drgvp"]
+
+[ext_resource type="Texture2D" uid="uid://c8uohnvbux3gw" path="res://sprites/Soldier/Soldier/Arrow(projectile)/Arrow01(100x100).png" id="1_drxwb"]
+[ext_resource type="Script" path="res://scripts/ProjectileEnemy.cs" id="1_noyxg"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s5mhs"]
+size = Vector2(20, 2)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_whlkt"]
+size = Vector2(20, 2)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sryek"]
+atlas = ExtResource("1_drxwb")
+region = Rect2(0, 0, 100, 100)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3mytl"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sryek")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="CharacterBody2D" type="CharacterBody2D"]
+collision_layer = 2
+script = ExtResource("1_noyxg")
 
 [node name="Hitbox" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
+shape = SubResource("RectangleShape2D_s5mhs")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_whlkt")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_3mytl")

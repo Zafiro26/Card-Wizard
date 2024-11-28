@@ -1,13 +1,67 @@
-[gd_scene load_steps=21 format=3 uid="uid://bquxx51tc6x84"]
+[gd_scene load_steps=36 format=3 uid="uid://bquxx51tc6x84"]
 
 [ext_resource type="Script" path="res://scripts/Enemy.cs" id="1_mpuhr"]
 [ext_resource type="PackedScene" uid="uid://b1imj3rbykb40" path="res://scenes/UIs/healthBar.tscn" id="1_mtdaf"]
 [ext_resource type="Texture2D" uid="uid://cl2xqxhq6tsim" path="res://sprites/Soldier/Soldier/Soldier/Soldier-Walk.png" id="2_cwqk1"]
+[ext_resource type="Texture2D" uid="uid://c5bnjgf8d5sqc" path="res://sprites/Soldier/Soldier/Soldier/Soldier.png" id="2_h2ust"]
+[ext_resource type="Texture2D" uid="uid://bnt7l7fr0025v" path="res://sprites/Soldier/Soldier/Soldier/Soldier-Death.png" id="2_jm5u4"]
 [ext_resource type="Script" path="res://scripts/states/StateMachine.cs" id="3_a5r7q"]
 [ext_resource type="Script" path="res://scripts/states/enemy/IdleMob.cs" id="4_kg4uo"]
 [ext_resource type="Script" path="res://scripts/states/enemy/MoveMob.cs" id="5_koxd3"]
 [ext_resource type="Script" path="res://scripts/states/enemy/AttackRangeMob.cs" id="5_wr3mq"]
 [ext_resource type="Script" path="res://scripts/states/enemy/DieMob.cs" id="7_4t4q6"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sgrqp"]
+atlas = ExtResource("2_jm5u4")
+region = Rect2(0, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7kd0a"]
+atlas = ExtResource("2_jm5u4")
+region = Rect2(100, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_thcf2"]
+atlas = ExtResource("2_jm5u4")
+region = Rect2(200, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w7xih"]
+atlas = ExtResource("2_jm5u4")
+region = Rect2(300, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qm7e7"]
+atlas = ExtResource("2_h2ust")
+region = Rect2(0, 400, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_purjp"]
+atlas = ExtResource("2_h2ust")
+region = Rect2(100, 400, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5sneh"]
+atlas = ExtResource("2_h2ust")
+region = Rect2(200, 400, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ltl0s"]
+atlas = ExtResource("2_h2ust")
+region = Rect2(300, 400, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vy3lx"]
+atlas = ExtResource("2_h2ust")
+region = Rect2(400, 400, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1aj1g"]
+atlas = ExtResource("2_h2ust")
+region = Rect2(500, 400, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7g3ci"]
+atlas = ExtResource("2_h2ust")
+region = Rect2(600, 400, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p8gjl"]
+atlas = ExtResource("2_h2ust")
+region = Rect2(700, 400, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vq36p"]
+atlas = ExtResource("2_h2ust")
+region = Rect2(800, 400, 100, 100)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_mjtxd"]
 atlas = ExtResource("2_cwqk1")
@@ -45,6 +99,55 @@ region = Rect2(700, 0, 100, 100)
 animations = [{
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_sgrqp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7kd0a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_thcf2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w7xih")
+}],
+"loop": true,
+"name": &"died",
+"speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qm7e7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_purjp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5sneh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ltl0s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vy3lx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1aj1g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7g3ci")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p8gjl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vq36p")
+}],
+"loop": true,
+"name": &"shoot",
+"speed": 14.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_mjtxd")
 }, {
 "duration": 1.0,
@@ -69,31 +172,28 @@ animations = [{
 "texture": SubResource("AtlasTexture_uckkr")
 }],
 "loop": true,
-"name": &"default",
-"speed": 5.0
-}, {
-"frames": [],
-"loop": true,
-"name": &"new_animation",
+"name": &"walk_side",
 "speed": 5.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_fvhec"]
-size = Vector2(12, 18)
+[sub_resource type="CircleShape2D" id="CircleShape2D_yc8j5"]
+radius = 6.08276
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_d4bcq"]
 size = Vector2(12, 18)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_1jfes"]
-radius = 40.0125
+radius = 116.004
 
-[node name="Archer" type="CharacterBody2D"]
+[node name="Archer" type="CharacterBody2D" groups=["Enemy"]]
 script = ExtResource("1_mpuhr")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_c66gb")
+animation = &"died"
+frame_progress = 0.0693858
 
-[node name="FSM" type="Node" parent="." groups=["Enemy"]]
+[node name="FSM" type="Node" parent="."]
 script = ExtResource("3_a5r7q")
 initialState = NodePath("idleMob")
 
@@ -110,8 +210,7 @@ script = ExtResource("5_wr3mq")
 script = ExtResource("7_4t4q6")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -2)
-shape = SubResource("RectangleShape2D_fvhec")
+shape = SubResource("CircleShape2D_yc8j5")
 
 [node name="Hitbox" type="Area2D" parent="."]
 
@@ -124,7 +223,7 @@ shape = SubResource("RectangleShape2D_d4bcq")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Detection"]
 
 [node name="Muzzle" type="Marker2D" parent="."]
-position = Vector2(2, 2)
+position = Vector2(7, 0)
 
 [node name="AttackArea" type="Area2D" parent="."]
 
@@ -132,7 +231,10 @@ position = Vector2(2, 2)
 shape = SubResource("CircleShape2D_1jfes")
 
 [node name="HealthBar" parent="." instance=ExtResource("1_mtdaf")]
-visible = false
+offset_left = -13.0
+offset_top = -16.0
+offset_right = 13.0
+offset_bottom = -13.0
 
 [node name="AttackCooldown" type="Timer" parent="."]
 

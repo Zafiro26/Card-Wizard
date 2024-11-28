@@ -32,7 +32,7 @@ public partial class Enemy : CharacterBody2D
 	{
         fsm = GetNode<StateMachine>("FSM");
         health = MAX_HP;
-        areaDetection = GetNode<Area2D>("Detection");
+        //areaDetection = GetNode<Area2D>("Detection");
         attackArea = GetNode<Area2D>("AttackArea");
         healthBar = GetNode<HealthBar>("HealthBar");
         healthBar.init_health(MAX_HP);
@@ -82,6 +82,7 @@ public partial class Enemy : CharacterBody2D
         if (body.IsInGroup("Player"))
         {
             fsm.TransitionTo("moveMob");
+            GD.Print("Mob change to move1");
         }
     }
 
@@ -89,6 +90,7 @@ public partial class Enemy : CharacterBody2D
     public void force_transition_move()
     {
         fsm.TransitionTo("moveMob");
+        GD.Print("Mob change to move2");
     }
 
 
@@ -96,7 +98,7 @@ public partial class Enemy : CharacterBody2D
     {
         if (body.IsInGroup("Player"))
         {
-            fsm.TransitionTo("attackMeleeMob");
+            fsm.TransitionTo("attackMob");
             GD.Print("Mob change to attack");
         }
     }

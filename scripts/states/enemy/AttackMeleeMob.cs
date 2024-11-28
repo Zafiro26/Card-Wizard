@@ -39,7 +39,7 @@ public partial class AttackMeleeMob : State
             DoDamage(player);
             attackCooldown = true;
             attackCooldownTimer.Start(mob.attackCooldown);
-            //anim.Play("attack_front");
+            anim.Play("attack_front");
         }
     }
 

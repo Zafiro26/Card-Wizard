@@ -22,7 +22,6 @@ public partial class StateMachine : Node
                 s.Exit();           //Reset all states
             }
         }
-
         this.current_state = GetNode<State>(initialState);
         this.current_state.Enter();
 	}
@@ -42,8 +41,6 @@ public partial class StateMachine : Node
         {
             current_state.PhysicsUpdate((float)delta);
         }
-        //GD.Print("Estado: ");
-        //GD.Print(current_state.Name);
     }
 
     public void TransitionTo(string key)

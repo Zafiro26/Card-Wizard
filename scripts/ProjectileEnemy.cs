@@ -1,7 +1,7 @@
 using Godot;
 using System;
 
-public partial class ProjecitleEnemy : CharacterBody2D
+public partial class ProjectileEnemy : CharacterBody2D
 {
 
     public int speed = 300;

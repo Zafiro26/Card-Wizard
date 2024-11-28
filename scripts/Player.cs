@@ -60,16 +60,6 @@ public partial class Player : CharacterBody2D
 		GD.Print("Player heals: " + healing);
 	}
 
-	public void shoot(int speed, int damage, AnimatedSprite2D animatedSprite)
-	{
-        //projectile = GD.Load<PackedScene>("res://scenes/Cards/fireball.tscn");
-		//Projectile n = (Projectile)projectile.Instantiate();
-        //n.speed = speed;
-        //n.damage = damage;
-		//GetTree().Root.AddChild(n);
-		//n.Transform = muzzle.GlobalTransform;
-		
-	}
 
 	/*
 	* Add player health with value.

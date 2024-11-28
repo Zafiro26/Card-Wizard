@@ -82,7 +82,7 @@ position = Vector2(61, 134)
 shape = SubResource("RectangleShape2D_fysyi")
 
 [node name="Archer" parent="." instance=ExtResource("5_u8ddd")]
-position = Vector2(317, 93)
+position = Vector2(332, 120)
 
 [editable path="DoorUp"]
 [editable path="DoorDown"]
