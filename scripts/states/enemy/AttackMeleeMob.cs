@@ -9,6 +9,7 @@ public partial class AttackMeleeMob : State
     private Enemy mob;
     private bool attackCooldown;
     private Timer attackCooldownTimer;
+    public AnimatedSprite2D anim;
 	// Called when the node enters the scene tree for the first time.
 	public override void Ready()
 	{
@@ -16,6 +17,8 @@ public partial class AttackMeleeMob : State
         player = (Player)GetTree().GetFirstNodeInGroup("Player");
         attackCooldown = false;
         attackCooldownTimer = mob.GetNode<Timer>("AttackCooldown");
+        anim = mob.GetNode<AnimatedSprite2D>("AnimatedSprite2D");
+
         attackCooldownTimer.Timeout += onTimerEnd;
 	}
 
@@ -36,6 +39,7 @@ public partial class AttackMeleeMob : State
             DoDamage(player);
             attackCooldown = true;
             attackCooldownTimer.Start(mob.attackCooldown);
+            //anim.Play("attack_front");
         }
     }
 

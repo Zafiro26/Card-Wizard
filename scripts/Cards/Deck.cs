@@ -9,8 +9,6 @@ public partial class Deck : Node
     private Stack<Card> deck;
     private Stack<Card> used_deck;
     public Hand hand;
-
-    
     
 
 	// Called when the node enters the scene tree for the first time.
@@ -108,9 +106,9 @@ public partial class Deck : Node
         Card n3 = (Card)tmp.Instantiate();
         deck.Push(n3);
 
-        tmp = GD.Load<PackedScene>("res://scenes/Cards/healing_card.tscn");
-        Card n4 = (Card)tmp.Instantiate();
-        deck.Push(n4);
+        //tmp = GD.Load<PackedScene>("res://scenes/Cards/healing_card.tscn");
+        //Card n4 = (Card)tmp.Instantiate();
+        //deck.Push(n4);
 
         tmp = GD.Load<PackedScene>("res://scenes/Cards/frozen_arrow_card.tscn");
         Card n5 = (Card)tmp.Instantiate();

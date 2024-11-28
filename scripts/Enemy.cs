@@ -11,6 +11,7 @@ public partial class Enemy : CharacterBody2D
     public Area2D attackArea;
     public float attackCooldown;
     public HealthBar healthBar;
+    public AnimatedSprite2D anim;
     
     //Scorch timer and damage
     public Timer scorchTimer;
@@ -35,6 +36,7 @@ public partial class Enemy : CharacterBody2D
         attackArea = GetNode<Area2D>("AttackArea");
         healthBar = GetNode<HealthBar>("HealthBar");
         healthBar.init_health(MAX_HP);
+        anim = GetNode<AnimatedSprite2D>("AnimatedSprite2D");
 
         scorchTimer = GetNode<Timer>("ScorchTimer");
         slowTimer = GetNode<Timer>("SlowTimer");
@@ -168,5 +170,10 @@ public partial class Enemy : CharacterBody2D
             health = MAX_HP;
         }
         healthBar.set_health(health);
+    }
+
+    public void play_animation(String name)
+    {
+
     }
 }

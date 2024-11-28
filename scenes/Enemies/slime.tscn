@@ -1,4 +1,4 @@
-[gd_scene load_steps=82 format=3 uid="uid://cs1xxp1hi4smr"]
+[gd_scene load_steps=79 format=3 uid="uid://cs1xxp1hi4smr"]
 
 [ext_resource type="Script" path="res://scripts/Enemy.cs" id="1_jfu7o"]
 [ext_resource type="Texture2D" uid="uid://cfyk8pf3bnfhp" path="res://sprites/characters/slime.png" id="2_0k4fr"]
@@ -295,33 +295,33 @@ animations = [{
 }],
 "loop": true,
 "name": &"attack_back",
-"speed": 5.0
+"speed": 7.0
 }, {
 "frames": [{
-"duration": 1.0,
+"duration": 0.5,
 "texture": SubResource("AtlasTexture_kgl6x")
 }, {
-"duration": 1.0,
+"duration": 0.5,
 "texture": SubResource("AtlasTexture_b858r")
 }, {
-"duration": 1.0,
+"duration": 0.5,
 "texture": SubResource("AtlasTexture_ada4l")
 }, {
-"duration": 1.0,
+"duration": 0.5,
 "texture": SubResource("AtlasTexture_lgstc")
 }, {
-"duration": 1.0,
+"duration": 0.5,
 "texture": SubResource("AtlasTexture_7we1u")
 }, {
-"duration": 1.0,
+"duration": 0.5,
 "texture": SubResource("AtlasTexture_oya8i")
 }, {
-"duration": 1.0,
+"duration": 0.5,
 "texture": SubResource("AtlasTexture_atyua")
 }],
 "loop": true,
 "name": &"attack_front",
-"speed": 5.0
+"speed": 6.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -532,68 +532,6 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="Animation" id="Animation_wepyw"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [1]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath(".:animation")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [&"idle_front"]
-}
-
-[sub_resource type="Animation" id="Animation_mdl85"]
-resource_name = "idle_front"
-loop_mode = 1
-step = 0.25
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:animation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [&"idle_front"]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath(".:frame")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.25, 0.5, 0.75),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 1,
-"values": [0, 1, 2, 3]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_g17mb"]
-_data = {
-"RESET": SubResource("Animation_wepyw"),
-"idle_front": SubResource("Animation_mdl85")
-}
-
 [sub_resource type="CircleShape2D" id="CircleShape2D_4qbse"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_rxk01"]
@@ -602,7 +540,7 @@ _data = {
 radius = 41.1947
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_u10ro"]
-radius = 13.0
+radius = 17.0
 
 [node name="Slime" type="CharacterBody2D" groups=["Enemy"]]
 script = ExtResource("1_jfu7o")
@@ -610,14 +548,8 @@ script = ExtResource("1_jfu7o")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -3)
 sprite_frames = SubResource("SpriteFrames_iuw4o")
-animation = &"idle_front"
-frame = 1
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="AnimatedSprite2D"]
-libraries = {
-"": SubResource("AnimationLibrary_g17mb")
-}
-autoplay = "idle_front"
+animation = &"attack_front"
+frame_progress = 0.359955
 
 [node name="FSM" type="Node" parent="."]
 script = ExtResource("3_5w7el")
