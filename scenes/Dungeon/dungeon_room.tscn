@@ -1,18 +1,30 @@
-[gd_scene load_steps=6 format=3 uid="uid://bhok0guuewoa3"]
+[gd_scene load_steps=9 format=3 uid="uid://bhok0guuewoa3"]
 
 [ext_resource type="Texture2D" uid="uid://tvaqd08yyty6" path="res://sprites/Rooms/basic_dungeon_room.png" id="1_it8dt"]
 [ext_resource type="Script" path="res://scripts/Dungeon/DungeonRoom.cs" id="1_yj86n"]
 [ext_resource type="PackedScene" uid="uid://biropaa43pld0" path="res://scenes/Dungeon/door.tscn" id="2_novrj"]
+[ext_resource type="Texture2D" uid="uid://bd7mvo8xlgqmo" path="res://sprites/Rooms/basic_dungeon_room_closed.png" id="2_nx78r"]
+[ext_resource type="PackedScene" uid="uid://cs1xxp1hi4smr" path="res://scenes/Enemies/slime.tscn" id="4_xr2yj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gj80x"]
 size = Vector2(335, 166)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fysyi"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uiswm"]
+size = Vector2(30, 31)
+
 [node name="DungeonRoom" type="Node2D"]
 script = ExtResource("1_yj86n")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Closed" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(240, 132)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("2_nx78r")
+
+[node name="Opened" type="Sprite2D" parent="."]
+z_index = -1
 position = Vector2(240, 132)
 scale = Vector2(1.5, 1.5)
 texture = ExtResource("1_it8dt")
@@ -31,18 +43,18 @@ shape = SubResource("RectangleShape2D_gj80x")
 polygon = PackedVector2Array(72, 116, 1, 115, 0, 1, 225, 1, 224, 48, 73, 49)
 
 [node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="StaticBody2D"]
-position = Vector2(480, 265)
+position = Vector2(480, 263)
 rotation = 3.14159
-polygon = PackedVector2Array(72, 116, 1, 115, 0, 1, 225, 1, 224, 48, 73, 49)
+polygon = PackedVector2Array(72.9997, 117, 1, 115, 0, 1, 225, 1, 225, 49.0006, 73, 49)
 
 [node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="StaticBody2D"]
 position = Vector2(0, 1)
-polygon = PackedVector2Array(408, 116, 479, 116, 480, 0, 254, 1, 255, 47, 408, 49)
+polygon = PackedVector2Array(407, 116, 479, 116, 480, 0, 254, 1, 255, 47, 408, 49)
 
 [node name="CollisionPolygon2D4" type="CollisionPolygon2D" parent="StaticBody2D"]
 position = Vector2(480, 265)
 rotation = 3.14159
-polygon = PackedVector2Array(408, 116, 479, 116, 480, 0, 254, 1, 255, 47, 408, 49)
+polygon = PackedVector2Array(408, 116, 479, 116, 480, 0, 254, 1, 255, 50.0007, 408, 49)
 
 [node name="DoorUp" parent="." instance=ExtResource("2_novrj")]
 
@@ -68,7 +80,7 @@ shape = SubResource("RectangleShape2D_fysyi")
 position = Vector2(555, 135)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DoorRight"]
-position = Vector2(417, 134)
+position = Vector2(418, 134)
 shape = SubResource("RectangleShape2D_fysyi")
 
 [node name="DoorLeft" parent="." instance=ExtResource("2_novrj")]
@@ -77,8 +89,29 @@ shape = SubResource("RectangleShape2D_fysyi")
 position = Vector2(-83, 135)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DoorLeft"]
-position = Vector2(61, 134)
+position = Vector2(59, 134)
 shape = SubResource("RectangleShape2D_fysyi")
+
+[node name="Slime" parent="." instance=ExtResource("4_xr2yj")]
+position = Vector2(316, 105)
+
+[node name="ClosedDoors" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ClosedDoors"]
+position = Vector2(239, 32.5)
+shape = SubResource("RectangleShape2D_uiswm")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="ClosedDoors"]
+position = Vector2(56, 132)
+shape = SubResource("RectangleShape2D_uiswm")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="ClosedDoors"]
+position = Vector2(240, 230)
+shape = SubResource("RectangleShape2D_uiswm")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="ClosedDoors"]
+position = Vector2(422, 133)
+shape = SubResource("RectangleShape2D_uiswm")
 
 [editable path="DoorUp"]
 [editable path="DoorDown"]

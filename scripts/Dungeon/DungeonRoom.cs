@@ -1,5 +1,6 @@
 using Godot;
 using System;
+using System.Collections.Generic;
 using System.Diagnostics.Tracing;
 
 public partial class DungeonRoom : Node2D
@@ -7,11 +8,41 @@ public partial class DungeonRoom : Node2D
 
     public Area2D area;
     [Signal] public delegate void RoomEnteredEventHandler(DungeonRoom room);
+    public StaticBody2D doors;
+    public Sprite2D opened;
+    public Sprite2D closed;
 
     public override void _Ready()
     {
         area = GetNode<Area2D>("DetectionPlayer");
         area.BodyEntered += onBodyEntered;
+        doors = GetNode<StaticBody2D>("ClosedDoors");
+        opened = GetNode<Sprite2D>("Closed");
+        closed = GetNode<Sprite2D>("Opened");
+
+        closed.Visible = false;
+    }
+
+    public override void _PhysicsProcess(double delta)
+    {
+        int i = 0;
+        foreach (Node n in GetChildren())
+        {
+            if (n.GetType() == typeof(Enemy))
+            {
+                i++;
+            }
+        }
+        if (i == 0)
+        {
+            foreach (Node n in doors.GetChildren())
+            {
+                CollisionShape2D tmp = (CollisionShape2D) n;
+                tmp.Disabled = true;
+            }
+            closed.Visible = true;
+            opened.Visible = false;
+        }
     }
 
     private void onBodyEntered(Node2D body)

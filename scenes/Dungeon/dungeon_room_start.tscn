@@ -1,0 +1,72 @@
+[gd_scene load_steps=7 format=3 uid="uid://dqp6gd7m3rox2"]
+
+[ext_resource type="Script" path="res://scripts/Dungeon/DungeonRoom.cs" id="1_rfx08"]
+[ext_resource type="Texture2D" uid="uid://fpe0ve34ktf" path="res://sprites/Rooms/dungeon_room_no_door_bottom_left_right.png" id="2_su0dk"]
+[ext_resource type="PackedScene" uid="uid://biropaa43pld0" path="res://scenes/Dungeon/door.tscn" id="3_ii2h0"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gj80x"]
+size = Vector2(335, 166)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fysyi"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a0w8o"]
+size = Vector2(29, 21)
+
+[node name="DungeonRoom" type="Node2D"]
+script = ExtResource("1_rfx08")
+
+[node name="Opened" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(240, 132)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("2_su0dk")
+
+[node name="Closed" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(240, 132)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("2_su0dk")
+
+[node name="DetectionPlayer" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DetectionPlayer"]
+position = Vector2(238.5, 132)
+shape = SubResource("RectangleShape2D_gj80x")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PackedVector2Array(72, 116, 1, 115, 0, 1, 225, 1, 224, 48, 73, 49)
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="StaticBody2D"]
+position = Vector2(480, 265)
+rotation = 3.14159
+polygon = PackedVector2Array(72.9996, 162, 0.999603, 157, 0, 1, 225, 1, 225, 49.0006, 73, 49)
+
+[node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="StaticBody2D"]
+position = Vector2(0, 1)
+polygon = PackedVector2Array(408, 116, 479, 116, 480, 0, 254, 1, 255, 47, 408, 49)
+
+[node name="CollisionPolygon2D4" type="CollisionPolygon2D" parent="StaticBody2D"]
+position = Vector2(480, 265)
+rotation = 3.14159
+polygon = PackedVector2Array(409, 153.001, 477, 154.001, 480, 0, 215, 4.00055, 220, 50.0006, 408, 49)
+
+[node name="DoorUp" parent="." instance=ExtResource("3_ii2h0")]
+
+[node name="Marker2D" parent="DoorUp" index="0"]
+position = Vector2(239, -53)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DoorUp"]
+position = Vector2(238, 37)
+shape = SubResource("RectangleShape2D_fysyi")
+
+[node name="ClosedDoors" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ClosedDoors"]
+position = Vector2(238.5, 38.5)
+shape = SubResource("RectangleShape2D_a0w8o")
+
+[editable path="DoorUp"]
