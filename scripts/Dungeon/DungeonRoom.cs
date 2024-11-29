@@ -20,7 +20,7 @@ public partial class DungeonRoom : Node2D
         opened = GetNode<Sprite2D>("Closed");
         closed = GetNode<Sprite2D>("Opened");
 
-        closed.Visible = false;
+        opened.Visible = false;
     }
 
     public override void _PhysicsProcess(double delta)
@@ -40,8 +40,8 @@ public partial class DungeonRoom : Node2D
                 CollisionShape2D tmp = (CollisionShape2D) n;
                 tmp.Disabled = true;
             }
-            closed.Visible = true;
-            opened.Visible = false;
+            opened.Visible = true;
+            closed.Visible = false;
         }
     }
 

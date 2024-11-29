@@ -17,13 +17,13 @@ size = Vector2(30, 31)
 [node name="DungeonRoom" type="Node2D"]
 script = ExtResource("1_yj86n")
 
-[node name="Closed" type="Sprite2D" parent="."]
+[node name="Opened" type="Sprite2D" parent="."]
 z_index = -1
 position = Vector2(240, 132)
 scale = Vector2(1.5, 1.5)
 texture = ExtResource("2_nx78r")
 
-[node name="Opened" type="Sprite2D" parent="."]
+[node name="Closed" type="Sprite2D" parent="."]
 z_index = -1
 position = Vector2(240, 132)
 scale = Vector2(1.5, 1.5)
@@ -59,7 +59,7 @@ polygon = PackedVector2Array(408, 116, 479, 116, 480, 0, 254, 1, 255, 50.0007, 4
 [node name="DoorUp" parent="." instance=ExtResource("2_novrj")]
 
 [node name="Marker2D" parent="DoorUp" index="0"]
-position = Vector2(239, -53)
+position = Vector2(239, -84)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DoorUp"]
 position = Vector2(238, 37)
@@ -68,7 +68,7 @@ shape = SubResource("RectangleShape2D_fysyi")
 [node name="DoorDown" parent="." instance=ExtResource("2_novrj")]
 
 [node name="Marker2D" parent="DoorDown" index="0"]
-position = Vector2(241, 322)
+position = Vector2(242, 347)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DoorDown"]
 position = Vector2(238, 226)

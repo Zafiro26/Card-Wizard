@@ -1,0 +1,62 @@
+[gd_scene load_steps=9 format=3 uid="uid://d181qg7qq5rhd"]
+
+[ext_resource type="PackedScene" uid="uid://desn57nqlkj4y" path="res://scenes/Player/player.tscn" id="1_fy3il"]
+[ext_resource type="Script" path="res://scripts/Dungeon/Camera2dDungeon.cs" id="2_ul0ks"]
+[ext_resource type="PackedScene" uid="uid://dqp6gd7m3rox2" path="res://scenes/Dungeon/dungeon_room_start.tscn" id="3_leboy"]
+[ext_resource type="PackedScene" uid="uid://bhok0guuewoa3" path="res://scenes/Dungeon/dungeon_room.tscn" id="4_23mft"]
+[ext_resource type="PackedScene" uid="uid://c0ugptl2oplar" path="res://scenes/Dungeon/dungeon_room_no_bottom.tscn" id="5_r6yka"]
+[ext_resource type="PackedScene" uid="uid://bvkl66xhr1l45" path="res://scenes/Dungeon/dungeon_room_no_bottom_left.tscn" id="6_0v7gu"]
+[ext_resource type="PackedScene" uid="uid://d0dr2omvr8gsk" path="res://scenes/Dungeon/dungeon_room_no_bottom_right.tscn" id="7_wbhof"]
+[ext_resource type="PackedScene" uid="uid://5wt7e4tqlpbl" path="res://scenes/Dungeon/dungeon_room_only_sides.tscn" id="8_iek18"]
+
+[node name="World" type="Node2D"]
+
+[node name="player" parent="." groups=["World"] instance=ExtResource("1_fy3il")]
+position = Vector2(209, 151)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+anchor_mode = 0
+zoom = Vector2(2.4, 2.45)
+position_smoothing_enabled = true
+position_smoothing_speed = 10.0
+script = ExtResource("2_ul0ks")
+
+[node name="DungeonRoom" parent="." instance=ExtResource("3_leboy")]
+
+[node name="DungeonRoom2" parent="." instance=ExtResource("4_23mft")]
+z_index = -1
+position = Vector2(0, -289)
+
+[node name="DungeonRoom3" parent="." instance=ExtResource("5_r6yka")]
+position = Vector2(-480, -288)
+
+[node name="DungeonRoom4" parent="." instance=ExtResource("5_r6yka")]
+position = Vector2(-959, -289)
+
+[node name="DungeonRoom5" parent="." instance=ExtResource("5_r6yka")]
+position = Vector2(479, -289)
+
+[node name="DungeonRoom6" parent="." instance=ExtResource("5_r6yka")]
+position = Vector2(960, -289)
+
+[node name="DungeonRoom7" parent="." instance=ExtResource("6_0v7gu")]
+position = Vector2(-1439, -289)
+
+[node name="DungeonRoom10" parent="." instance=ExtResource("6_0v7gu")]
+position = Vector2(-960, -596)
+
+[node name="DungeonRoom8" parent="." instance=ExtResource("4_23mft")]
+z_index = -1
+position = Vector2(0, -599)
+
+[node name="DungeonRoom9" parent="." instance=ExtResource("5_r6yka")]
+position = Vector2(-480, -598)
+
+[node name="DungeonRoom11" parent="." instance=ExtResource("5_r6yka")]
+position = Vector2(479, -599)
+
+[node name="DungeonRoom14" parent="." instance=ExtResource("7_wbhof")]
+position = Vector2(1437, -288)
+
+[node name="DungeonRoom12" parent="." instance=ExtResource("8_iek18")]
+position = Vector2(959, -600)

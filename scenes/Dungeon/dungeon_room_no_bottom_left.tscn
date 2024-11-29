@@ -1,10 +1,11 @@
-[gd_scene load_steps=9 format=3 uid="uid://c0ugptl2oplar"]
+[gd_scene load_steps=10 format=3 uid="uid://bvkl66xhr1l45"]
 
-[ext_resource type="Script" path="res://scripts/Dungeon/DungeonRoom.cs" id="1_3pty3"]
-[ext_resource type="Texture2D" uid="uid://bo5rwcr30ebaf" path="res://sprites/Rooms/dungeon_room_no_door_bottom.png" id="2_fygoa"]
-[ext_resource type="Texture2D" uid="uid://yfern86rhk24" path="res://sprites/Rooms/dungeon_room_no_door_bottom_closed.png" id="3_ibn42"]
-[ext_resource type="PackedScene" uid="uid://biropaa43pld0" path="res://scenes/Dungeon/door.tscn" id="3_p1r8s"]
-[ext_resource type="PackedScene" uid="uid://cs1xxp1hi4smr" path="res://scenes/Enemies/slime.tscn" id="5_uwnfg"]
+[ext_resource type="Script" path="res://scripts/Dungeon/DungeonRoom.cs" id="1_8oubo"]
+[ext_resource type="Texture2D" uid="uid://fh87cp30f1oc" path="res://sprites/Rooms/dungeon_room_no_door_bottom_left_closed.png" id="2_4ny1r"]
+[ext_resource type="Texture2D" uid="uid://cpc5i3rw687q1" path="res://sprites/Rooms/dungeon_room_no_door_bottom_left.png" id="3_dlfmy"]
+[ext_resource type="PackedScene" uid="uid://biropaa43pld0" path="res://scenes/Dungeon/door.tscn" id="4_q72t7"]
+[ext_resource type="PackedScene" uid="uid://cs1xxp1hi4smr" path="res://scenes/Enemies/slime.tscn" id="5_573si"]
+[ext_resource type="PackedScene" uid="uid://bquxx51tc6x84" path="res://scenes/Enemies/archer.tscn" id="6_xutju"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gj80x"]
 size = Vector2(335, 166)
@@ -15,19 +16,19 @@ size = Vector2(335, 166)
 size = Vector2(30, 31)
 
 [node name="DungeonRoom" type="Node2D"]
-script = ExtResource("1_3pty3")
+script = ExtResource("1_8oubo")
 
 [node name="Closed" type="Sprite2D" parent="."]
 z_index = -1
 position = Vector2(240, 132)
 scale = Vector2(1.5, 1.5)
-texture = ExtResource("2_fygoa")
+texture = ExtResource("2_4ny1r")
 
 [node name="Opened" type="Sprite2D" parent="."]
 z_index = -1
 position = Vector2(240, 132)
 scale = Vector2(1.5, 1.5)
-texture = ExtResource("3_ibn42")
+texture = ExtResource("3_dlfmy")
 
 [node name="DetectionPlayer" type="Area2D" parent="."]
 collision_layer = 0
@@ -40,7 +41,7 @@ shape = SubResource("RectangleShape2D_gj80x")
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
-polygon = PackedVector2Array(72, 116, 1, 115, 0, 1, 225, 1, 224, 48, 73, 49)
+polygon = PackedVector2Array(72, 150, 1, 150, 0, 1, 225, 1, 224, 48, 73, 49)
 
 [node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="StaticBody2D"]
 position = Vector2(480, 263)
@@ -56,7 +57,7 @@ position = Vector2(480, 265)
 rotation = 3.14159
 polygon = PackedVector2Array(408, 116, 479, 116, 480, 0, 217, 1.00055, 223, 50.0006, 408, 49)
 
-[node name="DoorUp" parent="." instance=ExtResource("3_p1r8s")]
+[node name="DoorUp" parent="." instance=ExtResource("4_q72t7")]
 
 [node name="Marker2D" parent="DoorUp" index="0"]
 position = Vector2(239, -84)
@@ -65,7 +66,7 @@ position = Vector2(239, -84)
 position = Vector2(238, 37)
 shape = SubResource("RectangleShape2D_fysyi")
 
-[node name="DoorRight" parent="." instance=ExtResource("3_p1r8s")]
+[node name="DoorRight" parent="." instance=ExtResource("4_q72t7")]
 
 [node name="Marker2D" parent="DoorRight" index="0"]
 position = Vector2(555, 135)
@@ -74,16 +75,7 @@ position = Vector2(555, 135)
 position = Vector2(418, 134)
 shape = SubResource("RectangleShape2D_fysyi")
 
-[node name="DoorLeft" parent="." instance=ExtResource("3_p1r8s")]
-
-[node name="Marker2D" parent="DoorLeft" index="0"]
-position = Vector2(-83, 135)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="DoorLeft"]
-position = Vector2(59, 134)
-shape = SubResource("RectangleShape2D_fysyi")
-
-[node name="Slime" parent="." instance=ExtResource("5_uwnfg")]
+[node name="Slime" parent="." instance=ExtResource("5_573si")]
 position = Vector2(316, 105)
 
 [node name="ClosedDoors" type="StaticBody2D" parent="."]
@@ -92,14 +84,12 @@ position = Vector2(316, 105)
 position = Vector2(239, 32.5)
 shape = SubResource("RectangleShape2D_uiswm")
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="ClosedDoors"]
-position = Vector2(56, 132)
-shape = SubResource("RectangleShape2D_uiswm")
-
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="ClosedDoors"]
 position = Vector2(422, 133)
 shape = SubResource("RectangleShape2D_uiswm")
 
+[node name="Archer" parent="." instance=ExtResource("6_xutju")]
+position = Vector2(397, 89)
+
 [editable path="DoorUp"]
 [editable path="DoorRight"]
-[editable path="DoorLeft"]
