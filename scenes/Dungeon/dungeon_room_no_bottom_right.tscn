@@ -58,7 +58,7 @@ polygon = PackedVector2Array(408, 116, 479, 116, 480, 0, 217, 1.00055, 223, 50.0
 [node name="DoorUp" parent="." instance=ExtResource("4_p7y1e")]
 
 [node name="Marker2D" parent="DoorUp" index="0"]
-position = Vector2(239, -84)
+position = Vector2(239, -104)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DoorUp"]
 position = Vector2(238, 37)

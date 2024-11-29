@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://d181qg7qq5rhd"]
+[gd_scene load_steps=15 format=3 uid="uid://d181qg7qq5rhd"]
 
 [ext_resource type="PackedScene" uid="uid://desn57nqlkj4y" path="res://scenes/Player/player.tscn" id="1_fy3il"]
 [ext_resource type="Script" path="res://scripts/Dungeon/Camera2dDungeon.cs" id="2_ul0ks"]
@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://cmihn5io2sowe" path="res://scenes/Dungeon/dungeon_room_no_top_left.tscn" id="11_1oxmp"]
 [ext_resource type="PackedScene" uid="uid://cpdskvsfxxg4m" path="res://scenes/Dungeon/dungeon_room_no_right.tscn" id="12_mmq5r"]
 [ext_resource type="PackedScene" uid="uid://q0ceen86jqbb" path="res://scenes/Dungeon/dungeon_room_no_sides.tscn" id="13_dpans"]
+[ext_resource type="PackedScene" uid="uid://daoaehq1vgevc" path="res://scenes/Dungeon/dungeon_room_no_top.tscn" id="14_nmovu"]
 
 [node name="World" type="Node2D"]
 
@@ -73,31 +74,67 @@ position = Vector2(-479, -289)
 position = Vector2(1439, -600)
 
 [node name="DungeonRoom16" parent="." instance=ExtResource("11_1oxmp")]
-position = Vector2(-2, -912)
+position = Vector2(-2, -908)
 
 [node name="DungeonRoom17" parent="." instance=ExtResource("12_mmq5r")]
-position = Vector2(477, -913)
+position = Vector2(477, -909)
 
 [node name="DungeonRoom18" parent="." instance=ExtResource("13_dpans")]
-position = Vector2(478, -1224)
+position = Vector2(478, -1220)
 
 [node name="DungeonRoom19" parent="." instance=ExtResource("13_dpans")]
-position = Vector2(957, -914)
+position = Vector2(957, -910)
 
 [node name="DungeonRoom20" parent="." instance=ExtResource("11_1oxmp")]
-position = Vector2(957, -1225)
+position = Vector2(957, -1221)
 
 [node name="DungeonRoom22" parent="." instance=ExtResource("11_1oxmp")]
-position = Vector2(480, -1534)
+position = Vector2(480, -1530)
 
 [node name="DungeonRoom21" parent="." instance=ExtResource("7_wbhof")]
-position = Vector2(1437, -1225)
+position = Vector2(1437, -1221)
 
 [node name="DungeonRoom23" parent="." instance=ExtResource("5_r6yka")]
-position = Vector2(958, -1535)
+position = Vector2(958, -1531)
 
 [node name="DungeonRoom24" parent="." instance=ExtResource("10_0ko81")]
-position = Vector2(1437, -1534)
+position = Vector2(1437, -1530)
 
 [node name="DungeonRoom25" parent="." instance=ExtResource("9_7io5m")]
-position = Vector2(959, -1845)
+position = Vector2(959, -1841)
+
+[node name="DungeonRoom26" parent="." instance=ExtResource("10_0ko81")]
+position = Vector2(-481, -907)
+
+[node name="DungeonRoom27" parent="." instance=ExtResource("14_nmovu")]
+position = Vector2(-961, -906)
+
+[node name="DungeonRoom28" parent="." instance=ExtResource("6_0v7gu")]
+position = Vector2(-1442, -906)
+
+[node name="DungeonRoom29" parent="." instance=ExtResource("14_nmovu")]
+position = Vector2(-1442, -1216)
+
+[node name="DungeonRoom30" parent="." instance=ExtResource("7_wbhof")]
+position = Vector2(-964, -1217)
+
+[node name="DungeonRoom31" parent="." instance=ExtResource("13_dpans")]
+position = Vector2(-962, -1525)
+
+[node name="DungeonRoom33" parent="." instance=ExtResource("13_dpans")]
+position = Vector2(-1921, -1525)
+
+[node name="DungeonRoom32" parent="." instance=ExtResource("6_0v7gu")]
+position = Vector2(-1921, -1215)
+
+[node name="DungeonRoom34" parent="." instance=ExtResource("11_1oxmp")]
+position = Vector2(-1921, -1836)
+
+[node name="DungeonRoom35" parent="." instance=ExtResource("5_r6yka")]
+position = Vector2(-1442, -1837)
+
+[node name="DungeonRoom36" parent="." instance=ExtResource("10_0ko81")]
+position = Vector2(-963, -1837)
+
+[node name="DungeonRoom37" parent="." instance=ExtResource("13_dpans")]
+position = Vector2(-1442, -2145)
