@@ -32,7 +32,7 @@ public partial class MoveMob : State
 
         mob.Velocity = d * mob.SPEED;
         mob.MoveAndSlide();
-        //update_animation(d);
+        update_animation(d);
 
 	}
 

@@ -89,8 +89,27 @@ public partial class Enemy : CharacterBody2D
 
     public void force_transition_move()
     {
-        fsm.TransitionTo("moveMob");
-        GD.Print("Mob change to move2");
+        bool t = false;
+        foreach(var c in attackArea.GetOverlappingBodies())
+        {
+            if (c.GetType() == typeof(Player))
+            {
+                t = true;
+            }
+        }
+
+        if (t)
+        {
+            fsm.TransitionTo("attackMob");
+            GD.Print("Mob change to attack");
+        }
+        else
+        {
+            fsm.TransitionTo("moveMob");
+            GD.Print("Mob change to move2");
+        }   
+        
+
     }
 
 
