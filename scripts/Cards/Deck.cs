@@ -144,6 +144,18 @@ public partial class Deck : Node
         Card n16 = (Card)tmp.Instantiate();
         deck.Push(n16);
 
+        tmp = GD.Load<PackedScene>("res://scenes/Cards/bad_card_slow.tscn");
+        Card n17 = (Card)tmp.Instantiate();
+        deck.Push(n17);
+
+        tmp = GD.Load<PackedScene>("res://scenes/Cards/bad_card_slow.tscn");
+        Card n18 = (Card)tmp.Instantiate();
+        deck.Push(n18);
+
+        tmp = GD.Load<PackedScene>("res://scenes/Cards/bad_card_slow.tscn");
+        Card n19 = (Card)tmp.Instantiate();
+        deck.Push(n19);
+
         deck.Shuffle();
 
         

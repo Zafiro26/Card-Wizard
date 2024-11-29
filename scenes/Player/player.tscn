@@ -108,8 +108,8 @@ offset_bottom = 36.0
 
 [node name="Sprite2D" type="Sprite2D" parent="CanvasLayer"]
 visible = false
-position = Vector2(318, 56)
-scale = Vector2(0.05, 0.05)
+position = Vector2(172, 27)
+scale = Vector2(0.02, 0.02)
 texture = ExtResource("8_7fbo3")
 
 [node name="Deck" parent="." instance=ExtResource("8_1puey")]

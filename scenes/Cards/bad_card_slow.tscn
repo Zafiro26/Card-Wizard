@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://vyr0kp8mdvwj"]
+
+[ext_resource type="Script" path="res://scripts/Cards/BadCardSlow.cs" id="1_4k5k4"]
+[ext_resource type="PackedScene" uid="uid://vsptq01pxkxa" path="res://scenes/Cards/card.tscn" id="1_x3dyo"]
+[ext_resource type="Texture2D" uid="uid://c7e85sqa8ocm1" path="res://sprites/Cards/bad_card.png" id="2_x34vw"]
+
+[node name="bad_card_slow" type="Node2D"]
+script = ExtResource("1_4k5k4")
+
+[node name="Card" parent="." instance=ExtResource("1_x3dyo")]
+
+[node name="Sprite2D" parent="Card/CardImage" index="0"]
+scale = Vector2(2, 2)
+texture = ExtResource("2_x34vw")
+
+[editable path="Card"]

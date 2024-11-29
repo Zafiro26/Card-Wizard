@@ -22,7 +22,7 @@ public partial class Speed : Card
         b = (float)b * (float)1.2;
         player.speed = b;
         timer.Start(4.0f);
-        GD.Print("Casted fronzeArrow");
+        GD.Print("Casted Slow");
     }
 	
 }

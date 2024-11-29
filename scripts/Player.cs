@@ -33,8 +33,8 @@ public partial class Player : CharacterBody2D
         speedTimer.Timeout += OnSpeedTimeout;
         
         healthBar.init_health(MAX_HP);
-        speed = 300f;
-        base_speed = 300f;
+        speed = 200f;
+        base_speed = 200f;
         inmortal = false;
         Init_player();
         

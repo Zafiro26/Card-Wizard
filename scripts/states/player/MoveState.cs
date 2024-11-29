@@ -37,45 +37,8 @@ public partial class MoveState : State
 
 	public void movement(float delta)
 	{
-
-		 Vector2 v = player.Velocity;   
-		
-		if (Input.IsActionPressed("ui_right"))
-		{  
-			//direction = 1;
-			//play_animation(1);
-			v.X = player.speed;
-			v.Y = 0;
-		}
-		else if (Input.IsActionPressed("ui_left"))
-		{
-			//direction = 3;
-			//play_animation(1);
-			v.X = -player.speed;
-			v.Y = 0;
-		}
-		else if (Input.IsActionPressed("ui_down"))
-		{
-			//direction = 2;
-			//play_animation(1);
-			v.X = 0;
-			v.Y = player.speed;
-		}
-		else if (Input.IsActionPressed("ui_up"))
-		{
-			//direction = 4;
-			//play_animation(1);
-			v.X = 0;
-			v.Y = -player.speed;
-		} 
-		else 
-		{
-			//play_animation(0);
-			fsm.TransitionTo("idle");
-		}
-
-		player.Velocity = v;
-
+        Vector2 direction = Input.GetVector("ui_left", "ui_right", "ui_up", "ui_down");
+		player.Velocity = direction * player.speed;
 		player.MoveAndSlide();
 
 	}
