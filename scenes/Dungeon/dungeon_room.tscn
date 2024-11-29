@@ -113,6 +113,15 @@ shape = SubResource("RectangleShape2D_uiswm")
 [node name="Slime" parent="." instance=ExtResource("5_18tcc")]
 position = Vector2(332, 111)
 
+[node name="Slime2" parent="." instance=ExtResource("5_18tcc")]
+position = Vector2(301, 94)
+
+[node name="Slime3" parent="." instance=ExtResource("5_18tcc")]
+position = Vector2(289, 124)
+
+[node name="Slime4" parent="." instance=ExtResource("5_18tcc")]
+position = Vector2(325, 142)
+
 [editable path="DoorUp"]
 [editable path="DoorDown"]
 [editable path="DoorRight"]

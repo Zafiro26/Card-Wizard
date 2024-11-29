@@ -10,7 +10,7 @@ script = ExtResource("1_43p2h")
 [node name="Card" parent="." instance=ExtResource("2_6uv38")]
 
 [node name="Sprite2D" parent="Card/CardImage" index="0"]
-scale = Vector2(4, 4)
+scale = Vector2(2, 2)
 texture = ExtResource("3_wtwp6")
 
 [editable path="Card"]

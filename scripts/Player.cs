@@ -7,12 +7,17 @@ using System.Runtime.CompilerServices;
 public partial class Player : CharacterBody2D
 {
 	private const int MAX_HP = 100;
+    public float speed;
+    public float base_speed;
 	public StateMachine fsm;
 	public Deck deck;
 	public PackedScene projectile;
 	public Marker2D muzzle;
 	private int health;
     public HealthBar healthBar;
+    public Timer speedTimer;
+    public bool inmortal;
+    public Sprite2D shield;
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
@@ -22,11 +27,24 @@ public partial class Player : CharacterBody2D
 		
         muzzle = GetNode<Marker2D>("Muzzle");
         healthBar = GetNode<HealthBar>("CanvasLayer/HealthBar");
+        shield = GetNode<Sprite2D>("CanvasLayer/Sprite2D");
+
+        speedTimer = GetNode<Timer>("SpeedTimer");
+        speedTimer.Timeout += OnSpeedTimeout;
         
         healthBar.init_health(MAX_HP);
+        speed = 300f;
+        base_speed = 300f;
+        inmortal = false;
         Init_player();
         
 	}
+
+    private void OnSpeedTimeout()
+    {
+        speed = base_speed;
+    }
+
 
     public override void _PhysicsProcess(double delta)
     {
@@ -45,8 +63,16 @@ public partial class Player : CharacterBody2D
 	*/
 	public void Take_damage(int damage)
 	{
-		add_health(0 - damage);
-		GD.Print("Player takes: " + damage);
+        if (!inmortal)
+        {
+            add_health(0 - damage);
+            GD.Print("Player takes: " + damage);
+        }
+        else
+        {
+            inmortal = false;
+            shield.Visible = false;
+        }
 		
 	}
 

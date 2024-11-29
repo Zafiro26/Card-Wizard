@@ -11,6 +11,7 @@ public partial class ProjectileFireball : CharacterBody2D
     private Player player;
     private PackedScene explosion;
     private AnimatedSprite2D n;
+    private Area2D explosionArea;
 
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
@@ -18,6 +19,7 @@ public partial class ProjectileFireball : CharacterBody2D
         area = this.GetNode<Area2D>("Hitbox");
         area.BodyEntered += OnBodyEntered;
         player = (Player)GetTree().GetFirstNodeInGroup("Player");
+        explosionArea = GetNode<Area2D>("Explosion");
 
         PackedScene tmp = GD.Load<PackedScene>("res://scenes/VFX/animated_sprite_2d.tscn");
         n = (AnimatedSprite2D)tmp.Instantiate();
@@ -40,21 +42,37 @@ public partial class ProjectileFireball : CharacterBody2D
     {
         if (body.IsInGroup("Enemy"))
         {
-            Enemy tmp = (Enemy)body;
-            tmp.Take_damage(damage);
-            tmp.Take_dot_damage(5, 20, 2.0f);
-            //Node2D w = (Node2D)GetTree().GetFirstNodeInGroup("World");
-            //n.GlobalPosition = GlobalPosition;
-            //w.AddChild(n);
-            //n.Play();
-            //GD.Print(n.GlobalPosition);
-            //GD.Print(GlobalPosition);
+            //Enemy tmp = (Enemy)body;
+            //tmp.Take_damage(damage);
+            //tmp.Take_dot_damage(5, 20, 2.0f);
+            explosionM();
+            /*
+            Node2D w = (Node2D)GetTree().GetFirstNodeInGroup("World");
+            n.GlobalPosition = GlobalPosition;
+            w.AddChild(n);
+            n.Play();
+            GD.Print(n.GlobalPosition);
+            GD.Print(GlobalPosition);
+            */
             this.QueueFree();
             
         }
         if (body.GetType() == typeof(StaticBody2D))
         {
             this.QueueFree();
+        }
+    }
+
+    private void explosionM()
+    {
+        foreach (var body in explosionArea.GetOverlappingBodies())
+        {
+            if (body.IsInGroup("Enemy"))
+            {
+                Enemy tmp = (Enemy)body;
+                tmp.Take_damage(damage);
+                tmp.Take_dot_damage(5, 20, 2.0f);
+            }
         }
     }
 

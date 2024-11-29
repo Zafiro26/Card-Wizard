@@ -120,6 +120,30 @@ public partial class Deck : Node
         Card n10 = (Card)tmp.Instantiate();
         deck.Push(n10);
 
+        tmp = GD.Load<PackedScene>("res://scenes/Cards/speed_card.tscn");
+        Card n11 = (Card)tmp.Instantiate();
+        deck.Push(n11);
+
+        tmp = GD.Load<PackedScene>("res://scenes/Cards/speed_card.tscn");
+        Card n12 = (Card)tmp.Instantiate();
+        deck.Push(n12);
+
+        tmp = GD.Load<PackedScene>("res://scenes/Cards/shield_card.tscn");
+        Card n13 = (Card)tmp.Instantiate();
+        deck.Push(n13);
+
+        tmp = GD.Load<PackedScene>("res://scenes/Cards/shield_card.tscn");
+        Card n14 = (Card)tmp.Instantiate();
+        deck.Push(n14);
+
+        tmp = GD.Load<PackedScene>("res://scenes/Cards/teleport_card.tscn");
+        Card n15 = (Card)tmp.Instantiate();
+        deck.Push(n15);
+
+        tmp = GD.Load<PackedScene>("res://scenes/Cards/teleport_card.tscn");
+        Card n16 = (Card)tmp.Instantiate();
+        deck.Push(n16);
+
         deck.Shuffle();
 
         

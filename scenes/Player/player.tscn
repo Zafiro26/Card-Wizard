@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://desn57nqlkj4y"]
+[gd_scene load_steps=18 format=3 uid="uid://desn57nqlkj4y"]
 
 [ext_resource type="Texture2D" uid="uid://4prhe04glhm3" path="res://sprites/characters/player.png" id="1_3p7rb"]
 [ext_resource type="Script" path="res://scripts/Player.cs" id="1_nb1at"]
@@ -7,6 +7,7 @@
 [ext_resource type="Script" path="res://scripts/states/player/MoveState.cs" id="4_7k8l6"]
 [ext_resource type="Script" path="res://scripts/states/player/CastCardState.cs" id="6_qb1xb"]
 [ext_resource type="PackedScene" uid="uid://dya2gto7jgheq" path="res://scenes/Player/deck.tscn" id="8_1puey"]
+[ext_resource type="Texture2D" uid="uid://cmsbvuqjpmv06" path="res://sprites/shield.png" id="8_7fbo3"]
 [ext_resource type="PackedScene" uid="uid://b1imj3rbykb40" path="res://scenes/UIs/healthBar.tscn" id="8_8q5xp"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_dopyf"]
@@ -102,7 +103,15 @@ position = Vector2(6, 1)
 [node name="HealthBar" parent="CanvasLayer" instance=ExtResource("8_8q5xp")]
 offset_left = 7.0
 offset_top = 29.0
-offset_right = 268.0
-offset_bottom = 43.0
+offset_right = 149.0
+offset_bottom = 36.0
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer"]
+visible = false
+position = Vector2(318, 56)
+scale = Vector2(0.05, 0.05)
+texture = ExtResource("8_7fbo3")
 
 [node name="Deck" parent="." instance=ExtResource("8_1puey")]
+
+[node name="SpeedTimer" type="Timer" parent="."]

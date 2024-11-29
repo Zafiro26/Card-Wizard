@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://udf1lyy8m5gv"]
+[gd_scene load_steps=11 format=3 uid="uid://udf1lyy8m5gv"]
 
 [ext_resource type="Script" path="res://scripts/Cards/ProjectileFireball.cs" id="1_jqn8x"]
 [ext_resource type="Texture2D" uid="uid://cwrdvjvh5jt8k" path="res://VFX/Fireball/FB00_nyknck/FB001.png" id="2_ejclv"]
@@ -36,10 +36,14 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_7k34k"]
+radius = 42.0476
+
 [node name="ProjectileFireball" type="CharacterBody2D"]
 script = ExtResource("1_jqn8x")
 
 [node name="Hitbox" type="Area2D" parent="."]
+position = Vector2(-10, 2)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
 position = Vector2(10.5, -2)
@@ -47,10 +51,17 @@ rotation = 1.5708
 shape = SubResource("RectangleShape2D_av4db")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(10.5, -2)
+position = Vector2(0.5, 0)
 shape = SubResource("RectangleShape2D_aew7k")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-10, 2)
 sprite_frames = SubResource("SpriteFrames_b7fw3")
 animation = &"fireball"
 autoplay = "fireball"
+
+[node name="Explosion" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Explosion"]
+position = Vector2(0, 1)
+shape = SubResource("CircleShape2D_7k34k")

@@ -107,18 +107,18 @@ public partial class Hand : Node2D
     private void fill_dicitonary(Dictionary<int, Vector2> d)
     {
         Vector2 v;
-        v.Y = 600;
+        v.Y = 240;
 
-        v.X = 750;
+        v.X = 300;
         d[0] = v;
 
-        v.X = 850;
+        v.X = 350;
         d[1] = v;
 
-        v.X = 950;
+        v.X = 400;
         d[2] = v;
 
-        v.X = 1050;
+        v.X = 450;
         d[3] = v;
     }
 

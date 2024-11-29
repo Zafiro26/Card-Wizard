@@ -10,7 +10,7 @@ script = ExtResource("1_mce42")
 [node name="Card" parent="." instance=ExtResource("1_mhhxm")]
 
 [node name="Sprite2D" parent="Card/CardImage" index="0"]
-scale = Vector2(4, 4)
+scale = Vector2(2, 2)
 texture = ExtResource("2_o0ywu")
 
 [editable path="Card"]

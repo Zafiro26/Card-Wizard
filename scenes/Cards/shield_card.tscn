@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://cmu3k1yp8pise"]
+
+[ext_resource type="PackedScene" uid="uid://vsptq01pxkxa" path="res://scenes/Cards/card.tscn" id="1_ghhla"]
+[ext_resource type="Script" path="res://scenes/Cards/Shield.cs" id="1_ukqe2"]
+[ext_resource type="Texture2D" uid="uid://bqflu2tt4nt5l" path="res://sprites/Cards/shield.png" id="2_yj0cx"]
+
+[node name="ShieldCard" type="Node2D"]
+script = ExtResource("1_ukqe2")
+
+[node name="Card" parent="." instance=ExtResource("1_ghhla")]
+
+[node name="Sprite2D" parent="Card/CardImage" index="0"]
+scale = Vector2(2, 2)
+texture = ExtResource("2_yj0cx")
+
+[editable path="Card"]
