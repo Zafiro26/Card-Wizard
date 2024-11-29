@@ -92,11 +92,7 @@ public partial class Deck : Node
         Card n3 = (Card)tmp.Instantiate();
         deck.Push(n3);
 
-        //tmp = GD.Load<PackedScene>("res://scenes/Cards/healing_card.tscn");
-        //Card n4 = (Card)tmp.Instantiate();
-        //deck.Push(n4);
-
-        tmp = GD.Load<PackedScene>("res://scenes/Cards/fireball_card.tscn");
+        tmp = GD.Load<PackedScene>("res://scenes/Cards/healing_card.tscn");
         Card n4 = (Card)tmp.Instantiate();
         deck.Push(n4);
 
@@ -115,6 +111,14 @@ public partial class Deck : Node
         tmp = GD.Load<PackedScene>("res://scenes/Cards/poison_arrow_card.tscn");
         Card n8 = (Card)tmp.Instantiate();
         deck.Push(n8);
+
+        tmp = GD.Load<PackedScene>("res://scenes/Cards/rock_card.tscn");
+        Card n9 = (Card)tmp.Instantiate();
+        deck.Push(n9);
+
+        tmp = GD.Load<PackedScene>("res://scenes/Cards/rock_card.tscn");
+        Card n10 = (Card)tmp.Instantiate();
+        deck.Push(n10);
 
         deck.Shuffle();
 

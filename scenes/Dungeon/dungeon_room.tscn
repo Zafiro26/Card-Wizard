@@ -1,9 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://bhok0guuewoa3"]
+[gd_scene load_steps=9 format=3 uid="uid://bhok0guuewoa3"]
 
 [ext_resource type="Texture2D" uid="uid://tvaqd08yyty6" path="res://sprites/Rooms/basic_dungeon_room.png" id="1_it8dt"]
 [ext_resource type="Script" path="res://scripts/Dungeon/DungeonRoom.cs" id="1_yj86n"]
 [ext_resource type="PackedScene" uid="uid://biropaa43pld0" path="res://scenes/Dungeon/door.tscn" id="2_novrj"]
 [ext_resource type="Texture2D" uid="uid://bd7mvo8xlgqmo" path="res://sprites/Rooms/basic_dungeon_room_closed.png" id="2_nx78r"]
+[ext_resource type="PackedScene" uid="uid://cs1xxp1hi4smr" path="res://scenes/Enemies/slime.tscn" id="5_18tcc"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gj80x"]
 size = Vector2(335, 166)
@@ -108,6 +109,9 @@ shape = SubResource("RectangleShape2D_uiswm")
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="ClosedDoors"]
 position = Vector2(422, 133)
 shape = SubResource("RectangleShape2D_uiswm")
+
+[node name="Slime" parent="." instance=ExtResource("5_18tcc")]
+position = Vector2(332, 111)
 
 [editable path="DoorUp"]
 [editable path="DoorDown"]

@@ -1,0 +1,42 @@
+[gd_scene load_steps=7 format=3 uid="uid://dwyutux2iaq2o"]
+
+[ext_resource type="Script" path="res://scripts/Cards/ProjectileRock.cs" id="1_g33sp"]
+[ext_resource type="Texture2D" uid="uid://pklhfg5lropi" path="res://sprites/rocks/rocks.png" id="2_i1dwp"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5i3i2"]
+size = Vector2(31, 29)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pnah0"]
+size = Vector2(31, 29)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1gcmg"]
+atlas = ExtResource("2_i1dwp")
+region = Rect2(48, 24, 24, 24)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_uef2m"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1gcmg")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="ProjectileRock" type="CharacterBody2D"]
+script = ExtResource("1_g33sp")
+
+[node name="Hitbox" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
+position = Vector2(1.5, -1.5)
+shape = SubResource("RectangleShape2D_5i3i2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1.5, -1.5)
+shape = SubResource("RectangleShape2D_pnah0")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_uef2m")
+autoplay = "default"

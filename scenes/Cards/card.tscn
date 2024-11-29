@@ -10,10 +10,3 @@
 texture = ExtResource("2_0djaq")
 
 [node name="Cost" type="Node2D" parent="."]
-
-[node name="CostLabel" type="Label" parent="Cost"]
-offset_left = -37.0
-offset_top = -62.0
-offset_right = 3.0
-offset_bottom = -39.0
-text = "1"
