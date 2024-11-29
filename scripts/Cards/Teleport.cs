@@ -18,10 +18,15 @@ public partial class Teleport : Card
     public override void Effect_card(Player player)
     {
         Godot.Vector2 v = GetGlobalMousePosition();
-        v = ToLocal(v);
+        Godot.Vector2 v2 = (v - player.GlobalPosition).Normalized();
 
-        player.GlobalPosition = v;
-        GD.Print("Casted teleport");
+        Godot.Vector2 d = player.GlobalPosition + v2 * 100;
+
+        if (player.GlobalPosition.DistanceTo(v) < 100)
+        {
+            d = v;
+        }
+        player.GlobalPosition = d;
     }
 	
 }
