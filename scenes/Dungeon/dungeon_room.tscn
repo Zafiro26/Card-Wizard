@@ -1,10 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://bhok0guuewoa3"]
+[gd_scene load_steps=8 format=3 uid="uid://bhok0guuewoa3"]
 
 [ext_resource type="Texture2D" uid="uid://tvaqd08yyty6" path="res://sprites/Rooms/basic_dungeon_room.png" id="1_it8dt"]
 [ext_resource type="Script" path="res://scripts/Dungeon/DungeonRoom.cs" id="1_yj86n"]
 [ext_resource type="PackedScene" uid="uid://biropaa43pld0" path="res://scenes/Dungeon/door.tscn" id="2_novrj"]
 [ext_resource type="Texture2D" uid="uid://bd7mvo8xlgqmo" path="res://sprites/Rooms/basic_dungeon_room_closed.png" id="2_nx78r"]
-[ext_resource type="PackedScene" uid="uid://cs1xxp1hi4smr" path="res://scenes/Enemies/slime.tscn" id="4_xr2yj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gj80x"]
 size = Vector2(335, 166)
@@ -59,7 +58,7 @@ polygon = PackedVector2Array(408, 116, 479, 116, 480, 0, 254, 1, 255, 50.0007, 4
 [node name="DoorUp" parent="." instance=ExtResource("2_novrj")]
 
 [node name="Marker2D" parent="DoorUp" index="0"]
-position = Vector2(239, -84)
+position = Vector2(240, -114)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DoorUp"]
 position = Vector2(238, 37)
@@ -68,7 +67,7 @@ shape = SubResource("RectangleShape2D_fysyi")
 [node name="DoorDown" parent="." instance=ExtResource("2_novrj")]
 
 [node name="Marker2D" parent="DoorDown" index="0"]
-position = Vector2(242, 347)
+position = Vector2(238, 372)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DoorDown"]
 position = Vector2(238, 226)
@@ -91,9 +90,6 @@ position = Vector2(-83, 135)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DoorLeft"]
 position = Vector2(59, 134)
 shape = SubResource("RectangleShape2D_fysyi")
-
-[node name="Slime" parent="." instance=ExtResource("4_xr2yj")]
-position = Vector2(316, 105)
 
 [node name="ClosedDoors" type="StaticBody2D" parent="."]
 

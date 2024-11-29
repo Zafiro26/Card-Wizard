@@ -1,10 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://d0dr2omvr8gsk"]
+[gd_scene load_steps=8 format=3 uid="uid://d0dr2omvr8gsk"]
 
 [ext_resource type="Script" path="res://scripts/Dungeon/DungeonRoom.cs" id="1_tx5do"]
 [ext_resource type="Texture2D" uid="uid://8oparq6h6vd4" path="res://sprites/Rooms/dungeon_room_no _door_bottom_right.png" id="2_6v1n6"]
 [ext_resource type="Texture2D" uid="uid://7f6l0im38c3v" path="res://sprites/Rooms/dungeon_room_no_door_bottom_right_closed.png" id="3_05lan"]
 [ext_resource type="PackedScene" uid="uid://biropaa43pld0" path="res://scenes/Dungeon/door.tscn" id="4_p7y1e"]
-[ext_resource type="PackedScene" uid="uid://cs1xxp1hi4smr" path="res://scenes/Enemies/slime.tscn" id="5_kf1qd"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gj80x"]
 size = Vector2(335, 166)
@@ -73,9 +72,6 @@ position = Vector2(-83, 135)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DoorLeft"]
 position = Vector2(59, 134)
 shape = SubResource("RectangleShape2D_fysyi")
-
-[node name="Slime" parent="." instance=ExtResource("5_kf1qd")]
-position = Vector2(316, 105)
 
 [node name="ClosedDoors" type="StaticBody2D" parent="."]
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://d181qg7qq5rhd"]
+[gd_scene load_steps=10 format=3 uid="uid://d181qg7qq5rhd"]
 
 [ext_resource type="PackedScene" uid="uid://desn57nqlkj4y" path="res://scenes/Player/player.tscn" id="1_fy3il"]
 [ext_resource type="Script" path="res://scripts/Dungeon/Camera2dDungeon.cs" id="2_ul0ks"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://bvkl66xhr1l45" path="res://scenes/Dungeon/dungeon_room_no_bottom_left.tscn" id="6_0v7gu"]
 [ext_resource type="PackedScene" uid="uid://d0dr2omvr8gsk" path="res://scenes/Dungeon/dungeon_room_no_bottom_right.tscn" id="7_wbhof"]
 [ext_resource type="PackedScene" uid="uid://5wt7e4tqlpbl" path="res://scenes/Dungeon/dungeon_room_only_sides.tscn" id="8_iek18"]
+[ext_resource type="PackedScene" uid="uid://dtgkk0bjjw8e0" path="res://scenes/Dungeon/dungeon_room_dead_end_up.tscn" id="9_7io5m"]
 
 [node name="World" type="Node2D"]
 
@@ -27,18 +28,6 @@ script = ExtResource("2_ul0ks")
 z_index = -1
 position = Vector2(0, -289)
 
-[node name="DungeonRoom3" parent="." instance=ExtResource("5_r6yka")]
-position = Vector2(-480, -288)
-
-[node name="DungeonRoom4" parent="." instance=ExtResource("5_r6yka")]
-position = Vector2(-959, -289)
-
-[node name="DungeonRoom5" parent="." instance=ExtResource("5_r6yka")]
-position = Vector2(479, -289)
-
-[node name="DungeonRoom6" parent="." instance=ExtResource("5_r6yka")]
-position = Vector2(960, -289)
-
 [node name="DungeonRoom7" parent="." instance=ExtResource("6_0v7gu")]
 position = Vector2(-1439, -289)
 
@@ -49,14 +38,29 @@ position = Vector2(-960, -596)
 z_index = -1
 position = Vector2(0, -599)
 
-[node name="DungeonRoom9" parent="." instance=ExtResource("5_r6yka")]
-position = Vector2(-480, -598)
-
 [node name="DungeonRoom11" parent="." instance=ExtResource("5_r6yka")]
 position = Vector2(479, -599)
+
+[node name="DungeonRoom15" parent="." instance=ExtResource("5_r6yka")]
+position = Vector2(958, -599)
 
 [node name="DungeonRoom14" parent="." instance=ExtResource("7_wbhof")]
 position = Vector2(1437, -288)
 
-[node name="DungeonRoom12" parent="." instance=ExtResource("8_iek18")]
-position = Vector2(959, -600)
+[node name="DungeonRoom5" parent="." instance=ExtResource("8_iek18")]
+position = Vector2(479, -289)
+
+[node name="DungeonRoom6" parent="." instance=ExtResource("8_iek18")]
+position = Vector2(958, -287)
+
+[node name="DungeonRoom12" parent="." instance=ExtResource("9_7io5m")]
+position = Vector2(-1440, -594)
+
+[node name="DungeonRoom4" parent="." instance=ExtResource("8_iek18")]
+position = Vector2(-959, -289)
+
+[node name="DungeonRoom3" parent="." instance=ExtResource("4_23mft")]
+position = Vector2(-481, -596)
+
+[node name="DungeonRoom9" parent="." instance=ExtResource("5_r6yka")]
+position = Vector2(-479, -289)
