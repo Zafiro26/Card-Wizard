@@ -34,6 +34,10 @@ public partial class ProjectileFrozenArrow : CharacterBody2D
             tmp.slow(40);
             this.QueueFree();
         }
+        if (body.GetType() == typeof(StaticBody2D))
+        {
+            this.QueueFree();
+        }
     }
 
 

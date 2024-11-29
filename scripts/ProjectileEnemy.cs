@@ -33,6 +33,10 @@ public partial class ProjectileEnemy : CharacterBody2D
             tmp.Take_damage(damage);
             this.QueueFree();
         }
+        if (body.GetType() == typeof(StaticBody2D))
+        {
+            this.QueueFree();
+        }
     }
 
 

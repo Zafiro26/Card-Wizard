@@ -52,6 +52,10 @@ public partial class ProjectileFireball : CharacterBody2D
             this.QueueFree();
             
         }
+        if (body.GetType() == typeof(StaticBody2D))
+        {
+            this.QueueFree();
+        }
     }
 
 

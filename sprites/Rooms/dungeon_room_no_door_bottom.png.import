@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://tvaqd08yyty6"
-path="res://.godot/imported/basic_dungeon_room.png-c73131a13799438297fd3bb4e1fb6de8.ctex"
+uid="uid://bo5rwcr30ebaf"
+path="res://.godot/imported/dungeon_room_no_door_bottom.png-28973b6189a02b57a566af5b9442cb7e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/basic_dungeon_room.png"
-dest_files=["res://.godot/imported/basic_dungeon_room.png-c73131a13799438297fd3bb4e1fb6de8.ctex"]
+source_file="res://sprites/Rooms/dungeon_room_no_door_bottom.png"
+dest_files=["res://.godot/imported/dungeon_room_no_door_bottom.png-28973b6189a02b57a566af5b9442cb7e.ctex"]
 
 [params]
 

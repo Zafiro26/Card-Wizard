@@ -21,20 +21,6 @@ public partial class Deck : Node
         hand.hand = draw(hand.max_hand);
         hand.update_hand();
         
-
-        //Test
-        /*
-        Card c1 = new Fireball();
-        Card c2 = new Fireball();
-        Card c3 = new Healing();
-        Card c4 = new Healing();
-
-
-        deck.Push(c1);
-        deck.Push(c2);
-        deck.Push(c3);
-        deck.Push(c4);
-        */
 	}
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -129,6 +115,8 @@ public partial class Deck : Node
         tmp = GD.Load<PackedScene>("res://scenes/Cards/poison_arrow_card.tscn");
         Card n8 = (Card)tmp.Instantiate();
         deck.Push(n8);
+
+        deck.Shuffle();
 
         
     }
