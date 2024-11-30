@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://d181qg7qq5rhd"]
+[gd_scene load_steps=17 format=3 uid="uid://d181qg7qq5rhd"]
 
 [ext_resource type="PackedScene" uid="uid://desn57nqlkj4y" path="res://scenes/Player/player.tscn" id="1_fy3il"]
 [ext_resource type="Script" path="res://scripts/Dungeon/Camera2dDungeon.cs" id="2_ul0ks"]
@@ -14,6 +14,8 @@
 [ext_resource type="PackedScene" uid="uid://cpdskvsfxxg4m" path="res://scenes/Dungeon/dungeon_room_no_right.tscn" id="12_mmq5r"]
 [ext_resource type="PackedScene" uid="uid://q0ceen86jqbb" path="res://scenes/Dungeon/dungeon_room_no_sides.tscn" id="13_dpans"]
 [ext_resource type="PackedScene" uid="uid://daoaehq1vgevc" path="res://scenes/Dungeon/dungeon_room_no_top.tscn" id="14_nmovu"]
+[ext_resource type="PackedScene" uid="uid://bu4pqgpki3o45" path="res://scenes/Dungeon/dungeon_room_final.tscn" id="15_mg13c"]
+[ext_resource type="PackedScene" uid="uid://d0esh08hwwoye" path="res://scenes/Dungeon/end_screen_area.tscn" id="16_xaxb3"]
 
 [node name="World" type="Node2D"]
 
@@ -138,3 +140,9 @@ position = Vector2(-963, -1837)
 
 [node name="DungeonRoom37" parent="." instance=ExtResource("13_dpans")]
 position = Vector2(-1442, -2145)
+
+[node name="DungeonRoom38" parent="." instance=ExtResource("15_mg13c")]
+position = Vector2(-1442, -2455)
+
+[node name="Area2D" parent="." instance=ExtResource("16_xaxb3")]
+position = Vector2(-1450, -2696)

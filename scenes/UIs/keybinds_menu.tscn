@@ -30,9 +30,11 @@ theme_override_fonts/normal_font = ExtResource("1_lvlxg")
 text = "WASD : Move around
 1/Left click: Use card 1
 2/Right click: Use card 2
-3/Q : Use card 3
-4/E : Use card 4
-R : Draw new hand"
+3/Q/MSB2 : Use card 3
+4/E/MSB1 : Use card 4
+R/SPACE : Draw new hand
+
+MSB : Mouse side button"
 
 [node name="Back" type="Button" parent="CanvasLayer"]
 offset_left = 344.0
