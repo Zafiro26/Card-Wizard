@@ -1,0 +1,173 @@
+[gd_scene load_steps=11 format=3 uid="uid://e2v07blmfpow"]
+
+[ext_resource type="Texture2D" uid="uid://dhm4ktauvqb0f" path="res://sprites/Cards/Fireball.png" id="1_f5w60"]
+[ext_resource type="Script" path="res://scripts/UIs/CardsMenu.cs" id="1_hapuw"]
+[ext_resource type="FontFile" uid="uid://nqxtu3ng1kbx" path="res://joystix monospace.otf" id="2_hump4"]
+[ext_resource type="Texture2D" uid="uid://bvxiuvu8gatmy" path="res://sprites/Cards/Rock.png" id="3_p72ne"]
+[ext_resource type="Texture2D" uid="uid://bqflu2tt4nt5l" path="res://sprites/Cards/shield.png" id="4_2iwnj"]
+[ext_resource type="Texture2D" uid="uid://c7wvu05p6qayd" path="res://sprites/Cards/FrozenArrow.png" id="4_jh22o"]
+[ext_resource type="Texture2D" uid="uid://co3jefvws2jxi" path="res://sprites/Cards/teleport.png" id="5_8u6fc"]
+[ext_resource type="Texture2D" uid="uid://dpdilfobw8bqt" path="res://sprites/Cards/heal.png" id="5_ae0m7"]
+[ext_resource type="Texture2D" uid="uid://bteon23ad8i0s" path="res://sprites/Cards/Speed.png" id="5_ctcst"]
+[ext_resource type="Texture2D" uid="uid://chja245kjtjo0" path="res://sprites/Cards/PoisonArrow.png" id="6_7p555"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_hapuw")
+metadata/_edit_use_anchors_ = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer"]
+position = Vector2(35, 42)
+scale = Vector2(1.18, 1.125)
+texture = ExtResource("1_f5w60")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/Sprite2D"]
+offset_left = 29.0
+offset_top = -23.0
+offset_right = 180.0
+offset_bottom = 28.0
+theme_override_fonts/normal_font = ExtResource("2_hump4")
+theme_override_font_sizes/normal_font_size = 7
+text = "Throws a fireball that does damage in an area on impact. Also inflicts scorch which deal an extra damage over time."
+
+[node name="Sprite2D5" type="Sprite2D" parent="CanvasLayer"]
+position = Vector2(267, 42)
+scale = Vector2(1.18, 1.125)
+texture = ExtResource("3_p72ne")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/Sprite2D5"]
+anchors_preset = -1
+anchor_top = -0.536111
+anchor_bottom = -0.536111
+offset_left = 29.0
+offset_top = 6.0
+offset_right = 180.0
+offset_bottom = 36.0
+theme_override_fonts/normal_font = ExtResource("2_hump4")
+theme_override_font_sizes/normal_font_size = 7
+text = "Throws a rock that does no damage but push the enemies far away."
+
+[node name="Sprite2D6" type="Sprite2D" parent="CanvasLayer"]
+position = Vector2(267, 99)
+scale = Vector2(1.18, 1.125)
+texture = ExtResource("4_2iwnj")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/Sprite2D6"]
+anchors_preset = -1
+anchor_top = -1.025
+anchor_bottom = -1.025
+offset_left = 29.0
+offset_top = 24.5556
+offset_right = 180.0
+offset_bottom = 55.5556
+theme_override_fonts/normal_font = ExtResource("2_hump4")
+theme_override_font_sizes/normal_font_size = 7
+text = "Alllows to tank one hit from the enemies. It can not stack."
+
+[node name="Sprite2D8" type="Sprite2D" parent="CanvasLayer"]
+position = Vector2(267, 211)
+scale = Vector2(1.18, 1.125)
+texture = ExtResource("5_8u6fc")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/Sprite2D8"]
+anchors_preset = -1
+anchor_top = -1.96667
+anchor_bottom = -1.96667
+offset_left = 29.0
+offset_top = 71.8889
+offset_right = 180.0
+offset_bottom = 84.8889
+theme_override_fonts/normal_font = ExtResource("2_hump4")
+theme_override_font_sizes/normal_font_size = 7
+text = "Short distance teleport"
+
+[node name="Sprite2D7" type="Sprite2D" parent="CanvasLayer"]
+position = Vector2(267, 154)
+scale = Vector2(1.18, 1.125)
+texture = ExtResource("5_ctcst")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/Sprite2D7"]
+anchors_preset = -1
+anchor_top = -1.53889
+anchor_bottom = -1.53889
+offset_left = 29.0
+offset_top = 45.1111
+offset_right = 180.0
+offset_bottom = 75.1111
+theme_override_fonts/normal_font = ExtResource("2_hump4")
+theme_override_font_sizes/normal_font_size = 7
+text = "Grants a small speed buff for a few second. It can not stack."
+
+[node name="Sprite2D2" type="Sprite2D" parent="CanvasLayer"]
+position = Vector2(35, 98)
+scale = Vector2(1.18, 1.125)
+texture = ExtResource("4_jh22o")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/Sprite2D2"]
+anchors_preset = -1
+anchor_top = -0.7
+anchor_bottom = -0.7
+offset_left = 29.0
+offset_top = 16.5556
+offset_right = 180.0
+offset_bottom = 39.5556
+theme_override_fonts/normal_font = ExtResource("2_hump4")
+theme_override_font_sizes/normal_font_size = 7
+text = "Deals damage to a single target and also slows."
+
+[node name="Sprite2D3" type="Sprite2D" parent="CanvasLayer"]
+position = Vector2(35, 153)
+scale = Vector2(1.18, 1.125)
+texture = ExtResource("5_ae0m7")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/Sprite2D3"]
+anchors_preset = -1
+anchor_top = -1.56667
+anchor_bottom = -1.56667
+offset_left = 29.0
+offset_top = 58.1111
+offset_right = 180.0
+offset_bottom = 75.1111
+theme_override_fonts/normal_font = ExtResource("2_hump4")
+theme_override_font_sizes/normal_font_size = 7
+text = "Heal the player."
+
+[node name="Sprite2D4" type="Sprite2D" parent="CanvasLayer"]
+position = Vector2(35, 207)
+scale = Vector2(1.18, 1.125)
+texture = ExtResource("6_7p555")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/Sprite2D4"]
+anchors_preset = -1
+anchor_top = -1.38333
+anchor_bottom = -1.38333
+offset_left = 29.0
+offset_top = 33.8889
+offset_right = 180.0
+offset_bottom = 84.8889
+theme_override_fonts/normal_font = ExtResource("2_hump4")
+theme_override_font_sizes/normal_font_size = 7
+text = "Poison arrow that does no damage but inflicts poison, which deals damage over time indefinitely and stacks."
+
+[node name="Button" type="Button" parent="CanvasLayer"]
+offset_left = 416.0
+offset_top = 231.0
+offset_right = 477.0
+offset_bottom = 259.0
+theme_override_fonts/font = ExtResource("2_hump4")
+text = "Menu"
+
+[node name="Button2" type="Button" parent="CanvasLayer"]
+offset_left = 353.0
+offset_top = 231.0
+offset_right = 414.0
+offset_bottom = 259.0
+theme_override_fonts/font = ExtResource("2_hump4")
+text = "Next"

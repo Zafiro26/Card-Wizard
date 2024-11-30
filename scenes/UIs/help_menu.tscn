@@ -1,0 +1,53 @@
+[gd_scene load_steps=3 format=3 uid="uid://dt78kkofh0bay"]
+
+[ext_resource type="Script" path="res://scripts/UIs/HelpMenu.cs" id="1_g3fj2"]
+[ext_resource type="FontFile" uid="uid://nqxtu3ng1kbx" path="res://joystix monospace.otf" id="2_mg5ll"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_g3fj2")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -64.0
+offset_top = -46.0
+offset_right = 64.0
+offset_bottom = 46.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="PlayButton" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+focus_neighbor_top = NodePath("../ExitButton")
+theme_override_fonts/font = ExtResource("2_mg5ll")
+text = "Objective"
+
+[node name="ObtionsButton" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_mg5ll")
+text = "Cards"
+
+[node name="Keybinds" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_mg5ll")
+text = "KEYBINDS"
+
+[node name="ExitButton" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+focus_neighbor_bottom = NodePath("../PlayButton")
+theme_override_fonts/font = ExtResource("2_mg5ll")
+text = "Main Menu"

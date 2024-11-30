@@ -1,0 +1,185 @@
+[gd_scene load_steps=21 format=3 uid="uid://bj3dpkk8y3aeq"]
+
+[ext_resource type="Script" path="res://scripts/UIs/ObjectiveMenu.cs" id="1_klas0"]
+[ext_resource type="FontFile" uid="uid://nqxtu3ng1kbx" path="res://joystix monospace.otf" id="1_sqchy"]
+[ext_resource type="Texture2D" uid="uid://cfyk8pf3bnfhp" path="res://sprites/characters/slime.png" id="2_mgxp4"]
+[ext_resource type="Texture2D" uid="uid://cl2xqxhq6tsim" path="res://sprites/Soldier/Soldier/Soldier/Soldier-Walk.png" id="3_32t5t"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uy5jd"]
+atlas = ExtResource("2_mgxp4")
+region = Rect2(0, 128, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sfesw"]
+atlas = ExtResource("2_mgxp4")
+region = Rect2(32, 128, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yolwq"]
+atlas = ExtResource("2_mgxp4")
+region = Rect2(64, 128, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3p5hu"]
+atlas = ExtResource("2_mgxp4")
+region = Rect2(96, 128, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d0rxr"]
+atlas = ExtResource("2_mgxp4")
+region = Rect2(128, 128, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_goesb"]
+atlas = ExtResource("2_mgxp4")
+region = Rect2(160, 128, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_vn65v"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uy5jd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sfesw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yolwq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3p5hu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d0rxr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_goesb")
+}],
+"loop": true,
+"name": &"default",
+"speed": 7.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0v6wx"]
+atlas = ExtResource("3_32t5t")
+region = Rect2(0, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jofms"]
+atlas = ExtResource("3_32t5t")
+region = Rect2(100, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i7ubf"]
+atlas = ExtResource("3_32t5t")
+region = Rect2(200, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jx27q"]
+atlas = ExtResource("3_32t5t")
+region = Rect2(300, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f41d3"]
+atlas = ExtResource("3_32t5t")
+region = Rect2(400, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jtq2l"]
+atlas = ExtResource("3_32t5t")
+region = Rect2(500, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_splwy"]
+atlas = ExtResource("3_32t5t")
+region = Rect2(600, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t01ix"]
+atlas = ExtResource("3_32t5t")
+region = Rect2(700, 0, 100, 100)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_hbri1"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0v6wx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jofms")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i7ubf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jx27q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f41d3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jtq2l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_splwy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t01ix")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_klas0")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -162.5
+offset_top = 25.0
+offset_right = 162.5
+offset_bottom = 65.0
+grow_horizontal = 2
+theme_override_fonts/normal_font = ExtResource("1_sqchy")
+theme_override_font_sizes/normal_font_size = 10
+text = "Your objetive is to escape form the dungeon with the power of your cards"
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CanvasLayer"]
+position = Vector2(122, 140)
+scale = Vector2(1.625, 1.65625)
+sprite_frames = SubResource("SpriteFrames_vn65v")
+autoplay = "default"
+frame_progress = 0.397901
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="CanvasLayer"]
+offset_left = 51.0
+offset_top = 167.0
+offset_right = 206.0
+offset_bottom = 220.0
+theme_override_fonts/normal_font = ExtResource("1_sqchy")
+theme_override_font_sizes/normal_font_size = 10
+text = "Slimes can only attack while in melee range"
+
+[node name="RichTextLabel3" type="RichTextLabel" parent="CanvasLayer"]
+offset_left = 291.0
+offset_top = 167.0
+offset_right = 446.0
+offset_bottom = 239.0
+theme_override_fonts/normal_font = ExtResource("1_sqchy")
+theme_override_font_sizes/normal_font_size = 10
+text = "Archers can attack from afar. They also shoot a last arrow as they final breath"
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="CanvasLayer"]
+position = Vector2(369, 140)
+scale = Vector2(1.4875, 1.465)
+sprite_frames = SubResource("SpriteFrames_hbri1")
+autoplay = "default"
+frame_progress = 0.232186
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 417.0
+offset_top = 229.0
+offset_right = 478.0
+offset_bottom = 260.0
+theme_override_fonts/font = ExtResource("1_sqchy")
+text = "Back"

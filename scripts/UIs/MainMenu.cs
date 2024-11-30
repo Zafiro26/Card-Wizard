@@ -30,7 +30,7 @@ public partial class MainMenu : Control
 
     private void onObtionsButtonPressed()
     {
-        GetTree().ChangeSceneToFile("res://scenes/dungeon.tscn");
+        GetTree().ChangeSceneToFile("res://scenes/UIs/help_menu.tscn");
     }
 
 
