@@ -30,6 +30,7 @@ public partial class AttackMeleeMob : State
     private void DoDamage(Player player)
     {
         player.Take_damage(damage);
+        player.hit();
     }
 
     public override void PhysicsUpdate(float delta)
