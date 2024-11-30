@@ -141,7 +141,8 @@ offset_bottom = 65.0
 grow_horizontal = 2
 theme_override_fonts/normal_font = ExtResource("1_sqchy")
 theme_override_font_sizes/normal_font_size = 10
-text = "Your objetive is to escape form the dungeon with the power of your cards"
+text = "Your objetive is to escape from
+ the dungeon with the power of your cards"
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CanvasLayer"]
 position = Vector2(122, 140)
@@ -166,7 +167,7 @@ offset_right = 446.0
 offset_bottom = 239.0
 theme_override_fonts/normal_font = ExtResource("1_sqchy")
 theme_override_font_sizes/normal_font_size = 10
-text = "Archers can attack from afar. They also shoot a last arrow as they final breath"
+text = "Archers can attack from afar."
 
 [node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="CanvasLayer"]
 position = Vector2(369, 140)

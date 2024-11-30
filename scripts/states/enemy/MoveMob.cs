@@ -1,5 +1,6 @@
 using Godot;
 using System;
+using System.Runtime.Serialization;
 
 public partial class MoveMob : State
 {
@@ -9,6 +10,7 @@ public partial class MoveMob : State
     public Area2D area;
     public Area2D attackArea;
     public AnimatedSprite2D anim;
+    private AudioStreamPlayer2D audio;
 
     //public int SPEED = 80;
 
@@ -19,11 +21,21 @@ public partial class MoveMob : State
 		mob = GetOwner<Enemy>();
         player = (Player)GetTree().GetFirstNodeInGroup("Player");
         anim = mob.GetNode<AnimatedSprite2D>("AnimatedSprite2D");
+        audio = mob.GetNode<AudioStreamPlayer2D>("Walk");
+
+        anim.AnimationLooped += onAnimationLoop;
 
 	}
 
+    private void onAnimationLoop()
+    {
+        audio.Play();
+    }
+
+
 
     // Called every frame. 'delta' is the elapsed time since the previous frame.
+
 
     public override void PhysicsUpdate(float delta)
 	{
@@ -69,6 +81,7 @@ public partial class MoveMob : State
             }
             */
         }
+        
 
     }
 }

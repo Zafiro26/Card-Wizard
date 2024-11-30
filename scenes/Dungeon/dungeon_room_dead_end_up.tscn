@@ -1,9 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://dtgkk0bjjw8e0"]
+[gd_scene load_steps=9 format=3 uid="uid://dtgkk0bjjw8e0"]
 
 [ext_resource type="Script" path="res://scripts/Dungeon/DungeonRoom.cs" id="1_v7drr"]
 [ext_resource type="Texture2D" uid="uid://bm6ro42e2biv6" path="res://sprites/Rooms/dungeon_room_dead_end_up.png" id="2_5fi6n"]
 [ext_resource type="Texture2D" uid="uid://bx3gp1yokf8m6" path="res://sprites/Rooms/dungeon_room_dead_end_up_closed.png" id="3_1o450"]
 [ext_resource type="PackedScene" uid="uid://biropaa43pld0" path="res://scenes/Dungeon/door.tscn" id="4_a0nub"]
+[ext_resource type="PackedScene" uid="uid://bquxx51tc6x84" path="res://scenes/Enemies/archer.tscn" id="5_h7skx"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gj80x"]
 size = Vector2(335, 166)
@@ -69,5 +70,14 @@ shape = SubResource("RectangleShape2D_fysyi")
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="ClosedDoors"]
 position = Vector2(240, 230)
 shape = SubResource("RectangleShape2D_uiswm")
+
+[node name="Archer" parent="." instance=ExtResource("5_h7skx")]
+position = Vector2(127, 72)
+
+[node name="Archer2" parent="." instance=ExtResource("5_h7skx")]
+position = Vector2(236, 72)
+
+[node name="Archer3" parent="." instance=ExtResource("5_h7skx")]
+position = Vector2(353, 72)
 
 [editable path="DoorDown"]

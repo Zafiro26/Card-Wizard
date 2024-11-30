@@ -1,27 +1,6 @@
-[gd_scene load_steps=18 format=3 uid="uid://b7s62yml7dskp"]
+[gd_scene load_steps=12 format=3 uid="uid://b7s62yml7dskp"]
 
-[ext_resource type="Texture2D" uid="uid://dbb42jksn32r6" path="res://sprites/emptyFrame.png" id="1_ja776"]
 [ext_resource type="Texture2D" uid="uid://ddn778gdeh1s1" path="res://sprites/VFX/Effect and FX Pixel Part 12 Free/586.png" id="2_myumy"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_hichd"]
-atlas = ExtResource("2_myumy")
-region = Rect2(0, 256, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_hmfqb"]
-atlas = ExtResource("2_myumy")
-region = Rect2(64, 256, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_mv0w1"]
-atlas = ExtResource("2_myumy")
-region = Rect2(128, 256, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_hekmo"]
-atlas = ExtResource("2_myumy")
-region = Rect2(192, 256, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_3x5bj"]
-atlas = ExtResource("2_myumy")
-region = Rect2(256, 256, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5hc4j"]
 atlas = ExtResource("2_myumy")
@@ -63,24 +42,6 @@ region = Rect2(832, 256, 64, 64)
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_ja776")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_hichd")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_hmfqb")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_mv0w1")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_hekmo")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_3x5bj")
-}, {
-"duration": 1.0,
 "texture": SubResource("AtlasTexture_5hc4j")
 }, {
 "duration": 1.0,
@@ -107,10 +68,12 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_3n8oq")
 }],
-"loop": true,
+"loop": false,
 "name": &"default",
-"speed": 5.0
+"speed": 20.0
 }]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D"]
 sprite_frames = SubResource("SpriteFrames_ih6qn")
+frame = 8
+frame_progress = 1.0

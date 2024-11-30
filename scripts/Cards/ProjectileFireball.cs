@@ -46,16 +46,21 @@ public partial class ProjectileFireball : CharacterBody2D
             //tmp.Take_damage(damage);
             //tmp.Take_dot_damage(5, 20, 2.0f);
             explosionM();
-            /*
+            
             Node2D w = (Node2D)GetTree().GetFirstNodeInGroup("World");
             n.GlobalPosition = GlobalPosition;
             w.AddChild(n);
             n.Play();
             GD.Print(n.GlobalPosition);
             GD.Print(GlobalPosition);
-            */
+            
             this.QueueFree();
             
+        }
+
+        else if (body.IsInGroup("Player"))
+        {
+            explosionM();
         }
         if (body.GetType() == typeof(StaticBody2D))
         {
@@ -73,6 +78,11 @@ public partial class ProjectileFireball : CharacterBody2D
                 Enemy tmp = (Enemy)body;
                 tmp.Take_damage(damage);
                 tmp.Take_dot_damage(5, 20, 2.0f);
+            }
+            else if (body.IsInGroup("Player"))
+            {
+                Player tmp = (Player)body;
+                tmp.Take_damage(damage);
             }
         }
     }

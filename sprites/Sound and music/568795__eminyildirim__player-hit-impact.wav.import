@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://c8grwo1e37125"
+path="res://.godot/imported/568795__eminyildirim__player-hit-impact.wav-3e8252d33cc39d4950b477a6f1f00bd8.sample"
+
+[deps]
+
+source_file="res://sprites/Sound and music/568795__eminyildirim__player-hit-impact.wav"
+dest_files=["res://.godot/imported/568795__eminyildirim__player-hit-impact.wav-3e8252d33cc39d4950b477a6f1f00bd8.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

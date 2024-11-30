@@ -5,11 +5,13 @@ public partial class IdleState : State
 {
 
 	private CharacterBody2D player;
+    private AnimatedSprite2D anim;
 
 	public override void Ready()
 	{
 
 		player = this.GetOwner<CharacterBody2D>();
+        anim = player.GetNode<AnimatedSprite2D>("AnimatedSprite2D");
 
 	}
 
@@ -23,6 +25,7 @@ public partial class IdleState : State
         {
             player.Velocity = v;
 		    player.MoveAndSlide();
+            anim.Play("idle");
         }
         else
         {

@@ -21,6 +21,7 @@ public partial class DungeonRoom : Node2D
         closed = GetNode<Sprite2D>("Opened");
 
         opened.Visible = false;
+        closed.Visible = true;
     }
 
     public override void _PhysicsProcess(double delta)

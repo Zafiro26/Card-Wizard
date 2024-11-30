@@ -4,7 +4,7 @@
 [ext_resource type="Script" path="res://scripts/Dungeon/DungeonRoom.cs" id="1_yj86n"]
 [ext_resource type="PackedScene" uid="uid://biropaa43pld0" path="res://scenes/Dungeon/door.tscn" id="2_novrj"]
 [ext_resource type="Texture2D" uid="uid://bd7mvo8xlgqmo" path="res://sprites/Rooms/basic_dungeon_room_closed.png" id="2_nx78r"]
-[ext_resource type="PackedScene" uid="uid://bquxx51tc6x84" path="res://scenes/Enemies/archer.tscn" id="5_sxdc1"]
+[ext_resource type="PackedScene" uid="uid://cs1xxp1hi4smr" path="res://scenes/Enemies/slime.tscn" id="6_fspi0"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gj80x"]
 size = Vector2(335, 166)
@@ -110,8 +110,17 @@ shape = SubResource("RectangleShape2D_uiswm")
 position = Vector2(422, 133)
 shape = SubResource("RectangleShape2D_uiswm")
 
-[node name="Archer" parent="." instance=ExtResource("5_sxdc1")]
-position = Vector2(393, 87)
+[node name="Slime" parent="." instance=ExtResource("6_fspi0")]
+position = Vector2(326, 123)
+
+[node name="Slime2" parent="." instance=ExtResource("6_fspi0")]
+position = Vector2(191, 86)
+
+[node name="Slime3" parent="." instance=ExtResource("6_fspi0")]
+position = Vector2(277, 152)
+
+[node name="Slime4" parent="." instance=ExtResource("6_fspi0")]
+position = Vector2(187, 145)
 
 [editable path="DoorUp"]
 [editable path="DoorDown"]

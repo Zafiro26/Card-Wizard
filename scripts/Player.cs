@@ -6,13 +6,14 @@ using System.Runtime.CompilerServices;
 
 public partial class Player : CharacterBody2D
 {
-	private const int MAX_HP = 100;
+	private const int MAX_HP = 1000000;
     public float speed;
     public float base_speed;
 	public StateMachine fsm;
 	public Deck deck;
 	public PackedScene projectile;
 	public Marker2D muzzle;
+    public Marker2D muzzleRock;
 	private int health;
     public HealthBar healthBar;
     public Timer speedTimer;
@@ -27,7 +28,8 @@ public partial class Player : CharacterBody2D
 		fsm = GetNode<StateMachine>("FSM");
         deck = GetNode<Deck>("Deck");
 		
-        muzzle = GetNode<Marker2D>("Muzzle");
+        muzzle = GetNode<Marker2D>("Muzzle/Marker2D");
+        muzzleRock = GetNode<Marker2D>("Muzzle/Marker2D2");
         healthBar = GetNode<HealthBar>("CanvasLayer/HealthBar");
         shield = GetNode<Sprite2D>("CanvasLayer/Sprite2D");
 
@@ -51,7 +53,10 @@ public partial class Player : CharacterBody2D
     public override void _PhysicsProcess(double delta)
     {
         //LookAt(GetGlobalMousePosition());
-        muzzle.LookAt(GetGlobalMousePosition());
+        //muzzle.LookAt(GetGlobalMousePosition());
+        //Vector2 v = GetGlobalMousePosition();
+        //float a = (v - muzzle.GlobalPosition).Angle();
+        //muzzle.Rotate(a);
     }
 
     private void Init_player()
@@ -113,9 +118,9 @@ public partial class Player : CharacterBody2D
         audio.Play();
     }
 
-    public void arrow_hit()
+    public void hit()
     {
-        audio = GetNode<AudioStreamPlayer2D>("Arrow");
+        audio = GetNode<AudioStreamPlayer2D>("Hit");
         audio.Play();
     }
 }

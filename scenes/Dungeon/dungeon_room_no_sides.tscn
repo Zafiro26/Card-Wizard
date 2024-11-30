@@ -1,9 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://q0ceen86jqbb"]
+[gd_scene load_steps=10 format=3 uid="uid://q0ceen86jqbb"]
 
 [ext_resource type="Script" path="res://scripts/Dungeon/DungeonRoom.cs" id="1_hnqbr"]
 [ext_resource type="Texture2D" uid="uid://cp2g74fxfbay1" path="res://sprites/Rooms/dungeon_room_no_door_sides.png" id="2_bup28"]
 [ext_resource type="Texture2D" uid="uid://burw7ndcbr0bh" path="res://sprites/Rooms/dungeon_room_no_door_sides_closed.png" id="3_ike4c"]
 [ext_resource type="PackedScene" uid="uid://biropaa43pld0" path="res://scenes/Dungeon/door.tscn" id="4_nc4mv"]
+[ext_resource type="PackedScene" uid="uid://bquxx51tc6x84" path="res://scenes/Enemies/archer.tscn" id="5_px6vo"]
+[ext_resource type="PackedScene" uid="uid://cs1xxp1hi4smr" path="res://scenes/Enemies/slime.tscn" id="6_43i6a"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gj80x"]
 size = Vector2(335, 166)
@@ -16,13 +18,13 @@ size = Vector2(30, 31)
 [node name="DungeonRoom" type="Node2D"]
 script = ExtResource("1_hnqbr")
 
-[node name="Opened" type="Sprite2D" parent="."]
+[node name="Closed" type="Sprite2D" parent="."]
 z_index = -1
 position = Vector2(240, 132)
 scale = Vector2(1.5, 1.5)
 texture = ExtResource("2_bup28")
 
-[node name="Closed" type="Sprite2D" parent="."]
+[node name="Opened" type="Sprite2D" parent="."]
 z_index = -1
 position = Vector2(240, 132)
 scale = Vector2(1.5, 1.5)
@@ -82,6 +84,18 @@ shape = SubResource("RectangleShape2D_uiswm")
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="ClosedDoors"]
 position = Vector2(240, 230)
 shape = SubResource("RectangleShape2D_uiswm")
+
+[node name="Archer" parent="." instance=ExtResource("5_px6vo")]
+position = Vector2(392, 196)
+
+[node name="Archer2" parent="." instance=ExtResource("5_px6vo")]
+position = Vector2(85, 65)
+
+[node name="Slime" parent="." instance=ExtResource("6_43i6a")]
+position = Vector2(190, 167)
+
+[node name="Slime2" parent="." instance=ExtResource("6_43i6a")]
+position = Vector2(268, 110)
 
 [editable path="DoorUp"]
 [editable path="DoorDown"]

@@ -2,12 +2,12 @@
 
 importer="wav"
 type="AudioStreamWAV"
-uid="uid://d2bafs8ffooth"
+uid="uid://ccy77ohoa1o1l"
 valid=false
 
 [deps]
 
-source_file="res://sprites/Sound and music/521242-cyoung510-arrow-hits-target_T1Ih2fyB.wav"
+source_file="res://sprites/Sound and music/arrow.wav"
 
 [params]
 

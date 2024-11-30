@@ -79,7 +79,7 @@ public partial class AttackRangeMob : State
 		player.Take_damage(damage);
 	}
 
-	public override async void PhysicsUpdate(float delta)
+	public override void PhysicsUpdate(float delta)
 	{
         if (attack)
         {   
@@ -89,6 +89,7 @@ public partial class AttackRangeMob : State
             timer.Start(0.2f);
             
         }
+        mob.MoveAndSlide();
 	}
 
 

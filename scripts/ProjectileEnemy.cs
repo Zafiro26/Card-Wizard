@@ -31,7 +31,7 @@ public partial class ProjectileEnemy : CharacterBody2D
         {
             Player tmp = (Player)body;
             tmp.Take_damage(damage);
-            tmp.arrow_hit();
+            tmp.hit();
             this.QueueFree();
         }
         if (body.GetType() == typeof(StaticBody2D))

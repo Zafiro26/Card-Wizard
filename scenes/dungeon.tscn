@@ -17,9 +17,9 @@
 [ext_resource type="PackedScene" uid="uid://bu4pqgpki3o45" path="res://scenes/Dungeon/dungeon_room_final.tscn" id="15_mg13c"]
 [ext_resource type="PackedScene" uid="uid://d0esh08hwwoye" path="res://scenes/Dungeon/end_screen_area.tscn" id="16_xaxb3"]
 
-[node name="World" type="Node2D"]
+[node name="World" type="Node2D" groups=["World"]]
 
-[node name="player" parent="." groups=["World"] instance=ExtResource("1_fy3il")]
+[node name="player" parent="." instance=ExtResource("1_fy3il")]
 position = Vector2(209, 151)
 
 [node name="Camera2D" type="Camera2D" parent="."]

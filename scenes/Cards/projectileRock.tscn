@@ -4,10 +4,10 @@
 [ext_resource type="Texture2D" uid="uid://pklhfg5lropi" path="res://sprites/rocks/rocks.png" id="2_i1dwp"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5i3i2"]
-size = Vector2(31, 29)
+size = Vector2(24, 25)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pnah0"]
-size = Vector2(31, 29)
+size = Vector2(24, 25)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1gcmg"]
 atlas = ExtResource("2_i1dwp")
@@ -30,11 +30,11 @@ script = ExtResource("1_g33sp")
 [node name="Hitbox" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
-position = Vector2(1.5, -1.5)
+position = Vector2(1, -1.5)
 shape = SubResource("RectangleShape2D_5i3i2")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(1.5, -1.5)
+position = Vector2(1, -1.5)
 shape = SubResource("RectangleShape2D_pnah0")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]

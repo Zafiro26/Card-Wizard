@@ -26,6 +26,8 @@ public partial class Enemy : CharacterBody2D
     //Slow timer
     public Timer slowTimer;
     public float oldSpeed;
+
+    private AudioStreamPlayer2D audio;
     
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
@@ -187,13 +189,19 @@ public partial class Enemy : CharacterBody2D
         health += n;
         if (health <= 0)
         {
-            fsm.TransitionTo("dieMob");
+            fsm.TransitionTo("die");
         }
         if (health > MAX_HP)
         {
             health = MAX_HP;
         }
         healthBar.set_health(health);
+    }
+
+    public void hit()
+    {
+        audio = GetNode<AudioStreamPlayer2D>("Hit");
+        audio.Play();
     }
 
     public void play_animation(String name)

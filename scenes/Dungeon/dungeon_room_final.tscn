@@ -1,9 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://bu4pqgpki3o45"]
+[gd_scene load_steps=10 format=3 uid="uid://bu4pqgpki3o45"]
 
 [ext_resource type="Script" path="res://scripts/Dungeon/DungeonRoom.cs" id="1_0a8wq"]
 [ext_resource type="Texture2D" uid="uid://cp2g74fxfbay1" path="res://sprites/Rooms/dungeon_room_no_door_sides.png" id="2_fb2s8"]
 [ext_resource type="Texture2D" uid="uid://burw7ndcbr0bh" path="res://sprites/Rooms/dungeon_room_no_door_sides_closed.png" id="3_1qr2n"]
 [ext_resource type="PackedScene" uid="uid://biropaa43pld0" path="res://scenes/Dungeon/door.tscn" id="4_wjacp"]
+[ext_resource type="PackedScene" uid="uid://bquxx51tc6x84" path="res://scenes/Enemies/archer.tscn" id="5_xe1dn"]
+[ext_resource type="PackedScene" uid="uid://cs1xxp1hi4smr" path="res://scenes/Enemies/slime.tscn" id="6_okql0"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gj80x"]
 size = Vector2(335, 166)
@@ -16,13 +18,13 @@ size = Vector2(30, 31)
 [node name="DungeonRoom" type="Node2D"]
 script = ExtResource("1_0a8wq")
 
-[node name="Opened" type="Sprite2D" parent="."]
+[node name="Closed" type="Sprite2D" parent="."]
 z_index = -1
 position = Vector2(240, 132)
 scale = Vector2(1.5, 1.5)
 texture = ExtResource("2_fb2s8")
 
-[node name="Closed" type="Sprite2D" parent="."]
+[node name="Opened" type="Sprite2D" parent="."]
 z_index = -1
 position = Vector2(240, 132)
 scale = Vector2(1.5, 1.5)
@@ -82,6 +84,24 @@ shape = SubResource("RectangleShape2D_uiswm")
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="ClosedDoors"]
 position = Vector2(240, 230)
 shape = SubResource("RectangleShape2D_uiswm")
+
+[node name="Archer" parent="." instance=ExtResource("5_xe1dn")]
+position = Vector2(94, 70)
+
+[node name="Archer2" parent="." instance=ExtResource("5_xe1dn")]
+position = Vector2(385, 61)
+
+[node name="Archer3" parent="." instance=ExtResource("5_xe1dn")]
+position = Vector2(81, 196)
+
+[node name="Archer4" parent="." instance=ExtResource("5_xe1dn")]
+position = Vector2(385, 192)
+
+[node name="Slime" parent="." instance=ExtResource("6_okql0")]
+position = Vector2(301, 104)
+
+[node name="Slime2" parent="." instance=ExtResource("6_okql0")]
+position = Vector2(187, 106)
 
 [editable path="DoorUp"]
 [editable path="DoorDown"]

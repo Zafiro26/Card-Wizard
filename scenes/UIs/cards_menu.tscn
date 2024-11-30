@@ -52,7 +52,7 @@ offset_right = 180.0
 offset_bottom = 36.0
 theme_override_fonts/normal_font = ExtResource("2_hump4")
 theme_override_font_sizes/normal_font_size = 7
-text = "Throws a rock that does no damage but push the enemies far away."
+text = "Throws a rock that does no damage but pushes the enemies far away."
 
 [node name="Sprite2D6" type="Sprite2D" parent="CanvasLayer"]
 position = Vector2(267, 99)
@@ -69,7 +69,7 @@ offset_right = 180.0
 offset_bottom = 55.5556
 theme_override_fonts/normal_font = ExtResource("2_hump4")
 theme_override_font_sizes/normal_font_size = 7
-text = "Alllows to tank one hit from the enemies. It can not stack."
+text = "Alllows to tank one hit from the enemies. It does not stack."
 
 [node name="Sprite2D8" type="Sprite2D" parent="CanvasLayer"]
 position = Vector2(267, 211)
@@ -86,7 +86,7 @@ offset_right = 180.0
 offset_bottom = 84.8889
 theme_override_fonts/normal_font = ExtResource("2_hump4")
 theme_override_font_sizes/normal_font_size = 7
-text = "Short distance teleport"
+text = "Short distance teleport."
 
 [node name="Sprite2D7" type="Sprite2D" parent="CanvasLayer"]
 position = Vector2(267, 154)
@@ -103,7 +103,7 @@ offset_right = 180.0
 offset_bottom = 75.1111
 theme_override_fonts/normal_font = ExtResource("2_hump4")
 theme_override_font_sizes/normal_font_size = 7
-text = "Grants a small speed buff for a few second. It can not stack."
+text = "Grants a small speed buff for a few second. It can does stack."
 
 [node name="Sprite2D2" type="Sprite2D" parent="CanvasLayer"]
 position = Vector2(35, 98)
@@ -137,7 +137,7 @@ offset_right = 180.0
 offset_bottom = 75.1111
 theme_override_fonts/normal_font = ExtResource("2_hump4")
 theme_override_font_sizes/normal_font_size = 7
-text = "Heal the player."
+text = "Heals the player."
 
 [node name="Sprite2D4" type="Sprite2D" parent="CanvasLayer"]
 position = Vector2(35, 207)
@@ -154,7 +154,7 @@ offset_right = 180.0
 offset_bottom = 84.8889
 theme_override_fonts/normal_font = ExtResource("2_hump4")
 theme_override_font_sizes/normal_font_size = 7
-text = "Poison arrow that does no damage but inflicts poison, which deals damage over time indefinitely and stacks."
+text = "Does not deal damage but inflicts poison, which deals damage over time indefinitely and stacks."
 
 [node name="Button" type="Button" parent="CanvasLayer"]
 offset_left = 416.0

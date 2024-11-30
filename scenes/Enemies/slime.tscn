@@ -1,4 +1,4 @@
-[gd_scene load_steps=76 format=3 uid="uid://cs1xxp1hi4smr"]
+[gd_scene load_steps=78 format=3 uid="uid://cs1xxp1hi4smr"]
 
 [ext_resource type="Script" path="res://scripts/Enemy.cs" id="1_jfu7o"]
 [ext_resource type="Texture2D" uid="uid://cfyk8pf3bnfhp" path="res://sprites/characters/slime.png" id="2_0k4fr"]
@@ -8,6 +8,8 @@
 [ext_resource type="Script" path="res://scripts/states/enemy/AttackMeleeMob.cs" id="6_7e7hv"]
 [ext_resource type="Script" path="res://scripts/states/enemy/DieMob.cs" id="7_dvvta"]
 [ext_resource type="PackedScene" uid="uid://b1imj3rbykb40" path="res://scenes/UIs/healthBar.tscn" id="7_g55uw"]
+[ext_resource type="AudioStream" uid="uid://rmthuopqur6j" path="res://sprites/Sound and music/568795-eminyildirim-player-hit-impact_AOfy3Esc.wav" id="9_8rlx0"]
+[ext_resource type="AudioStream" uid="uid://cmlxg5kwve2os" path="res://sprites/Sound and music/353250__zuzek06__slimejump.wav" id="10_1k0ui"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3kr08"]
 atlas = ExtResource("2_0k4fr")
@@ -527,7 +529,7 @@ script = ExtResource("1_jfu7o")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -3)
 sprite_frames = SubResource("SpriteFrames_iuw4o")
-animation = &"take_damage"
+animation = &"walk_side"
 
 [node name="FSM" type="Node" parent="."]
 script = ExtResource("3_5w7el")
@@ -542,7 +544,7 @@ script = ExtResource("5_dsqfn")
 [node name="attackMob" type="Node" parent="FSM"]
 script = ExtResource("6_7e7hv")
 
-[node name="dieMob" type="Node" parent="FSM"]
+[node name="die" type="Node" parent="FSM"]
 script = ExtResource("7_dvvta")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -578,3 +580,10 @@ offset_bottom = -9.0
 [node name="SlowTimer" type="Timer" parent="."]
 
 [node name="PoisonTimer" type="Timer" parent="."]
+
+[node name="Hit" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("9_8rlx0")
+
+[node name="Walk" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("10_1k0ui")
+volume_db = -12.661

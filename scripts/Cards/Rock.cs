@@ -25,7 +25,7 @@ public partial class Rock : Card
         n.speed = speed;
         n.damage = damage;
         player.GetTree().Root.AddChild(n);
-        n.Transform = player.muzzle.GlobalTransform;
+        n.Transform = player.muzzleRock.GlobalTransform;
         GD.Print("Casted Rock");
     }
 	

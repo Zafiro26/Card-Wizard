@@ -30,7 +30,7 @@ offset_right = 180.0
 offset_bottom = 36.0
 theme_override_fonts/normal_font = ExtResource("2_l0qok")
 theme_override_font_sizes/normal_font_size = 7
-text = "Negative card that can eather slow you or damage you."
+text = "Negative card that can either slow you or damage you."
 metadata/_edit_use_anchors_ = true
 
 [node name="Button" type="Button" parent="CanvasLayer"]

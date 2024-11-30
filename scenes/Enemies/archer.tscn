@@ -1,4 +1,4 @@
-[gd_scene load_steps=42 format=3 uid="uid://bquxx51tc6x84"]
+[gd_scene load_steps=39 format=3 uid="uid://bquxx51tc6x84"]
 
 [ext_resource type="Script" path="res://scripts/Enemy.cs" id="1_mpuhr"]
 [ext_resource type="PackedScene" uid="uid://b1imj3rbykb40" path="res://scenes/UIs/healthBar.tscn" id="1_mtdaf"]
@@ -6,12 +6,12 @@
 [ext_resource type="Texture2D" uid="uid://c5bnjgf8d5sqc" path="res://sprites/Soldier/Soldier/Soldier/Soldier.png" id="2_h2ust"]
 [ext_resource type="Texture2D" uid="uid://bnt7l7fr0025v" path="res://sprites/Soldier/Soldier/Soldier/Soldier-Death.png" id="2_jm5u4"]
 [ext_resource type="Script" path="res://scripts/states/StateMachine.cs" id="3_a5r7q"]
-[ext_resource type="Texture2D" uid="uid://bp3jyl05pa5gq" path="res://sprites/Soldier/Soldier/Soldier/Soldier-Hurt.png" id="4_d3gvw"]
 [ext_resource type="Script" path="res://scripts/states/enemy/IdleMob.cs" id="4_kg4uo"]
 [ext_resource type="Script" path="res://scripts/states/enemy/MoveMob.cs" id="5_koxd3"]
 [ext_resource type="Script" path="res://scripts/states/enemy/AttackRangeMob.cs" id="5_wr3mq"]
 [ext_resource type="Script" path="res://scripts/states/enemy/DieMob.cs" id="7_4t4q6"]
 [ext_resource type="AudioStream" uid="uid://chvdjkl0kqcbe" path="res://sprites/Sound and music/Bow.wav" id="11_iwsvf"]
+[ext_resource type="AudioStream" uid="uid://rmthuopqur6j" path="res://sprites/Sound and music/568795-eminyildirim-player-hit-impact_AOfy3Esc.wav" id="13_wyu3r"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_sgrqp"]
 atlas = ExtResource("2_jm5u4")
@@ -64,22 +64,6 @@ region = Rect2(700, 400, 100, 100)
 [sub_resource type="AtlasTexture" id="AtlasTexture_vq36p"]
 atlas = ExtResource("2_h2ust")
 region = Rect2(800, 400, 100, 100)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_uekoc"]
-atlas = ExtResource("4_d3gvw")
-region = Rect2(0, 0, 100, 100)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_kr3jp"]
-atlas = ExtResource("4_d3gvw")
-region = Rect2(100, 0, 100, 100)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_eew1d"]
-atlas = ExtResource("4_d3gvw")
-region = Rect2(200, 0, 100, 100)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_w6n65"]
-atlas = ExtResource("4_d3gvw")
-region = Rect2(300, 0, 100, 100)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_mjtxd"]
 atlas = ExtResource("2_cwqk1")
@@ -164,19 +148,7 @@ animations = [{
 "name": &"shoot",
 "speed": 14.0
 }, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_uekoc")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_kr3jp")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_eew1d")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_w6n65")
-}],
+"frames": [],
 "loop": true,
 "name": &"take_damage",
 "speed": 5.0
@@ -220,14 +192,14 @@ size = Vector2(12, 18)
 [sub_resource type="CircleShape2D" id="CircleShape2D_1jfes"]
 radius = 149.03
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_apa8k"]
+
 [node name="Archer" type="CharacterBody2D" groups=["Enemy"]]
 script = ExtResource("1_mpuhr")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_c66gb")
-animation = &"shoot"
-frame = 8
-frame_progress = 1.0
+animation = &"take_damage"
 
 [node name="FSM" type="Node" parent="."]
 script = ExtResource("3_a5r7q")
@@ -242,7 +214,7 @@ script = ExtResource("5_koxd3")
 [node name="attackMob" type="Node" parent="FSM"]
 script = ExtResource("5_wr3mq")
 
-[node name="dieMob" type="Node" parent="FSM"]
+[node name="die" type="Node" parent="FSM"]
 script = ExtResource("7_4t4q6")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -282,3 +254,11 @@ offset_bottom = -13.0
 
 [node name="BowSound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("11_iwsvf")
+
+[node name="Hit" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("13_wyu3r")
+
+[node name="Walk" type="AudioStreamPlayer2D" parent="."]
+
+[node name="Shield" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_apa8k")

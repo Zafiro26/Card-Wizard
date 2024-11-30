@@ -49,6 +49,7 @@ public partial class StateMachine : Node
         {
             return;
         }
+        if (current_state == states["die"])
         this.current_state.Exit();
         this.current_state = this.states[key];
         this.current_state.Enter();

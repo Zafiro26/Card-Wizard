@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://rmthuopqur6j"
+path="res://.godot/imported/568795-eminyildirim-player-hit-impact_AOfy3Esc.wav-0f66bfdf2984ee792c9768c3e16950f4.sample"
+
+[deps]
+
+source_file="res://sprites/Sound and music/568795-eminyildirim-player-hit-impact_AOfy3Esc.wav"
+dest_files=["res://.godot/imported/568795-eminyildirim-player-hit-impact_AOfy3Esc.wav-0f66bfdf2984ee792c9768c3e16950f4.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0
