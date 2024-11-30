@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://chvdjkl0kqcbe"
+path="res://.godot/imported/Bow.wav-693c20f4d336d42b36cb81b525a569fe.sample"
+
+[deps]
+
+source_file="res://sprites/Sound and music/Bow.wav"
+dest_files=["res://.godot/imported/Bow.wav-693c20f4d336d42b36cb81b525a569fe.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=3 uid="uid://bquxx51tc6x84"]
+[gd_scene load_steps=37 format=3 uid="uid://bquxx51tc6x84"]
 
 [ext_resource type="Script" path="res://scripts/Enemy.cs" id="1_mpuhr"]
 [ext_resource type="PackedScene" uid="uid://b1imj3rbykb40" path="res://scenes/UIs/healthBar.tscn" id="1_mtdaf"]
@@ -10,6 +10,7 @@
 [ext_resource type="Script" path="res://scripts/states/enemy/MoveMob.cs" id="5_koxd3"]
 [ext_resource type="Script" path="res://scripts/states/enemy/AttackRangeMob.cs" id="5_wr3mq"]
 [ext_resource type="Script" path="res://scripts/states/enemy/DieMob.cs" id="7_4t4q6"]
+[ext_resource type="AudioStream" uid="uid://chvdjkl0kqcbe" path="res://sprites/Sound and music/Bow.wav" id="11_iwsvf"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_sgrqp"]
 atlas = ExtResource("2_jm5u4")
@@ -191,7 +192,6 @@ script = ExtResource("1_mpuhr")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_c66gb")
 animation = &"died"
-frame_progress = 0.0693858
 
 [node name="FSM" type="Node" parent="."]
 script = ExtResource("3_a5r7q")
@@ -243,3 +243,6 @@ offset_bottom = -13.0
 [node name="SlowTimer" type="Timer" parent="."]
 
 [node name="PoisonTimer" type="Timer" parent="."]
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("11_iwsvf")
