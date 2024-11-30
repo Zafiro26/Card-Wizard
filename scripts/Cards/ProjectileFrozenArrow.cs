@@ -33,6 +33,7 @@ public partial class ProjectileFrozenArrow : CharacterBody2D
             tmp.Take_damage(damage);
             tmp.slow(40);
             this.QueueFree();
+            player.arrow_hit();
         }
         if (body.GetType() == typeof(StaticBody2D))
         {

@@ -33,6 +33,7 @@ public partial class ProjectilePoisonArrow : CharacterBody2D
             tmp.Take_damage(damage);
             tmp.Take_dot_damage(5, 0, 1.0f);
             this.QueueFree();
+            player.arrow_hit();
         }
         if (body.GetType() == typeof(StaticBody2D))
         {

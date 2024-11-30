@@ -55,6 +55,8 @@ public partial class Enemy : CharacterBody2D
 
 	}
 
+
+
     private void OnSlowTimeout()
     {
         SPEED = oldSpeed;
@@ -153,6 +155,7 @@ public partial class Enemy : CharacterBody2D
     // Called every frame. 'delta' is the elapsed time since the previous frame.
     public void Take_damage(int damage)
     {
+        anim.Play("take_damage");
         add_health(0 - damage);
         
     }

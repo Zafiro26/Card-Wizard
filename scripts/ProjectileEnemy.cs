@@ -6,7 +6,7 @@ public partial class ProjectileEnemy : CharacterBody2D
 
     public int speed = 300;
     private Area2D area;
-    public int damage = 50;
+    public int damage = 20;
     private Vector2 d;
     //private Player player;
 
@@ -31,6 +31,7 @@ public partial class ProjectileEnemy : CharacterBody2D
         {
             Player tmp = (Player)body;
             tmp.Take_damage(damage);
+            tmp.arrow_hit();
             this.QueueFree();
         }
         if (body.GetType() == typeof(StaticBody2D))

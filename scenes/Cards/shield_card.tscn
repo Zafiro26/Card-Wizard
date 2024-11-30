@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://cmu3k1yp8pise"]
+[gd_scene load_steps=5 format=3 uid="uid://cmu3k1yp8pise"]
 
 [ext_resource type="PackedScene" uid="uid://vsptq01pxkxa" path="res://scenes/Cards/card.tscn" id="1_ghhla"]
 [ext_resource type="Script" path="res://scripts/Cards/Shield.cs" id="1_ukqe2"]
 [ext_resource type="Texture2D" uid="uid://bqflu2tt4nt5l" path="res://sprites/Cards/shield.png" id="2_yj0cx"]
+[ext_resource type="AudioStream" uid="uid://nrwck5j22w3k" path="res://sprites/Sound and music/armor-hit-soft-01-266303.mp3" id="4_3gthj"]
 
 [node name="ShieldCard" type="Node2D"]
 script = ExtResource("1_ukqe2")
@@ -12,5 +13,8 @@ script = ExtResource("1_ukqe2")
 [node name="Sprite2D" parent="Card/CardImage" index="0"]
 scale = Vector2(2, 2)
 texture = ExtResource("2_yj0cx")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_3gthj")
 
 [editable path="Card"]

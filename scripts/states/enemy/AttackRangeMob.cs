@@ -10,6 +10,11 @@ public partial class AttackRangeMob : State
 	public AnimatedSprite2D anim;
 	public PackedScene projectile;
 	public Marker2D muzzle;
+    public AudioStreamPlayer2D bow;
+    public Timer timer;
+    public bool attack;
+
+    public int bow_frame = 7;
 	// Called when the node enters the scene tree for the first time.
 	public override void Ready()
 	{
@@ -17,8 +22,48 @@ public partial class AttackRangeMob : State
 		muzzle = mob.GetNode<Marker2D>("Muzzle");
 		player = (Player)GetTree().GetFirstNodeInGroup("Player");
 		anim = mob.GetNode<AnimatedSprite2D>("AnimatedSprite2D");
+        bow = mob.GetNode<AudioStreamPlayer2D>("BowSound");
+        timer = mob.GetNode<Timer>("AttackCooldown");
+        attack = true;
+        
+
+        anim.FrameChanged += OnFrameChanged;
+        anim.AnimationFinished += OnAnimationFinished;
+        timer.Timeout += OnTimerTimeout;
 
 	}
+
+    private void OnTimerTimeout()
+    {
+        attack = true;
+    }
+
+
+    private void OnAnimationFinished()
+    {
+        projectile = GD.Load<PackedScene>("res://scenes/Enemies/projectileEnemy.tscn");
+        ProjectileEnemy n = (ProjectileEnemy)projectile.Instantiate();
+        mob.GetTree().Root.AddChild(n);
+        muzzle.LookAt(player.GlobalPosition);
+        n.Transform = muzzle.GlobalTransform;
+        attack = true;
+        GD.Print("anim finished");
+    }
+
+
+    
+
+
+    private void OnFrameChanged()
+    {
+        if (anim.Animation == "shoot")
+        {
+            if (anim.Frame == bow_frame)
+            {
+                bow.Play();
+            }
+        }
+    }
 
     public override void Enter()
     {
@@ -36,13 +81,14 @@ public partial class AttackRangeMob : State
 
 	public override async void PhysicsUpdate(float delta)
 	{
-		projectile = GD.Load<PackedScene>("res://scenes/Enemies/projectileEnemy.tscn");
-		ProjectileEnemy n = (ProjectileEnemy)projectile.Instantiate();
-        shoot_animation();
-        await ToSignal(anim, "animation_looped");
-		mob.GetTree().Root.AddChild(n);
-        muzzle.LookAt(player.GlobalPosition);
-		n.Transform = muzzle.GlobalTransform;
+        if (attack)
+        {   
+            
+            shoot_animation();
+            attack = false;
+            timer.Start(0.2f);
+            
+        }
 	}
 
 

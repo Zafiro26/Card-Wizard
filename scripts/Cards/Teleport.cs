@@ -7,6 +7,7 @@ public partial class Teleport : Card
     public int damage = 0;
     public int speed = 0;
     public PackedScene projectile;
+    private AudioStreamPlayer2D audio;
 
     public Teleport()
     {
@@ -21,6 +22,9 @@ public partial class Teleport : Card
         Godot.Vector2 v2 = (v - player.GlobalPosition).Normalized();
 
         Godot.Vector2 d = player.GlobalPosition + v2 * 100;
+
+        audio = GetNode<AudioStreamPlayer2D>("AudioStreamPlayer2D");
+        audio.Play();
 
         if (player.GlobalPosition.DistanceTo(v) < 100)
         {

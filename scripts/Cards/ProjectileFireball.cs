@@ -65,6 +65,7 @@ public partial class ProjectileFireball : CharacterBody2D
 
     private void explosionM()
     {
+        player.fireball_explosion();
         foreach (var body in explosionArea.GetOverlappingBodies())
         {
             if (body.IsInGroup("Enemy"))

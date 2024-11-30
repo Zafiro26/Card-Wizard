@@ -18,6 +18,8 @@ public partial class Player : CharacterBody2D
     public Timer speedTimer;
     public bool inmortal;
     public Sprite2D shield;
+
+    private AudioStreamPlayer2D audio;
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
@@ -104,4 +106,16 @@ public partial class Player : CharacterBody2D
 		}
         healthBar.set_health(health);
 	}
+
+    public void fireball_explosion()
+    {
+        audio = GetNode<AudioStreamPlayer2D>("Fireball");
+        audio.Play();
+    }
+
+    public void arrow_hit()
+    {
+        audio = GetNode<AudioStreamPlayer2D>("Arrow");
+        audio.Play();
+    }
 }

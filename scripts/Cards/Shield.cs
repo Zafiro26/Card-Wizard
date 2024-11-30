@@ -3,8 +3,7 @@ using System;
 
 public partial class Shield : Card
 {
-
-    private int heal = 20;
+    private AudioStreamPlayer2D audio;
 
     public Shield()
     {
@@ -15,6 +14,8 @@ public partial class Shield : Card
 	
 	public override void Effect_card(Player player)
     {
+        audio = GetNode<AudioStreamPlayer2D>("AudioStreamPlayer2D");
+        audio.Play();
         player.inmortal = true;
         player.shield.Visible = true;
         GD.Print("Casted healing");

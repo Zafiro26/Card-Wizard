@@ -7,6 +7,7 @@ public partial class Speed : Card
     public int damage = 0;
     public int speed = 0;
     public PackedScene projectile;
+    private AudioStreamPlayer2D audio;
 
     public Speed()
     {
@@ -20,6 +21,10 @@ public partial class Speed : Card
         Timer timer = player.speedTimer;
         float b = player.base_speed;
         b = (float)b * (float)1.2;
+
+        audio = GetNode<AudioStreamPlayer2D>("AudioStreamPlayer2D");
+        audio.Play();
+        
         player.speed = b;
         timer.Start(4.0f);
         GD.Print("Casted Slow");

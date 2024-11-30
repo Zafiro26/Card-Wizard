@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://desn57nqlkj4y"]
+[gd_scene load_steps=20 format=3 uid="uid://desn57nqlkj4y"]
 
 [ext_resource type="Texture2D" uid="uid://4prhe04glhm3" path="res://sprites/characters/player.png" id="1_3p7rb"]
 [ext_resource type="Script" path="res://scripts/Player.cs" id="1_nb1at"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://dya2gto7jgheq" path="res://scenes/Player/deck.tscn" id="8_1puey"]
 [ext_resource type="Texture2D" uid="uid://cmsbvuqjpmv06" path="res://sprites/shield.png" id="8_7fbo3"]
 [ext_resource type="PackedScene" uid="uid://b1imj3rbykb40" path="res://scenes/UIs/healthBar.tscn" id="8_8q5xp"]
+[ext_resource type="AudioStream" uid="uid://kvbi4cv3d78d" path="res://sprites/Sound and music/117137__zimbot__explosionbombblastambient2.wav" id="11_via1m"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_dopyf"]
 atlas = ExtResource("1_3p7rb")
@@ -62,8 +63,8 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_dt7ja"]
-radius = 4.0
-height = 14.0
+radius = 3.0
+height = 12.0
 
 [node name="player" type="CharacterBody2D" groups=["Player"]]
 collision_layer = 3
@@ -117,3 +118,9 @@ texture = ExtResource("8_7fbo3")
 [node name="Deck" parent="." instance=ExtResource("8_1puey")]
 
 [node name="SpeedTimer" type="Timer" parent="."]
+
+[node name="Fireball" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("11_via1m")
+volume_db = -21.704
+
+[node name="Arrow" type="AudioStreamPlayer2D" parent="."]

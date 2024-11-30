@@ -1,4 +1,4 @@
-[gd_scene load_steps=79 format=3 uid="uid://cs1xxp1hi4smr"]
+[gd_scene load_steps=76 format=3 uid="uid://cs1xxp1hi4smr"]
 
 [ext_resource type="Script" path="res://scripts/Enemy.cs" id="1_jfu7o"]
 [ext_resource type="Texture2D" uid="uid://cfyk8pf3bnfhp" path="res://sprites/characters/slime.png" id="2_0k4fr"]
@@ -104,18 +104,6 @@ region = Rect2(32, 352, 32, 32)
 [sub_resource type="AtlasTexture" id="AtlasTexture_h50sh"]
 atlas = ExtResource("2_0k4fr")
 region = Rect2(64, 352, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_faw4v"]
-atlas = ExtResource("2_0k4fr")
-region = Rect2(0, 288, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_3vjey"]
-atlas = ExtResource("2_0k4fr")
-region = Rect2(32, 288, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_pyl6x"]
-atlas = ExtResource("2_0k4fr")
-region = Rect2(64, 288, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_r48sl"]
 atlas = ExtResource("2_0k4fr")
@@ -365,20 +353,6 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_faw4v")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_3vjey")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_pyl6x")
-}],
-"loop": true,
-"name": &"damaged_front",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
 "texture": SubResource("AtlasTexture_r48sl")
 }, {
 "duration": 1.0,
@@ -460,6 +434,11 @@ animations = [{
 }],
 "loop": true,
 "name": &"idle_side",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"take_damage",
 "speed": 5.0
 }, {
 "frames": [{
@@ -548,8 +527,7 @@ script = ExtResource("1_jfu7o")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -3)
 sprite_frames = SubResource("SpriteFrames_iuw4o")
-animation = &"attack_front"
-frame_progress = 0.359955
+animation = &"take_damage"
 
 [node name="FSM" type="Node" parent="."]
 script = ExtResource("3_5w7el")

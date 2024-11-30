@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://1tx2d45iotjg"]
+[gd_scene load_steps=5 format=3 uid="uid://1tx2d45iotjg"]
 
 [ext_resource type="PackedScene" uid="uid://vsptq01pxkxa" path="res://scenes/Cards/card.tscn" id="1_3d237"]
 [ext_resource type="Script" path="res://scripts/Cards/Teleport.cs" id="1_mbq5n"]
 [ext_resource type="Texture2D" uid="uid://co3jefvws2jxi" path="res://sprites/Cards/teleport.png" id="3_qx1qo"]
+[ext_resource type="AudioStream" uid="uid://dn0ab5vvf5w73" path="res://sprites/Sound and music/146727__leszek_szary__energy.wav" id="4_shk1x"]
 
 [node name="TeleportCard" type="Node2D"]
 script = ExtResource("1_mbq5n")
@@ -12,5 +13,8 @@ script = ExtResource("1_mbq5n")
 [node name="Sprite2D" parent="Card/CardImage" index="0"]
 scale = Vector2(2, 2)
 texture = ExtResource("3_qx1qo")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_shk1x")
 
 [editable path="Card"]

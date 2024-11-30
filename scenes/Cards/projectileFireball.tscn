@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://udf1lyy8m5gv"]
+[gd_scene load_steps=12 format=3 uid="uid://udf1lyy8m5gv"]
 
 [ext_resource type="Script" path="res://scripts/Cards/ProjectileFireball.cs" id="1_jqn8x"]
 [ext_resource type="Texture2D" uid="uid://cwrdvjvh5jt8k" path="res://VFX/Fireball/FB00_nyknck/FB001.png" id="2_ejclv"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://c5minppqrntwr" path="res://VFX/Fireball/FB00_nyknck/FB003.png" id="4_jj0pq"]
 [ext_resource type="Texture2D" uid="uid://8clsp3lp6tqf" path="res://VFX/Fireball/FB00_nyknck/FB004.png" id="5_70u4q"]
 [ext_resource type="Texture2D" uid="uid://unf4k3x5sewk" path="res://VFX/Fireball/FB00_nyknck/FB005.png" id="6_ixwwc"]
+[ext_resource type="AudioStream" uid="uid://kvbi4cv3d78d" path="res://sprites/Sound and music/117137__zimbot__explosionbombblastambient2.wav" id="7_grirc"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_av4db"]
 size = Vector2(18, 21)
@@ -65,3 +66,7 @@ autoplay = "fireball"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Explosion"]
 position = Vector2(0, 1)
 shape = SubResource("CircleShape2D_7k34k")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("7_grirc")
+volume_db = -23.513

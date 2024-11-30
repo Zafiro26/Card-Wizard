@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://kvbi4cv3d78d"
+path="res://.godot/imported/117137__zimbot__explosionbombblastambient2.wav-9bed8570e7f2e444f05751be903e5218.sample"
+
+[deps]
+
+source_file="res://sprites/Sound and music/117137__zimbot__explosionbombblastambient2.wav"
+dest_files=["res://.godot/imported/117137__zimbot__explosionbombblastambient2.wav-9bed8570e7f2e444f05751be903e5218.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

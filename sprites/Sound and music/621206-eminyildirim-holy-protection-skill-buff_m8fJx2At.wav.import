@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://cijlakba2nd0m"
+path="res://.godot/imported/621206-eminyildirim-holy-protection-skill-buff_m8fJx2At.wav-d15a5658d6c9b457a933d3651b976357.sample"
+
+[deps]
+
+source_file="res://sprites/Sound and music/621206-eminyildirim-holy-protection-skill-buff_m8fJx2At.wav"
+dest_files=["res://.godot/imported/621206-eminyildirim-holy-protection-skill-buff_m8fJx2At.wav-d15a5658d6c9b457a933d3651b976357.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

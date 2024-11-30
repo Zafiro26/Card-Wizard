@@ -7,6 +7,7 @@ public partial class Rock : Card
     public int damage;
     public int speed = 350;
     public PackedScene projectile;
+    private AudioStreamPlayer2D audio;
 
     public Rock()
     {
@@ -19,6 +20,8 @@ public partial class Rock : Card
     {
         projectile = GD.Load<PackedScene>("res://scenes/Cards/projectileRock.tscn");
         ProjectileRock n = (ProjectileRock)projectile.Instantiate();
+        audio = GetNode<AudioStreamPlayer2D>("AudioStreamPlayer2D");
+        audio.Play();
         n.speed = speed;
         n.damage = damage;
         player.GetTree().Root.AddChild(n);
