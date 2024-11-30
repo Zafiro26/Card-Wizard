@@ -15,10 +15,15 @@ run/main_scene="res://scenes/UIs/menu.tscn"
 config/features=PackedStringArray("4.3", "C#", "Forward Plus")
 config/icon="res://icon.svg"
 
+[autoload]
+
+BackgroundMusic="*res://scenes/background_music.tscn"
+
 [display]
 
 window/size/viewport_width=480
 window/size/viewport_height=263
+window/size/mode=3
 window/stretch/mode="canvas_items"
 
 [dotnet]
@@ -30,6 +35,7 @@ project/assembly_name="MoreTesting"
 Player=""
 Enemy=""
 deck=""
+World=""
 
 [input]
 

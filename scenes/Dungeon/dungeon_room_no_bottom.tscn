@@ -99,7 +99,7 @@ position = Vector2(422, 133)
 shape = SubResource("RectangleShape2D_uiswm")
 
 [node name="Slime" parent="." instance=ExtResource("5_crren")]
-position = Vector2(310, 97)
+position = Vector2(237, 116)
 
 [node name="Slime2" parent="." instance=ExtResource("5_crren")]
 position = Vector2(254, 155)

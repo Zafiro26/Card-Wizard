@@ -4,7 +4,7 @@ using System;
 public partial class Enemy : CharacterBody2D
 {
     public int MAX_HP = 100;
-    public float SPEED = 80f;
+    public float SPEED = 100f;
     public int health;
     public StateMachine fsm;
     public Area2D areaDetection;

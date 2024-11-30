@@ -31,7 +31,7 @@ public partial class ProjectilePoisonArrow : CharacterBody2D
         {
             Enemy tmp = (Enemy)body;
             tmp.Take_damage(damage);
-            tmp.Take_dot_damage(5, 0, 1.0f);
+            tmp.Take_dot_damage(20, 0, 1.0f);
             tmp.hit();
             this.QueueFree();
             

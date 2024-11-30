@@ -6,7 +6,7 @@ using System.Runtime.CompilerServices;
 
 public partial class Player : CharacterBody2D
 {
-	private const int MAX_HP = 1000000;
+	private const int MAX_HP = 100;
     public float speed;
     public float base_speed;
 	public StateMachine fsm;

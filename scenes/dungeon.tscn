@@ -26,10 +26,11 @@ position = Vector2(209, 151)
 position = Vector2(0, 1)
 anchor_mode = 0
 position_smoothing_enabled = true
-position_smoothing_speed = 10.0
+position_smoothing_speed = 20.0
 script = ExtResource("2_ul0ks")
 
 [node name="DungeonRoom" parent="." instance=ExtResource("3_leboy")]
+position = Vector2(0, 1)
 
 [node name="DungeonRoom2" parent="." instance=ExtResource("4_23mft")]
 z_index = -1

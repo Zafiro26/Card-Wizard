@@ -111,16 +111,7 @@ position = Vector2(422, 133)
 shape = SubResource("RectangleShape2D_uiswm")
 
 [node name="Slime" parent="." instance=ExtResource("6_fspi0")]
-position = Vector2(326, 123)
-
-[node name="Slime2" parent="." instance=ExtResource("6_fspi0")]
-position = Vector2(191, 86)
-
-[node name="Slime3" parent="." instance=ExtResource("6_fspi0")]
-position = Vector2(277, 152)
-
-[node name="Slime4" parent="." instance=ExtResource("6_fspi0")]
-position = Vector2(187, 145)
+position = Vector2(264, 142)
 
 [editable path="DoorUp"]
 [editable path="DoorDown"]
