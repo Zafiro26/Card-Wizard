@@ -36,7 +36,7 @@ public partial class ProjectilePoisonArrow : CharacterBody2D
             this.QueueFree();
             
         }
-        if (body.GetType() == typeof(StaticBody2D))
+        if (body.IsInGroup("ProjectileStop"))
         {
             this.QueueFree();
         }

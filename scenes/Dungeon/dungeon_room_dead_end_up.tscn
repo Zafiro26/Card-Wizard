@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://dtgkk0bjjw8e0"]
+[gd_scene load_steps=13 format=3 uid="uid://dtgkk0bjjw8e0"]
 
 [ext_resource type="Script" path="res://scripts/Dungeon/DungeonRoom.cs" id="1_v7drr"]
 [ext_resource type="Texture2D" uid="uid://bm6ro42e2biv6" path="res://sprites/Rooms/dungeon_room_dead_end_up.png" id="2_5fi6n"]
@@ -13,6 +13,22 @@ size = Vector2(335, 166)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uiswm"]
 size = Vector2(30, 31)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_gwwk2"]
+a = Vector2(491, 271)
+b = Vector2(-11, 271)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_c8gwx"]
+a = Vector2(-10, -8)
+b = Vector2(491, -8)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_l4gwr"]
+a = Vector2(-4, -17)
+b = Vector2(-6, 285)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_crqs7"]
+a = Vector2(484, -18)
+b = Vector2(484, 287)
 
 [node name="DungeonRoom" type="Node2D"]
 script = ExtResource("1_v7drr")
@@ -79,5 +95,19 @@ position = Vector2(236, 72)
 
 [node name="Archer3" parent="." instance=ExtResource("5_h7skx")]
 position = Vector2(353, 72)
+
+[node name="ProjectileStop" type="StaticBody2D" parent="." groups=["ProjectileStop"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ProjectileStop"]
+shape = SubResource("SegmentShape2D_gwwk2")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="ProjectileStop"]
+shape = SubResource("SegmentShape2D_c8gwx")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="ProjectileStop"]
+shape = SubResource("SegmentShape2D_l4gwr")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="ProjectileStop"]
+shape = SubResource("SegmentShape2D_crqs7")
 
 [editable path="DoorDown"]

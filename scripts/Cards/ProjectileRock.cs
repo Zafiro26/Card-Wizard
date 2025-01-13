@@ -27,7 +27,7 @@ public partial class ProjectileRock : CharacterBody2D
 
     private void OnBodyEntered(Node2D body)
     {
-        if (body.GetType() == typeof(StaticBody2D))
+        if (body.IsInGroup("ProjectileStop"))
         {
             this.QueueFree();
         }

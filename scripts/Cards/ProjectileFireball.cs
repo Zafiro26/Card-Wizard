@@ -62,7 +62,7 @@ public partial class ProjectileFireball : CharacterBody2D
         {
             explosionM();
         }
-        if (body.GetType() == typeof(StaticBody2D))
+        if (body.IsInGroup("ProjectileStop"))
         {
             this.QueueFree();
         }

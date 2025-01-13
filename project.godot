@@ -36,6 +36,7 @@ Player=""
 Enemy=""
 deck=""
 World=""
+ProjectileStop=""
 
 [input]
 
