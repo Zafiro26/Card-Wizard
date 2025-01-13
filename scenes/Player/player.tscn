@@ -201,7 +201,7 @@ script = ExtResource("8_ts2u6")
 position = Vector2(5, -5)
 
 [node name="Marker2D2" type="Marker2D" parent="Muzzle"]
-position = Vector2(10, -11)
+position = Vector2(5, -5)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 

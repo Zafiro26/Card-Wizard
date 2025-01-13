@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://dmt84r6fvnjim"]
+
+[ext_resource type="Script" path="res://scenes/Cards/InvisibleCard.cs" id="1_lkpkm"]
+[ext_resource type="PackedScene" uid="uid://vsptq01pxkxa" path="res://scenes/Cards/card.tscn" id="2_xt2g4"]
+
+[node name="InvisibleCard" type="Node2D"]
+script = ExtResource("1_lkpkm")
+
+[node name="Card" parent="." instance=ExtResource("2_xt2g4")]
+
+[node name="CardImage" parent="Card" index="0"]
+scale = Vector2(0.001, 0.001)
+
+[editable path="Card"]

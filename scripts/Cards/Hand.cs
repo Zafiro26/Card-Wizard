@@ -12,6 +12,7 @@ public partial class Hand : Node2D
     public Player player;
     public Dictionary<int, Vector2> posiciones;
     public CanvasLayer canvas;
+    public Card card;
     
     public override void _Ready()
 	{
@@ -23,6 +24,11 @@ public partial class Hand : Node2D
         posiciones = new Dictionary<int, Vector2>();
         fill_dicitonary(posiciones);
         canvas = this.GetNode<CanvasLayer>("CanvasLayer");
+
+        PackedScene tmp;
+
+        tmp = GD.Load<PackedScene>("res://scenes/Cards/invisible_card.tscn");
+        card = (Card)tmp.Instantiate();
 
         
         //labels.Add(GetNode<Label>("CanvasLayer/Label"));
@@ -48,6 +54,8 @@ public partial class Hand : Node2D
         {
             canvas.RemoveChild(n);
         }
+        canvas.AddChild(card);
+        card.Position = new Vector2(250, 240);
         for (int i = 0; i < 4; i++)
         {
             GD.Print(hand[i].Name);
